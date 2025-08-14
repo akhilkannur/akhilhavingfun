@@ -1,191 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Akhil – Projects & Work</title>
-  <style>
-    :root{
-      --bg:#f4f1e0;
-      --ink:#111;
-      --accent1:#ff66c4;
-      --accent2:#6a5acd;
-      --panel:#fff;
-      --muted:#555;
-    }
-    html,body{height:100%;margin:0}
-    body {
-      font-family: "Courier New", monospace;
-      background: var(--bg);
-      color: var(--ink);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      max-width:1000px;
-      margin:0 auto;
-      padding:20px;
-      box-sizing:border-box;
-    }
+import Image from "next/image";
 
-    header{
-      text-align:center;
-      padding:48px 18px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2), #00ffff);
-      color:#fff;
-      border-bottom:4px solid #000;
-      box-shadow: 0 6px 0 rgba(0,0,0,0.06);
-    }
-    header h1{
-      font-size:2.6rem;
-      margin:0 0 6px 0;
-      text-shadow:2px 2px #000;
-      letter-spacing:0.5px;
-    }
-    header p{
-      margin:0 auto;
-      max-width:760px;
-      font-size:1.05rem;
-      color:#fff;
-      opacity:0.95;
-    }
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="px-6 md:px-12 lg:px-20 py-16 bg-gradient-to-b from-blue-50 to-white text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          Discover, Track & Connect with Funded Startups
+        </h1>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Get curated insights on recently funded startups, tailored for sales teams, agencies, and founders who want to move fast before the crowd gets there.
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
+          <a
+            href="#explore"
+            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md"
+          >
+            Explore Startups
+          </a>
+          <a
+            href="/about"
+            className="px-6 py-3 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold rounded-lg"
+          >
+            Learn More
+          </a>
+        </div>
+      </section>
 
-    main{ padding:28px 16px; }
-
-    .intro {
-      margin: 18px auto 26px auto;
-      max-width:820px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.95));
-      padding:18px;
-      border:3px double #000;
-      border-radius:8px;
-      box-shadow:6px 6px 0 rgba(0,0,0,0.06);
-    }
-    .intro p{ margin:0; color:var(--muted); }
-
-    h2 {
-      margin:30px 0 12px 0;
-      padding-bottom:6px;
-      border-bottom:2px dashed #000;
-      font-size:1.15rem;
-    }
-
-    ul.projects{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
-    .proj {
-      background:var(--panel);
-      padding:14px;
-      border:3px double #000;
-      border-radius:6px;
-      display:flex;
-      align-items:flex-start;
-      gap:12px;
-      box-shadow:4px 4px 0 rgba(0,0,0,0.06);
-    }
-    .proj .emoji{ font-size:1.6rem; width:42px; text-align:center; }
-    .proj a {
-      color: #ff3399;
-      text-decoration:none;
-      font-weight:bold;
-      display:inline-block;
-      margin-bottom:6px;
-    }
-    .proj p { margin:0; color:var(--muted); line-height:1.4; font-size:0.97rem; }
-
-    .about {
-      margin-top:28px;
-      background: rgba(255,255,255,0.92);
-      padding:14px;
-      border:2px solid #000;
-      border-radius:6px;
-    }
-
-    footer {
-      text-align:center;
-      padding:22px 10px;
-      margin-top:36px;
-      border-top:3px solid #000;
-      background:#e0dfd5;
-      color:var(--muted);
-      font-size:0.92rem;
-    }
-
-    @media (max-width:600px){
-      header h1{ font-size:2rem; }
-      .proj{ flex-direction:row; }
-      .proj p{ font-size:0.95rem; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>👋 Hey, I’m Akhil</h1>
-    <p>
-      I find the signal in the noise, then turn it into something useful, fast.  
-      I’ve been independent for 5+ years, building tools, newsletters, and systems that help people win before the crowd catches on.
-    </p>
-  </header>
-
-  <main>
-    <div class="intro">
-      <p>
-        This isn’t a portfolio. It’s a working desk. Everything here either ships, sells, or sparks ideas.  
-        Click through and you’ll see for yourself.
-      </p>
-    </div>
-
-    <h2>Projects</h2>
-    <ul class="projects">
-      <li class="proj">
-        <div class="emoji">🚀</div>
-        <div>
-          <a href="/cold-outbound-service/">Cold Outbound Service</a>
-          <p>
-            No templates. No guessing. I build insight-led outbound systems that start real conversations and scale without becoming spam.
+      {/* Context Section */}
+      <section className="px-6 md:px-12 lg:px-20 py-16 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900">
+            Why This Matters
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            The game is simple: find what’s true but not obvious in your market. 
+            Our platform gives you **asymmetric information** on newly funded startups so you can reach out before competitors even know they exist.
           </p>
         </div>
-      </li>
+      </section>
 
-      <li class="proj">
-        <div class="emoji">☕</div>
-        <div>
-          <a href="https://leadsbrew.example">LeadsBrew</a>
-          <p>
-            Biweekly lists of just-funded US startups. Double-verified emails. Your edge if you sell to marketing teams.
-          </p>
+      {/* Category Filter */}
+      <section id="explore" className="px-6 md:px-12 lg:px-20 py-8 bg-gray-50">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">Browse by Category</h3>
+        <div className="flex gap-2 overflow-x-auto py-2">
+          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">All</button>
+          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">AI & ML</button>
+          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">SaaS</button>
+          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">E-commerce</button>
+          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">HealthTech</button>
         </div>
-      </li>
+      </section>
 
-      <li class="proj">
-        <div class="emoji">🛠</div>
-        <div>
-          <a href="https://salestools.club">Salestools.club</a>
-          <p>
-            One new sales tech startup every week, plus the only industry updates worth your time.
-          </p>
-        </div>
-      </li>
+      {/* Startup Cards */}
+      <section className="px-6 md:px-12 lg:px-20 py-12 bg-white grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[1, 2, 3, 4, 5, 6].map((id) => (
+          <div key={id} className="bg-white border rounded-lg shadow hover:shadow-md transition p-4">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/placeholder-logo.png"
+                alt="Company Logo"
+                width={50}
+                height={50}
+                className="rounded-md border"
+              />
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800">Startup {id}</h4>
+                <p className="text-sm text-gray-500">AI & ML • San Francisco, CA</p>
+              </div>
+            </div>
+            <p className="mt-3 text-gray-600 text-sm">
+              This startup just raised $8M in Series A to revolutionize AI-powered customer support solutions.
+            </p>
+            <a
+              href="#"
+              className="mt-4 inline-block text-blue-600 hover:underline text-sm font-medium"
+            >
+              View Details →
+            </a>
+          </div>
+        ))}
+      </section>
 
-      <li class="proj">
-        <div class="emoji">🤖</div>
-        <div>
-          <a href="https://tinkeringwithai.example">Tinkering with AI</a>
-          <p>
-            Practical, curiosity-driven examples of AI in action — written for people who want results, not hype.
-          </p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="about">
-      <h2>About me</h2>
-      <p>
-        I work where asymmetric information lives — finding what’s true but not obvious, and building around it before everyone else notices.  
-        I’ve shipped projects in sales prospecting, startup intelligence, and content that actually gets read.  
-        I value speed, clarity, and work that speaks for itself.
-      </p>
-    </div>
-  </main>
-
-  <footer>
-    © 2025 Akhil — all projects, all experiments. Reach me: akhil at your email of choice.
-  </footer>
-</body>
-</html>
+      {/* CTA Section */}
+      <section className="px-6 md:px-12 lg:px-20 py-16 bg-gradient-to-b from-white to-blue-50 text-center">
+        <h2 className="text-3xl font-bold text-gray-900">
+          Stay Ahead of the Curve
+        </h2>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Join thousands of dealmakers and growth teams using our data to connect with the right startups at the right time.
+        </p>
+        <a
+          href="/subscribe"
+          className="mt-6 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md"
+        >
+          Subscribe Now
+        </a>
+      </section>
+    </main>
+  );
+}
