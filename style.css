@@ -15,7 +15,7 @@
 
 body {
     font-family: var(--font-family);
-    background-color: var(--white);
+    background-color: #f8f8f8; /* Subtle off-white background */
     color: var(--black);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -26,6 +26,7 @@ body {
     max-width: 700px; /* Narrower for minimalist look */
     margin: 0 auto;
     padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Subtle shadow */
 }
 
 /* General Text Styling */
@@ -33,37 +34,54 @@ h1 {
     font-size: 36px;
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Adjusted margin */
+    letter-spacing: -0.02em; /* Refined typography */
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-top: 20px; /* Space below the name */
+    margin-bottom: 20px; /* Space above the next content */
+    display: block; /* Ensures it takes its own line */
+    margin-left: 0; /* Align left with text */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow */
 }
 
 h2 {
     font-size: 28px;
     font-weight: 700;
     margin-top: 40px;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Adjusted margin */
+    letter-spacing: -0.02em; /* Refined typography */
 }
 
 h3 {
     font-size: 22px;
     font-weight: 700;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Adjusted margin */
+    letter-spacing: -0.02em; /* Refined typography */
 }
 
 p {
     font-size: 16px;
-    margin-bottom: 15px;
+    line-height: 1.7; /* Adjusted line-height */
+    margin-bottom: 20px; /* Adjusted margin */
 }
 
 ul {
     list-style: none; /* Remove default list style */
     margin-left: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Adjusted margin */
 }
 
 li {
     font-size: 16px;
-    margin-bottom: 8px;
+    line-height: 1.7; /* Adjusted line-height */
+    margin-bottom: 10px; /* Adjusted margin */
 }
 
 a {
@@ -73,7 +91,7 @@ a {
 }
 
 a:hover {
-    color: var(--gray-dark);
+    color: #333; /* Slightly darker on hover */
 }
 
 /* Specific sections */
