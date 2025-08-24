@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pack Service - Get Your Startup Discovered</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Header */
+        header {
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .nav-back {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-back:hover {
+            color: #000;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 0.9;
+            margin-bottom: 30px;
+            color: #000;
+            letter-spacing: -2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 40px;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: #999;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .hero-cta:hover {
+            opacity: 0.8;
+        }
+        
+        /* Service Philosophy */
+        .philosophy {
+            padding: 100px 0;
+            background: #f8f8f8;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #000;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+        
+        .pillar {
+            text-align: center;
+        }
+        
+        .pillar h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .pillar p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        /* Service Tiers */
+        .tiers {
+            padding: 120px 0;
+        }
+        
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+        
+        .tier {
+            border: 2px solid #eee;
+            padding: 60px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tier:hover {
+            border-color: #000;
+            transform: translateY(-10px);
+        }
+        
+        .tier.featured {
+            border-color: #000;
+            background: #000;
+            color: #fff;
+        }
+        
+        .tier.featured:hover {
+            background: #333;
+        }
+        
+        .tier-name {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .tier-price {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .tier-tagline {
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        
+        .tier-outcome {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .tier-includes {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .tier-includes li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            padding: 0;
+        }
+        
+        .tier-includes li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .tier-cta {
+            display: inline-block;
+            padding: 15px 30px;
+            background: transparent;
+            color: #000;
+            border: 2px solid #000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .tier.featured .tier-cta {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+        
+        .tier-cta:hover {
+            background: #000;
+            color: #fff;
+        }
+        
+        .tier.featured .tier-cta:hover {
+            background: transparent;
+            color: #fff;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 120px 0;
+            background: #f8f8f8;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 30px;
+        }
+        
+        .step h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        .step p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        /* Dashboard Preview */
+        .dashboard-preview {
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .dashboard-mockup {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            border: 2px solid #eee;
+            background: #f9f9f9;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .dashboard-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status.live {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.submitted {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status.todo {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 120px 0;
+            background: #f8f8f8;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .testimonial {
+            background: #fff;
+            padding: 40px;
+            text-align: left;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #000;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 120px 0;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 30px 0;
+        }
+        
+        .faq-question {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+        
+        .faq-answer {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* Footer CTA */
+        .footer-cta {
+            padding: 100px 0;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .footer-cta h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+        
+        .footer-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-cta-button:hover {
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .tiers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="../" class="logo">Akhil MK</a>
+            <a href="../" class="nav-back">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI Pack Service</h1>
+            <p class="hero-subtitle">Get your startup discovered on 40+ platforms with strategic preparation and live tracking</p>
+            <p class="hero-description">
+                We don't just submit your startup to directories. We prepare you for a successful launch with strategic insights, 
+                professional assets, and complete transparency through our live dashboard.
+            </p>
+            <a href="#tiers" class="hero-cta">Choose Your Package</a>
+        </div>
+    </section>
+
+    <!-- Service Philosophy -->
+    <section class="philosophy">
+        <div class="container">
+            <h2 class="section-title">Built on Three Pillars</h2>
+            <div class="pillars">
+                <div class="pillar">
+                    <h3>Strategic Preparation</h3>
+                    <p>We don't just submit; we prepare our clients for a successful launch with upfront feedback and optimization.</p>
+                </div>
+                <div class="pil

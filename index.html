@@ -1,102 +1,512 @@
-import Image from "next/image";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhil MK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        /* Tobias van Schneider inspired typography and layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Header */
+        header {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #000;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 160px;
+            text-align: left;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 0.9;
+            margin-bottom: 40px;
+            color: #000;
+            letter-spacing: -2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: #999;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+        
+        /* Services Grid */
+        .services {
+            padding: 120px 0;
+            background: #f8f8f8;
+        }
+        
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 80px;
+            color: #000;
+            letter-spacing: -1px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+        
+        .service-card {
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h3 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .service-link {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-link:hover {
+            opacity: 0.7;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 120px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #000;
+            letter-spacing: -1px;
+        }
+        
+        .about-text p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 120px 0;
+            background: #f8f8f8;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+        }
+        
+        .blog-post {
+            background: #fff;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .blog-content {
+            padding: 40px;
+        }
+        
+        .blog-date {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .blog-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 80px 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+        
+        .footer-text {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .contact-email {
+            font-size: 24px;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            opacity: 0.7;
+        }
+        
+        .social-links {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .social-link {
+            color: #999;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: #000;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .hero-subtitle {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .services-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">Akhil MK</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Writing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="px-6 md:px-12 lg:px-20 py-16 bg-gradient-to-b from-blue-50 to-white text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-          Discover, Track & Connect with Funded Startups
-        </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Get curated insights on recently funded startups, tailored for sales teams, agencies, and founders who want to move fast before the crowd gets there.
-        </p>
-        <div className="mt-6 flex justify-center gap-4">
-          <a
-            href="#explore"
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md"
-          >
-            Explore Startups
-          </a>
-          <a
-            href="/about"
-            className="px-6 py-3 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold rounded-lg"
-          >
-            Learn More
-          </a>
-        </div>
-      </section>
-
-      {/* Context Section */}
-      <section className="px-6 md:px-12 lg:px-20 py-16 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Why This Matters
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            The game is simple: find what’s true but not obvious in your market. 
-            Our platform gives you **asymmetric information** on newly funded startups so you can reach out before competitors even know they exist.
-          </p>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section id="explore" className="px-6 md:px-12 lg:px-20 py-8 bg-gray-50">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">Browse by Category</h3>
-        <div className="flex gap-2 overflow-x-auto py-2">
-          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">All</button>
-          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">AI & ML</button>
-          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">SaaS</button>
-          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">E-commerce</button>
-          <button className="px-3 py-1 rounded-full border border-gray-300 hover:bg-gray-100">HealthTech</button>
-        </div>
-      </section>
-
-      {/* Startup Cards */}
-      <section className="px-6 md:px-12 lg:px-20 py-12 bg-white grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[1, 2, 3, 4, 5, 6].map((id) => (
-          <div key={id} className="bg-white border rounded-lg shadow hover:shadow-md transition p-4">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/placeholder-logo.png"
-                alt="Company Logo"
-                width={50}
-                height={50}
-                className="rounded-md border"
-              />
-              <div>
-                <h4 className="text-lg font-semibold text-gray-800">Startup {id}</h4>
-                <p className="text-sm text-gray-500">AI & ML • San Francisco, CA</p>
-              </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>I run profitable projects on the internet</h1>
+                <p class="hero-subtitle">Building businesses that solve real problems</p>
+                <p class="hero-description">
+                    For the past 5+ years, I've been creating and running various internet-based projects. 
+                    From helping startups get discovered to building tools that agencies actually need. 
+                    Each project is designed to be profitable and sustainable from day one.
+                </p>
             </div>
-            <p className="mt-3 text-gray-600 text-sm">
-              This startup just raised $8M in Series A to revolutionize AI-powered customer support solutions.
-            </p>
-            <a
-              href="#"
-              className="mt-4 inline-block text-blue-600 hover:underline text-sm font-medium"
-            >
-              View Details →
-            </a>
-          </div>
-        ))}
-      </section>
+        </div>
+    </section>
 
-      {/* CTA Section */}
-      <section className="px-6 md:px-12 lg:px-20 py-16 bg-gradient-to-b from-white to-blue-50 text-center">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Stay Ahead of the Curve
-        </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Join thousands of dealmakers and growth teams using our data to connect with the right startups at the right time.
-        </p>
-        <a
-          href="/subscribe"
-          className="mt-6 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md"
-        >
-          Subscribe Now
-        </a>
-      </section>
-    </main>
-  );
-}
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Current Projects</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="window.location.href='ai-pack-service/'">
+                    <h3>AI Pack Service</h3>
+                    <p>Productized startup submission service. Get your startup listed on 40+ directories with strategic preparation and live dashboard tracking. Three tiers from $99 to $299.</p>
+                    <a href="ai-pack-service/" class="service-link">View Service</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Leadsbrew Intel</h3>
+                    <p>A newsletter that helps marketing agencies discover newly funded startups before their competitors. Curated insights and intelligence for faster deal closure.</p>
+                    <a href="#" class="service-link">Coming Soon</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Cold Outbound Strategy</h3>
+                    <p>Custom outbound campaigns that don't feel like generic spam. I help extract winning insights from your existing customers and scale them systematically.</p>
+                    <a href="cold-outbound-service/" class="service-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I've spent 5+ years as a freelancer, wearing every hat possible to survive and explore different opportunities on the internet.</p>
+                    <p>What excites me is building things that actually work and generate revenue. Not just side projects, but real businesses that solve problems people are willing to pay for.</p>
+                    <p>Based in Kerala, India, I work with clients globally, focusing on projects that can run profitably with minimal ongoing overhead.</p>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Online</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Active Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Startups Helped</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">40+</span>
+                        <span class="stat-label">Platforms</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Recent Writing</h2>
+            <div class="blog-grid">
+                <article class="blog-post">
+                    <div class="blog-image">Project Insights</div>
+                    <div class="blog-content">
+                        <div class="blog-date">Aug 2025</div>
+                        <h3 class="blog-title">Why Most Internet Projects Fail (And How Mine Don't)</h3>
+                        <p class="blog-excerpt">The difference between building something cool and building something profitable. Lessons from 5 years of trial and error.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="blog-image">Startup Intel</div>
+                    <div class="blog-content">
+                        <div class="blog-date">Jul 2025</div>
+                        <h3 class="blog-title">Finding Startups Before TechCrunch Does</h3>
+                        <p class="blog-excerpt">The signals and data points I track to identify promising startups weeks or months before they hit mainstream tech news.</p>
+                    </div>
+                </article>
+                
+                <article class="blog-post">
+                    <div class="blog-image">Business Strategy</div>
+                    <div class="blog-content">
+                        <div class="blog-date">Jun 2025</div>
+                        <h3 class="blog-title">Productizing Services: From $0 to Profitable</h3>
+                        <p class="blog-excerpt">How I turned manual submission work into a scalable productized service that runs with minimal involvement.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-title">Let's Work Together</h2>
+                <p class="footer-text">
+                    Have a project idea or need help with something I do? 
+                    Drop me a line and let's see if we can build something profitable together.
+                </p>
+                <a href="mailto:hello@akhilmk.com" class="contact-email">hello@akhilmk.com</a>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/akhilmk/" class="social-link" target="_blank">LinkedIn</a>
+                    <a href="https://twitter.com/akhilmk" class="social-link" target="_blank">Twitter</a>
+                    <a href="#" class="social-link">Newsletter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
