@@ -1,17 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
 :root {
-    --font-family: 'Manrope', sans-serif;
+    --font-family: 'Inter', sans-serif;
     --white: #ffffff;
     --black: #1a1a1a;
-    --gray-light: #f2f2f2;
-    --gray-medium: #999;
     --gray-dark: #666;
-    --yellow: #fde047; /* A nice, modern yellow */
-    --purple: #f3e8ff; /* A very light purple for backgrounds */
-    --blue: #dbeafe;
-    --pink: #fce7f3;
-    --green: #dcfce7;
 }
 
 * {
@@ -26,110 +19,35 @@ body {
     color: var(--black);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    padding: 40px 0; /* Overall page padding */
 }
 
 .container {
-    max-width: 800px; /* Reduced max-width for a more focused single column */
+    max-width: 700px; /* Narrower for minimalist look */
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- Header --- */
-.header {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--gray-light);
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 800;
-    text-decoration: none;
-    color: var(--black);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--gray-dark);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--black);
-}
-
-.button {
-    background-color: var(--yellow);
-    color: var(--black);
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: opacity 0.3s ease;
-}
-
-.button:hover {
-    opacity: 0.85;
-}
-
-/* --- Hero Section --- */
-.hero {
-    padding: 60px 0; /* Reduced padding */
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 48px; /* Slightly reduced font size */
+/* General Text Styling */
+h1 {
+    font-size: 36px;
     font-weight: 800;
     line-height: 1.2;
-    max-width: 700px;
-    margin: 0 auto 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: var(--gray-dark);
-    max-width: 600px;
-    margin: 0 auto 30px;
-}
-
-/* --- Content Sections (Simplified) --- */
-.content-section {
-    padding: 40px 0; /* Reduced padding */
-}
-
-.section-title {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 30px; /* Reduced margin */
-    text-align: center;
-}
-
-h2 { /* General h2 styling for content sections */
-    font-size: 28px;
-    font-weight: 800;
-    margin-top: 40px;
     margin-bottom: 20px;
 }
 
-h3 { /* General h3 styling for content sections */
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+h3 {
     font-size: 22px;
     font-weight: 700;
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 p {
@@ -137,15 +55,9 @@ p {
     margin-bottom: 15px;
 }
 
-.small-text {
-    font-size: 0.8em;
-    margin-top: 10px;
-    color: var(--gray-dark);
-}
-
 ul {
-    list-style: disc;
-    margin-left: 20px;
+    list-style: none; /* Remove default list style */
+    margin-left: 0;
     margin-bottom: 15px;
 }
 
@@ -164,112 +76,49 @@ a:hover {
     color: var(--gray-dark);
 }
 
-/* --- Mission/About Section --- */
-.mission {
-    background-color: var(--purple);
-    padding: 60px 0; /* Reduced padding */
-    text-align: center;
-    border-radius: 20px;
-    margin: 30px auto; /* Reduced margin, centered */
-    max-width: 800px; /* Ensure it respects container width */
+/* Specific sections */
+.hero {
+    text-align: left; /* Align left like danrowden.com */
+    margin-bottom: 40px;
 }
 
-.mission h2 {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 20px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.mission p {
-    font-size: 18px;
-    color: var(--gray-dark);
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-
-/* --- Footer --- */
-.footer {
-    background-color: var(--gray-light);
-    padding: 30px 0 20px;
-    margin-top: 60px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Adjusted for new content */
-    gap: 20px; /* Reduced gap */
-    margin-bottom: 30px; /* Reduced margin */
-}
-
-.footer-column h4 {
-    font-size: 16px;
+.section-title {
+    font-size: 28px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: left; /* Align left */
 }
 
-.footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.footer-links a {
-    text-decoration: none;
+.disclaimer {
+    font-style: italic;
     color: var(--gray-dark);
-    transition: color 0.3s ease;
+    margin-bottom: 20px;
 }
 
-.footer-links a:hover {
+.price {
+    font-size: 24px;
+    font-weight: bold;
     color: var(--black);
+    margin: 20px 0;
 }
 
-.footer-bottom {
-    border-top: 1px solid #ddd;
-    padding-top: 20px; /* Reduced padding */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.small-text {
+    font-size: 0.8em;
+    margin-top: 10px;
+    color: var(--gray-dark);
+}
+
+.contact-email {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.copyright {
     font-size: 14px;
     color: var(--gray-dark);
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-}
-
-.social-links a {
-    color: var(--gray-dark);
-    text-decoration: none;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--black);
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
-    }
-    .nav-links {
-        display: none; /* Simple responsive solution for now */
-    }
-    .footer-grid {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
-        text-align: center;
-    }
-    .footer-column {
-        margin-bottom: 20px;
-    }
-    .social-links {
-        justify-content: center;
-    }
+    margin-top: 40px;
+    text-align: center;
 }
