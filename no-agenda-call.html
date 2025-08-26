@@ -4,348 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No Agenda Call - Akhil MK</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #000;
-            background: #fff;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
-        /* Header */
-        header {
-            padding: 40px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #000;
-            text-decoration: none;
-        }
-        
-        .nav-back {
-            color: #666;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-back:hover {
-            color: #000;
-        }
-        
-        /* Main Content */
-        .main {
-            padding: 80px 0 120px;
-        }
-        
-        .title {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 0.9;
-            margin-bottom: 30px;
-            color: #000;
-            letter-spacing: -1px;
-        }
-        
-        .subtitle {
-            font-size: 24px;
-            color: #666;
-            margin-bottom: 60px;
-            font-weight: 400;
-        }
-        
-        .content {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #333;
-        }
-        
-        .content h2 {
-            font-size: 32px;
-            font-weight: 600;
-            margin: 60px 0 30px;
-            color: #000;
-            letter-spacing: -0.5px;
-        }
-        
-        .content h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 40px 0 20px;
-            color: #000;
-        }
-        
-        .content p {
-            margin-bottom: 25px;
-            color: #333;
-        }
-        
-        .content ul {
-            margin: 30px 0;
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .content li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            color: #333;
-        }
-        
-        .content li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #000;
-            font-weight: bold;
-        }
-        
-        .highlight-box {
-            background: #f8f8f8;
-            padding: 40px;
-            margin: 40px 0;
-            border-left: 4px solid #000;
-        }
-        
-        .highlight-box h3 {
-            margin-top: 0;
-        }
-        
-        .cta-section {
-            background: #000;
-            color: #fff;
-            padding: 60px;
-            margin: 80px 0;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            color: #fff;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            color: #ccc;
-            margin-bottom: 40px;
-        }
-        
-        .cal-button {
-            display: inline-block;
-            background: #fff;
-            color: #000;
-            padding: 20px 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: opacity 0.3s ease;
-        }
-        
-        .cal-button:hover {
-            opacity: 0.8;
-        }
-        
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin: 40px 0;
-        }
-        
-        .topic-card {
-            padding: 30px;
-            border: 1px solid #eee;
-            background: #fafafa;
-        }
-        
-        .topic-card h4 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #000;
-        }
-        
-        .topic-card p {
-            font-size: 16px;
-            margin-bottom: 0;
-            color: #666;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr));
-            gap: 40px;
-            margin: 60px 0;
-            text-align: center;
-        }
-        
-        .stat {
-            padding: 30px 20px;
-        }
-        
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            color: #000;
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .title {
-                font-size: 36px;
-            }
-            
-            .subtitle {
-                font-size: 20px;
-            }
-            
-            .content h2 {
-                font-size: 28px;
-            }
-            
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .cta-section {
-                padding: 40px 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">Akhil MK</a>
-            <a href="index.html" class="nav-back">← Back to Home</a>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main class="container">
-        <div class="main">
-            <h1 class="title">No Agenda Call</h1>
-            <p class="subtitle">30 minutes to discuss your internet project, startup launch, or business idea</p>
-            
-            <div class="content">
-                <p>I offer free 30-minute calls with no agenda, no pitch, and no strings attached. Just a conversation between two people who are interested in building profitable things on the internet.</p>
+    <div class="container">
+        <h1><a href="index.html">Akhil MK</a></h1>
 
-                <h2>What We Can Talk About</h2>
-                
-                <div class="topics-grid">
-                    <div class="topic-card">
-                        <h4>Internet Project Ideas</h4>
-                        <p>Validating ideas, finding profitable niches, building MVPs, and turning concepts into revenue-generating projects.</p>
-                    </div>
-                    <div class="topic-card">
-                        <h4>Agency Growth & Outreach</h4>
-                        <p>Finding better prospects, cold outreach that works, productizing services, and scaling without burning out.</p>
-                    </div>
-                    <div class="topic-card">
-                        <h4>Tech & Tools</h4>
-                        <p>Building with no-code, automation workflows, data tracking, and simple tech stacks that actually work.</p>
-                    </div>
-                </div>
+        <h1 class="section-title">No Agenda Call</h1>
+        <p>30 minutes to discuss your internet project, startup launch, or business idea.</p>
+        <p>I offer free 30-minute calls with no agenda, no pitch, and no strings attached. Just a conversation between two people who are interested in building profitable things on the internet.</p>
 
-                <div class="highlight-box">
-                    <h3>What You Can Expect</h3>
-                    <ul>
-                        <li>An open conversation about your project or idea</li>
-                        <li>My honest thoughts based on what I've learned</li>
-                        <li>A sounding board to help you work through challenges</li>
-                        <li>A fresh perspective from someone who's also in the trenches</li>
-                        <li>No sales pitch for my services (seriously)</li>
-                    </ul>
-                </div>
+        <h2>What We Can Talk About</h2>
+        <ul>
+            <li>Internet Project Ideas: Validating ideas, finding profitable niches, building MVPs, and turning concepts into revenue-generating projects.</li>
+            <li>Agency Growth & Outreach: Finding better prospects, cold outreach that works, productizing services, and scaling without burning out.</li>
+            <li>Tech & Tools: Building with no-code, automation workflows, data tracking, and simple tech stacks that actually work.</li>
+        </ul>
 
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">Startups Helped</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">0</span>
-                        <span class="stat-label">Hidden Agendas</span>
-                    </div>
-                </div>
+        <h2>What You Can Expect</h2>
+        <ul>
+            <li>An open conversation about your project or idea</li>
+            <li>My honest thoughts based on what I've learned</li>
+            <li>A sounding board to help you work through challenges</li>
+            <li>A fresh perspective from someone who's also in the trenches</li>
+            <li>No sales pitch for my services (seriously)</li>
+        </ul>
 
-                <h2>Who This Is For</h2>
-                <ul>
-                    <li>Founders preparing to launch their startup</li>
-                    <li>Freelancers wanting to build scalable businesses</li>
-                    <li>Agency owners looking for better growth strategies</li>
-                    <li>Anyone building profitable projects on the internet</li>
-                    <li>People who want honest feedback, not feel-good validation</li>
-                </ul>
+        <p>500+ Startups Helped | 0 Hidden Agendas</p>
 
-                <h2>What This Isn't</h2>
-                <ul>
-                    <li>A sales call in disguise</li>
-                    <li>Generic startup advice you can find on Twitter</li>
-                    <li>A pitch for you to buy my services</li>
-                    <li>Career counseling or life coaching</li>
-                    <li>Free consulting work (we'll keep it strategic)</li>
-                </ul>
+        <h2>Who This Is For</h2>
+        <ul>
+            <li>Founders preparing to launch their startup</li>
+            <li>Freelancers wanting to build scalable businesses</li>
+            <li>Agency owners looking for better growth strategies</li>
+            <li>Anyone building profitable projects on the internet</li>
+            <li>People who want honest feedback, not feel-good validation</li>
+        </ul>
 
-                <h3>About Me</h3>
-                <p>I've been experimenting with internet projects for over 5 years. It's a journey of trial and error, and I'm happy to share what I've picked up along the way. I currently run a few projects like Directory Listing Service and Leadsbrew Intel.</p>
+        <h2>What This Isn't</h2>
+        <ul>
+            <li>A sales call in disguise</li>
+            <li>Generic startup advice you can find on Twitter</li>
+            <li>A pitch for you to buy my services</li>
+            <li>Career counseling or life coaching</li>
+            <li>Free consulting work (we'll keep it strategic)</li>
+        </ul>
 
-                <p>I'm a big believer in keeping things simple and focusing on sustainable growth. It's a topic I enjoy discussing with other people who are building things online.</p>
-            </div>
+        <h2>About Me</h2>
+        <p>I've been experimenting with internet projects for over 5 years. It's a journey of trial and error, and I'm happy to share what I've picked up along the way. I currently run a few projects like Directory Listing Service and Leadsbrew Intel.</p>
+        <p>I'm a big believer in keeping things simple and focusing on sustainable growth. It's a topic I enjoy discussing with other people who are building things online.</p>
 
-            <div class="cta-section">
-                <h2>Ready to Chat?</h2>
-                <p>Book a 30-minute slot. No agenda required.</p>
-                <a href="https://calendly.com/akhilmk/no-agenda-call" class="cal-button" target="_blank">Schedule Your Call</a>
-            </div>
+        <h2>Ready to Chat?</h2>
+        <p>Book a 30-minute slot. No agenda required.</p>
+        <p><a href="https://calendly.com/akhilmk/no-agenda-call" target="_blank">Schedule Your Call</a></p>
 
-            <div class="content">
-                <h3>Before We Talk</h3>
-                <p>Come prepared with specific questions or challenges. The more context you give me, the better I can help. Don't worry about having everything figured out - that's exactly why these calls exist.</p>
+        <h2>Before We Talk</h2>
+        <p>Come prepared with specific questions or challenges. The more context you give me, the better I can help. Don't worry about having everything figured out - that's exactly why these calls exist.</p>
+        <p><strong>Note:</strong> If after our call you think my services might be helpful, I'm happy to discuss that separately. But the call itself is genuinely no-strings-attached.</p>
 
-                <p><strong>Note:</strong> If after our call you think my services might be helpful, I'm happy to discuss that separately. But the call itself is genuinely no-strings-attached.</p>
-            </div>
-        </div>
-    </main>
+        <p class="copyright">&copy; 2025 Akhil MK.</p>
+    </div>
+
 </body>
 </html>
