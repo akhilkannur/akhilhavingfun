@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px; /* Increased max-width for landing page */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -47,7 +47,7 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 36px; /* Increased size for section titles */
     font-weight: 700;
     margin-top: 60px;
     margin-bottom: 20px;
@@ -108,4 +108,138 @@ a:hover {
     color: var(--gray-dark);
     margin-top: 60px;
     text-align: center;
+}
+
+/* --- New Styles for SaaS Landing Page --- */
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3; /* A slightly darker blue */
+    opacity: 1;
+}
+
+/* Pricing Table */
+.pricing-table {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* On larger screens, use 3 columns */
+@media (min-width: 768px) {
+    .pricing-table {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .button {
+        width: auto; /* Auto width for buttons on larger screens */
+    }
+}
+
+.pricing-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.pricing-card .price {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.pricing-card .price-term {
+    font-size: 16px;
+    color: var(--gray-dark);
+}
+
+.pricing-card ul {
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.pricing-card li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.pricing-card li::before {
+    content: '✓';
+    color: #28a745; /* Green checkmark */
+    position: absolute;
+    left: 0;
+}
+
+/* How it Works Section */
+.how-it-works {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .how-it-works {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.step {
+    text-align: center;
+}
+
+.step h3 {
+    margin-top: 10px;
+}
+
+.step-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    margin: 0 auto;
+}
+
+/* FAQ Section */
+.faq {
+    margin-top: 40px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    margin-top: 0;
 }
