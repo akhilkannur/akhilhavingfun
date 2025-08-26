@@ -5,6 +5,7 @@
     --white: #ffffff;
     --black: #1a1a1a;
     --gray-dark: #666;
+    --accent-color: #007bff; /* Default accent color (blue) */
 }
 
 * {
@@ -15,128 +16,96 @@
 
 body {
     font-family: var(--font-family);
-    background-color: #f8f8f8; /* Subtle off-white background */
+    background-color: var(--white);
     color: var(--black);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    padding: 40px 0; /* Overall page padding */
+    padding: 40px 0;
 }
 
 .container {
-    max-width: 700px; /* Narrower for minimalist look */
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Subtle shadow */
 }
 
-/* General Text Styling */
 h1 {
-    font-size: 36px;
+    font-size: 48px;
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 30px; /* Adjusted margin */
-    letter-spacing: -0.02em; /* Refined typography */
+    margin-bottom: 20px;
+    letter-spacing: -0.03em;
 }
 
 .profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%; /* Makes it circular */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    margin-top: 20px; /* Space below the name */
-    margin-bottom: 20px; /* Space above the next content */
-    display: block; /* Ensures it takes its own line */
-    margin-left: 0; /* Align left with text */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 40px;
+    display: block;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 20px; /* Adjusted margin */
-    letter-spacing: -0.02em; /* Refined typography */
+    margin-top: 60px;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    margin-top: 30px;
-    margin-bottom: 10px; /* Adjusted margin */
-    letter-spacing: -0.02em; /* Refined typography */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.7; /* Adjusted line-height */
-    margin-bottom: 20px; /* Adjusted margin */
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
 ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     margin-left: 0;
-    margin-bottom: 20px; /* Adjusted margin */
+    margin-bottom: 20px;
 }
 
 li {
-    font-size: 16px;
-    line-height: 1.7; /* Adjusted line-height */
-    margin-bottom: 10px; /* Adjusted margin */
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 10px;
 }
 
 a {
-    color: var(--black); /* Default link color */
-    text-decoration: underline;
-    transition: color 0.3s ease;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
 }
 
 a:hover {
-    color: #333; /* Slightly darker on hover */
-}
-
-/* Specific sections */
-.hero {
-    text-align: left; /* Align left like danrowden.com */
-    margin-bottom: 40px;
-}
-
-.section-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    text-align: left; /* Align left */
-}
-
-.disclaimer {
-    font-style: italic;
-    color: var(--gray-dark);
-    margin-bottom: 20px;
-}
-
-.price {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--black);
-    margin: 20px 0;
-}
-
-.small-text {
-    font-size: 0.8em;
-    margin-top: 10px;
-    color: var(--gray-dark);
+    opacity: 0.7;
 }
 
 .contact-email {
     font-size: 18px;
     font-weight: 500;
-    margin-top: 40px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.social-link {
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
 .copyright {
     font-size: 14px;
     color: var(--gray-dark);
-    margin-top: 40px;
+    margin-top: 60px;
     text-align: center;
 }
