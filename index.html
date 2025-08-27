@@ -167,10 +167,44 @@
             document.getElementById('countdown-timer').innerText = `${percentageLeft.toFixed(2)}% left of 2025`;
         }
 
-        // Initial call
-        updateCountdown();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Countdown logic
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
 
-        // Update every second
-        setInterval(updateCountdown, 1000);
+            // Confetti logic
+            const confettiCount = 100; // Increased for more visibility
+            const colors = ['#00BFA6', '#A3FF12', '#FF4ECD', '#7C4DFF', '#FF7F11', '#29ABE2']; // Neon palette
+
+            // Trigger confetti from the center of the screen
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = `${centerX + (Math.random() - 0.5) * 400}px`; // Wider spread
+                confetti.style.top = `${centerY + (Math.random() - 0.5) * 400}px`; // Wider spread
+                document.body.appendChild(confetti);
+
+                // Animate confetti
+                const animationDuration = Math.random() * 1 + 2.5; // Longer duration
+                const translateX = (Math.random() - 0.5) * 800; // Wider fall
+                const translateY = (Math.random() - 0.5) * 800 + 400; // Fall downwards more
+                const rotate = Math.random() * 1080; // More rotation
+
+                confetti.animate([
+                    { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`, opacity: 0 }
+                ], {
+                    duration: animationDuration * 1000,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                }).onfinish = () => {
+                    confetti.remove();
+                };
+            }
+        });
     </script>
 </html>
