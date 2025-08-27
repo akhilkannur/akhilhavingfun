@@ -6,11 +6,13 @@ document.addEventListener('click', function(event) {
     }
 
     if (targetElement && targetElement.tagName === 'A') {
+        // Prevent default navigation immediately
+        event.preventDefault();
+
         // Confetti logic
         const confettiCount = 100;
         const colors = ['#00BFA6', '#A3FF12', '#FF4ECD', '#7C4DFF', '#FF7F11', '#29ABE2']; // Neon palette
 
-        // Trigger confetti from the click point
         const clickX = event.clientX;
         const clickY = event.clientY;
 
@@ -18,15 +20,14 @@ document.addEventListener('click', function(event) {
             const confetti = document.createElement('div');
             confetti.classList.add('confetti');
             confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.left = `${clickX + (Math.random() - 0.5) * 200}px`; // Random horizontal spread
-            confetti.style.top = `${clickY + (Math.random() - 0.5) * 200}px`; // Random vertical spread
+            confetti.style.left = `${clickX + (Math.random() - 0.5) * 200}px`;
+            confetti.style.top = `${clickY + (Math.random() - 0.5) * 200}px`;
             document.body.appendChild(confetti);
 
-            // Animate confetti
-            const animationDuration = Math.random() * 1 + 3; // Longer duration
-            const translateX = (Math.random() - 0.5) * 500; // Wider fall
-            const translateY = (Math.random() - 0.5) * 500 + 200; // Fall downwards more
-            const rotate = Math.random() * 720; // More rotation
+            const animationDuration = Math.random() * 1 + 3;
+            const translateX = (Math.random() - 0.5) * 500;
+            const translateY = (Math.random() - 0.5) * 500 + 200;
+            const rotate = Math.random() * 720;
 
             confetti.animate([
                 { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
@@ -39,5 +40,10 @@ document.addEventListener('click', function(event) {
                 confetti.remove();
             };
         }
+
+        // Manually navigate after a short delay
+        setTimeout(() => {
+            window.location.href = targetElement.href;
+        }, 200); // 200ms delay to allow confetti to show
     }
 });
