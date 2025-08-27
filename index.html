@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="animated-background"></div>
     <div class="container">
         <header class="header">
             <div id="countdown-timer" class="countdown-style"></div>
@@ -17,15 +18,17 @@
 
         <main>
             <section class="hero">
-                <div class="hero-illustration" id="illustration-1"></div>
-                <div class="hero-illustration" id="illustration-2"></div>
-                <div class="hero-illustration" id="illustration-3"></div>
                 <div class="profile-section">
                     <div class="profile-image-container">
                         <img src="DP.jpg" alt="Akhil MK" class="profile-image">
                     </div>
                     <div class="profile-content">
-                        <h2 class="greeting"><span class="hero-accent">Hi</span>, I'm Akhil</h2>
+                        <h2 class="greeting">
+                            <span class="hero-accent" style="position: relative; display: inline-block;">
+                                Hi
+                                <div class="hero-illustration"></div>
+                            </span>, I'm Akhil
+                        </h2>
                         <p class="description">I <span class="hero-accent">explore</span>, <span class="hero-accent">build</span>, <span class="hero-accent">learn</span>, and <span class="hero-accent">earn</span> through various internet projects. <span class="hero-accent">5 years a freelancer</span> building everything from sales campaigns to e-commerce stores to digital products.</p>
                         <p class="description">I work at various internet ventures where I spend most of my time <span class="hero-accent">building tools for entrepreneurs</span>. Some projects I've worked on include:</p>
                         <ul class="project-highlights">

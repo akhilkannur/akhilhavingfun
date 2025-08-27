@@ -8,7 +8,6 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #FAFAFA;
     color: #1A1A1A;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -355,49 +354,37 @@ footer a:hover {
     z-index: -1;
     opacity: 0.6;
     filter: blur(15px);
-}
 
-#illustration-1 {
-    top: 50px;
-    left: 50px;
-    width: 150px;
-    height: 150px;
+    /* New specific styles for behind "Hi" */
+    width: 80px; /* Adjust size to fit behind "Hi" */
+    height: 80px;
     background-color: #FF3366; /* Vivid Pink-Red */
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    animation: float1 10s ease-in-out infinite alternate;
+    border-radius: 50%; /* Make it a circle */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for center */
+    animation: pulse 2s infinite alternate; /* Subtle pulse animation */
 }
 
-#illustration-2 {
-    top: 200px;
-    right: 80px; /* Position from right */
-    width: 180px;
-    height: 180px;
-    background-color: #0066FF; /* Electric Blue */
-    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-    animation: float2 12s ease-in-out infinite alternate;
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
 }
 
-@keyframes float1 {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(20px, 30px) rotate(5deg); }
+.animated-background {
+    position: fixed; /* Stays in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Below hero-illustration */
+    background: linear-gradient(45deg, #FAFAFA, #e0f2f7, #f3e5f5, #e8f5e8, #fff3e0); /* Using very light versions of the neon palette */
+    background-size: 400% 400%; /* Larger than viewport */
+    animation: gradientAnimation 15s ease infinite alternate; /* Subtle animation */
 }
 
-@keyframes float2 {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(-25px, -15px) rotate(-8deg); }
-}
-
-@keyframes float3 {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(15px, -20px) rotate(10deg); }
-}
-
-#illustration-3 {
-    bottom: 100px; /* Position from bottom */
-    left: 150px;
-    width: 120px;
-    height: 120px;
-    background-color: #00BFA6; /* Teal */
-    border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%; /* More circular blob */
-    animation: float3 14s ease-in-out infinite alternate;
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
