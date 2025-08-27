@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Lora:wght@400;700&display=swap');
 
 :root {
-    /* Colors inspired by bryantcodes.art */
-    --color-background-dark: #0A0A0A; /* Near Black */
-    --color-text-light: #E0E0E0; /* Off-White/Light Gray */
-    --color-accent-purple: #BB86FC; /* Vibrant Purple */
-    --color-accent-blue: #03DAC6; /* Teal/Cyan */
-    --color-accent-pink: #CF6679; /* Muted Pink/Red */
-    --color-accent-green: #66BB6A; /* Soft Green */
+    /* Colors inspired by mhouge.dk */
+    --color-background: #F8F5F0; /* Light cream background */
+    --color-text-dark: #333333; /* Dark gray for text */
+    --color-heading: #2C3E50; /* Dark blue-gray for headings */
+    --color-accent: #E67E22; /* Warm orange accent */
+    --color-border: #DCDCDC; /* Light gray for borders */
+    --color-link-hover: #C0392B; /* Darker red for link hover */
 
     /* Font variables */
-    --font-body: 'Inter', sans-serif;
-    --font-heading: 'Space Mono', monospace;
+    --font-body: 'Lora', serif;
+    --font-heading: 'Inter', sans-serif;
 }
 
 * {
@@ -22,76 +22,73 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--color-background-dark);
-    color: var(--color-text-light);
-    line-height: 1.7;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    padding: 40px 0;
-    /* bryantcodes.art has subtle animated backgrounds, which would require JS. */
-    /* For now, just a dark solid background. */
+    padding: 60px 0; /* More vertical padding */
 }
 
 .container {
-    max-width: 900px; /* Slightly wider container for more open feel */
+    max-width: 960px; /* Wider container for more whitespace */
     margin: 0 auto;
-    padding: 40px 40px; /* More padding */
-    background-color: rgba(15, 15, 15, 0.8); /* Slightly lighter dark background for content area */
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Stronger, darker shadow for depth */
-    border: 1px solid rgba(var(--color-accent-blue), 0.2); /* Subtle accent border */
-    /* bryantcodes.art often has elements that break out of a strict container, */
-    /* but for a basic structure, this container provides a good base. */
+    padding: 50px 60px; /* Generous padding */
+    background-color: #FFFFFF; /* Pure white content background */
+    border-radius: 8px; /* Subtle rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, subtle shadow */
+    border: 1px solid var(--color-border); /* Clean border */
 }
 
 h1 {
     font-family: var(--font-heading);
-    font-size: 64px; /* Larger, more impactful heading */
-    font-weight: 700;
+    font-size: 60px; /* Large, impactful heading */
+    font-weight: 800;
     line-height: 1.1;
     margin-bottom: 30px;
-    letter-spacing: -0.05em;
-    color: var(--color-accent-purple); /* Primary heading color */
-    text-shadow: 0 0 15px rgba(var(--color-accent-purple), 0.6); /* Glowing effect */
+    letter-spacing: -0.04em;
+    color: var(--color-heading);
+    text-shadow: none; /* Remove previous glow */
 }
 
 .profile-pic {
-    width: 120px; /* Larger profile picture */
-    height: 120px;
+    width: 150px; /* Larger profile picture */
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     display: block;
-    border: 4px solid var(--color-accent-blue); /* Accent border */
-    box-shadow: 0 0 20px rgba(var(--color-accent-blue), 0.5); /* Stronger glow effect */
+    border: 3px solid var(--color-border); /* Clean, subtle border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Soft shadow */
+    /* Consider desaturating or making it black and white via CSS filter: grayscale(100%); */
 }
 
 h2 {
     font-family: var(--font-heading);
-    font-size: 48px; /* Larger section titles */
+    font-size: 44px; /* Large section titles */
     font-weight: 700;
     margin-top: 80px;
     margin-bottom: 30px;
-    letter-spacing: -0.04em;
-    color: var(--color-accent-blue); /* Secondary heading color */
-    text-shadow: 0 0 10px rgba(var(--color-accent-blue), 0.4); /* Subtle glow */
-    border-bottom: 2px solid rgba(var(--color-accent-blue), 0.3); /* Subtle border */
-    padding-bottom: 10px;
+    letter-spacing: -0.03em;
+    color: var(--color-heading);
+    text-shadow: none; /* Remove previous glow */
+    border-bottom: 1px solid var(--color-border); /* Clean, subtle border */
+    padding-bottom: 15px;
 }
 
 h3 {
     font-family: var(--font-heading);
-    font-size: 28px; /* Larger subheadings */
+    font-size: 28px; /* Subheadings */
     font-weight: 700;
     margin-top: 50px;
     margin-bottom: 15px;
-    letter-spacing: -0.02em;
-    color: var(--color-accent-pink);
-    text-shadow: 0 0 8px rgba(var(--color-accent-pink), 0.3);
+    letter-spacing: -0.01em;
+    color: var(--color-heading);
+    text-shadow: none; /* Remove previous glow */
 }
 
 p {
-    font-size: 20px; /* Slightly larger body text */
-    line-height: 1.8;
+    font-size: 19px;
+    line-height: 1.7;
     margin-bottom: 25px;
 }
 
@@ -102,73 +99,73 @@ ul {
 }
 
 li {
-    font-size: 20px;
-    line-height: 1.8;
-    margin-bottom: 15px;
-    padding-left: 30px; /* Indent list items */
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    padding-left: 30px;
     position: relative;
 }
 
 li::before {
-    content: '•'; /* Custom bullet point */
-    color: var(--color-accent-green); /* Green bullet */
+    content: '—'; /* Custom dash bullet */
+    color: var(--color-accent);
     position: absolute;
     left: 0;
-    font-size: 1.3em;
+    font-size: 1em;
     line-height: 1;
-    text-shadow: 0 0 5px rgba(var(--color-accent-green), 0.5); /* Glow effect */
+    text-shadow: none; /* Remove previous glow */
 }
 
 a {
-    color: var(--color-accent-blue); /* Link color */
+    color: var(--color-accent); /* Accent link color */
     text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    text-shadow: 0 0 5px rgba(var(--color-accent-blue), 0.3); /* Subtle link glow */
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-shadow: none; /* Remove previous glow */
 }
 
 a:hover {
-    color: var(--color-accent-purple); /* Change on hover */
-    text-shadow: 0 0 10px rgba(var(--color-accent-purple), 0.6); /* Stronger glow on hover */
+    color: var(--color-link-hover); /* Darker accent on hover */
+    text-decoration: underline; /* Underline on hover */
 }
 
 .contact-email, .social-link {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 19px;
+    font-weight: 600;
     margin-top: 70px;
     margin-bottom: 25px;
 }
 
 .copyright {
-    font-size: 16px;
-    color: var(--color-text-light);
+    font-size: 15px;
+    color: var(--color-text-dark);
     margin-top: 70px;
     text-align: center;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* --- New Styles for SaaS Landing Page (keeping for now, but might be removed if not used) --- */
+/* --- Other sections (adjusting to new aesthetic) --- */
 
 /* Button Styles */
 .button {
     display: inline-block;
-    background-color: var(--color-accent-purple);
-    color: var(--color-text-light);
-    padding: 20px 40px;
-    font-size: 22px;
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+    padding: 18px 35px;
+    font-size: 20px;
     font-weight: 700;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     border: none;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(var(--color-accent-purple), 0.5); /* Strong glow */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Soft shadow */
 }
 
 .button:hover {
-    background-color: var(--color-accent-blue);
-    box-shadow: 0 0 25px rgba(var(--color-accent-blue), 0.7);
+    background-color: var(--color-link-hover);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     opacity: 1;
 }
 
@@ -176,9 +173,9 @@ a:hover {
 .pricing-table {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
@@ -191,61 +188,58 @@ a:hover {
 }
 
 .pricing-card {
-    border: 2px solid rgba(var(--color-accent-blue), 0.3); /* Subtle border */
-    border-radius: 15px;
-    padding: 40px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 30px;
     text-align: center;
-    background-color: rgba(20, 20, 20, 0.7); /* Darker card background */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .pricing-card h3 {
-    font-size: 32px;
+    font-size: 24px;
     margin-top: 0;
-    color: var(--color-accent-pink);
-    text-shadow: 0 0 8px rgba(var(--color-accent-pink), 0.3);
+    color: var(--color-heading);
 }
 
 .pricing-card .price {
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 800;
-    margin: 30px 0;
-    color: var(--color-accent-green);
-    text-shadow: 0 0 15px rgba(var(--color-accent-green), 0.6);
+    margin: 20px 0;
+    color: var(--color-accent);
 }
 
 .pricing-card .price-term {
-    font-size: 20px;
-    color: var(--color-text-light);
+    font-size: 16px;
+    color: var(--color-text-dark);
 }
 
 .pricing-card ul {
     text-align: left;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .pricing-card li {
-    margin-bottom: 20px;
-    padding-left: 35px;
+    margin-bottom: 15px;
+    padding-left: 25px;
     position: relative;
 }
 
 .pricing-card li::before {
     content: '✓';
-    color: var(--color-accent-green);
+    color: #28a745;
     position: absolute;
     left: 0;
-    font-size: 1.4em;
-    text-shadow: 0 0 5px rgba(var(--color-accent-green), 0.5);
+    font-size: 1.2em;
 }
 
 /* How it Works Section */
 .how-it-works {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-top: 50px;
+    gap: 30px;
+    margin-top: 40px;
 }
 
 @media (min-width: 768px) {
@@ -259,48 +253,46 @@ a:hover {
 }
 
 .step h3 {
-    margin-top: 15px;
-    color: var(--color-accent-pink);
-    text-shadow: 0 0 8px rgba(var(--color-accent-pink), 0.3);
+    margin-top: 10px;
+    color: var(--color-heading);
 }
 
 .step-number {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 700;
-    color: var(--color-accent-blue);
-    border: 3px solid var(--color-accent-blue);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    line-height: 54px;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
     margin: 0 auto;
-    background-color: rgba(20, 20, 20, 0.7);
-    box-shadow: 0 0 15px rgba(var(--color-accent-blue), 0.5);
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.08);
 }
 
 /* FAQ Section */
 .faq {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .faq-item {
-    border-bottom: 2px solid rgba(var(--color-accent-blue), 0.2);
-    padding-bottom: 25px;
-    margin-bottom: 25px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .faq-item h3 {
     margin-top: 0;
-    color: var(--color-accent-pink);
-    text-shadow: 0 0 8px rgba(var(--color-accent-pink), 0.3);
+    color: var(--color-heading);
 }
 
 /* --- Grid for benefits section --- */
 .benefits-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 50px;
-    margin-top: 50px;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 @media (min-width: 768px) {
@@ -311,6 +303,5 @@ a:hover {
 
 .benefit-item h3 {
     margin-top: 0;
-    color: var(--color-accent-pink);
-    text-shadow: 0 0 8px rgba(var(--color-accent-pink), 0.3);
+    color: var(--color-heading);
 }
