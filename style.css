@@ -330,7 +330,7 @@ body {
 }
 
 .hero-accent {
-    color: #1A1A1A; /* Deep charcoal */
+    color: #1A1A1A !important; /* Deep charcoal */
     font-weight: 700; /* Bold */
     text-transform: uppercase; /* Capital letters */
 }
