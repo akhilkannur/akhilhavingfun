@@ -8,8 +8,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #FFFFFF;
-    color: #333;
+    background-color: #FAFAFA;
+    color: #1A1A1A;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
@@ -67,7 +67,7 @@ body {
 
 .description {
     font-size: 16px;
-    color: #666;
+    color: #4B4B4B;
     margin-bottom: 20px;
     line-height: 1.6;
 }
@@ -138,7 +138,7 @@ body {
 }
 
 .project-title a:hover {
-    color: #666;
+    color: #FF3366;
     text-decoration: underline;
 }
 
@@ -163,19 +163,19 @@ body {
     text-transform: lowercase;
 }
 
-.tag.service { background: #e3f2fd; color: #1976d2; }
-.tag.b2b { background: #f3e5f5; color: #7b1fa2; }
-.tag.automation { background: #e8f5e8; color: #388e3c; }
-.tag.sales { background: #fff3e0; color: #f57c00; }
-.tag.strategy { background: #fce4ec; color: #c2185b; }
-.tag.consulting { background: #e0f2f1; color: #00796b; }
-.tag.free { background: #e8eaf6; color: #3f51b5; }
-.tag.database { background: #fff8e1; color: #ffa000; }
-.tag.tool { background: #f1f8e9; color: #689f38; }
-.tag.linkedin { background: #e3f2fd; color: #1976d2; }
-.tag.agency { background: #fce4ec; color: #c2185b; }
-.tag.video { background: #fff3e0; color: #f57c00; }
-.tag.airtable { background: #e1f5fe; color: #0277bd; }
+.tag.service { color: #00BFA6; }
+.tag.b2b { color: #A3FF12; }
+.tag.automation { color: #FF4ECD; }
+.tag.sales { color: #7C4DFF; }
+.tag.strategy { color: #FF7F11; }
+.tag.consulting { color: #29ABE2; }
+.tag.free { color: #00BFA6; }
+.tag.database { color: #A3FF12; }
+.tag.tool { color: #FF4ECD; }
+.tag.linkedin { color: #7C4DFF; }
+.tag.agency { color: #FF7F11; }
+.tag.video { color: #29ABE2; }
+.tag.airtable { color: #00BFA6; }
 
 .thoughts {
     margin-bottom: 80px;
@@ -198,7 +198,7 @@ body {
 }
 
 .thought-link:hover {
-    color: #666;
+    color: #FF3366;
 }
 
 .contact {
@@ -248,7 +248,7 @@ body {
 }
 
 .social-link:hover {
-    color: #333;
+    color: #FF3366;
 }
 
 /* Responsive Design */
@@ -298,7 +298,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #FF3366; /* Secondary Accent */
 }
 
 .blog-post p {
@@ -326,6 +326,22 @@ body {
     margin-bottom: 0.5em;
 }
 
-.accent-red {
-    color: #E74C3C;
+.hero-accent {
+    color: #0066FF;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9em;
+    color: #4B4B4B; /* Using secondary text color */
+}
+
+footer a {
+    color: #0066FF; /* Using electric blue accent for links in footer */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
