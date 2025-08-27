@@ -23,7 +23,7 @@ document.addEventListener('click', function(event) {
             document.body.appendChild(confetti);
 
             // Animate confetti
-            const animationDuration = Math.random() * 1 + 2.5; // Longer duration
+            const animationDuration = Math.random() * 1 + 3; // Longer duration
             const translateX = (Math.random() - 0.5) * 500; // Wider fall
             const translateY = (Math.random() - 0.5) * 500 + 200; // Fall downwards more
             const rotate = Math.random() * 720; // More rotation
