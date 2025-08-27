@@ -1,17 +1,17 @@
 document.addEventListener('click', function(event) {
-    // Check if the clicked element or any of its parents is an anchor tag
+    console.log('Click event detected.'); // Debug log
+
     let targetElement = event.target;
     while (targetElement && targetElement.tagName !== 'A') {
         targetElement = targetElement.parentNode;
     }
 
     if (targetElement && targetElement.tagName === 'A') {
-        // Prevent default navigation immediately
+        console.log('Anchor tag clicked:', targetElement.href); // Debug log
         event.preventDefault();
 
-        // Confetti logic
         const confettiCount = 100;
-        const colors = ['#00BFA6', '#A3FF12', '#FF4ECD', '#7C4DFF', '#FF7F11', '#29ABE2']; // Neon palette
+        const colors = ['#00BFA6', '#A3FF12', '#FF4ECD', '#7C4DFF', '#FF7F11', '#29ABE2'];
 
         const clickX = event.clientX;
         const clickY = event.clientY;
@@ -24,7 +24,12 @@ document.addEventListener('click', function(event) {
             confetti.style.top = `${clickY + (Math.random() - 0.5) * 200}px`;
             document.body.appendChild(confetti);
 
-            const animationDuration = Math.random() * 1 + 3;
+            // Make confetti very large and fully opaque for debugging
+            confetti.style.width = '50px';
+            confetti.style.height = '50px';
+            confetti.style.opacity = '1';
+
+            const animationDuration = Math.random() * 1 + 5; // Even longer duration
             const translateX = (Math.random() - 0.5) * 500;
             const translateY = (Math.random() - 0.5) * 500 + 200;
             const rotate = Math.random() * 720;
@@ -41,9 +46,7 @@ document.addEventListener('click', function(event) {
             };
         }
 
-        // Manually navigate after a short delay
         setTimeout(() => {
             window.location.href = targetElement.href;
-        }, 200); // 200ms delay to allow confetti to show
+        }, 500); // Longer delay for debugging
     }
-});
