@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expired Directory Domains: How I Found Them for Building New Directories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expired Directory Domains: How I Found Them for Building New Directories</h1>
+        <p class="date">August 2025</p>
+
+        <p>Finding a good domain name can be a real headache. I'm not a professional coder – more of a "vibe coder" who knows enough to get by and definitely knows when to call in a real developer for anything production-ready. But I've been looking into something interesting: using <strong>expired <em>directory</em> domains</strong>. These are domains that used to host actual directories or resource lists, and they often come with some existing history and backlinks. I figured they'd be a solid starting point for building new directory sites. Here's how I went about finding them, with a lot of help from the Gemini CLI.</p>
+
+        <h2>Step 1: Finding the Right Data to Start With</h2>
+        <p>Most people might think about manually searching for expired domains, but that's a huge time sink. I prefer to start with data that's already out there.</p>
+        <p>For example, I used a Kaggle dataset that listed products from Product Hunt. While Product Hunt has all sorts of products, many of those products <em>are</em> directories themselves – like lists of tools, resources, or startups. This dataset gave me thousands of products, and importantly, their associated websites. This approach, handled efficiently by the Gemini CLI, saved me a ton of time on initial data collection.</p>
+
+        <h2>Step 2: Getting Just the Domain Name</h2>
+        <p>Once I had the raw data, the next step was to pull out just the clean domain names from all those URLs. The <code>websites</code> column in the dataset often had URLs mixed in with other text, so I needed a way to get just <code>example.com</code> from something like <code>https://www.example.com/blog/post</code>.</p>
+        <p>The Gemini CLI helped me use this Python function for that:</p>
+<pre><code class="language-python">import re
+from urllib.parse import urlparse
+
+def get_clean_domain(url_string):
+    """Extracts the clean domain name from a URL."""
+    try:
+        match = re.search(r"https?://[^\s,']+", url_string)
+        if not match:
+            return None
+        parsed_url = urlparse(match.group(0))
+        domain = parsed_url.netloc
+        if domain.startswith('www.'):
+            domain = domain[4:]
+        return domain
+    except:
+        return None
+</code></pre>
+
+        <h2>Step 3: Checking WHOIS for Expiration</h2>
+        <p>My first check for whether a domain was expired involved looking at its WHOIS record. The Gemini CLI handled running these lookups for me.</p>
+        <p>If a domain's WHOIS record didn't show an expiration date, or if the lookup failed completely, I considered it potentially available. This was a good first sign that the domain might be expired or never fully registered.</p>
+        <p>However, I learned that a missing WHOIS record isn't always the full story. Sometimes, active websites use privacy services that hide their WHOIS data, or the WHOIS server might just be having issues. So, I knew I needed another step to be sure.</p>
+
+        <h2>Step 4: Making Sure the Site Isn't Actually Live</h2>
+        <p>This was a really important step to avoid wasting time on domains that looked expired but were still active. Just because the WHOIS data was unclear didn't mean the site was truly gone.</p>
+        <p>For any domain that seemed potentially available from the WHOIS check, the Gemini CLI performed two more quick checks:</p>
+        <ol>
+            <li><strong>DNS Resolution:</strong> It tried to see if the domain still pointed to an IP address. If it didn't, that was a strong indicator it wasn't active anymore.</li>
+            <li><strong>HTTP Request:</strong> It then tried to make a quick request to the domain. If a live website responded, even if the WHOIS data was ambiguous, I knew to skip that domain.</li>
+        </ol>
+<pre><code class="language-python">import socket
+import requests
+
+def is_website_live(domain):
+    """Checks if a domain has a live website."""
+    try:
+        # First, check if the domain has a valid IP address
+        socket.gethostbyname(domain)
+
+        # Second, try to make a quick request to the website
+        # We use a short timeout to speed things up
+        response = requests.head(f"http://{domain}", timeout=5, allow_redirects=True)
+
+        # If we get a successful status code (like 200 OK), the site is live
+        if response.status_code < 400:
+            return True
+    except (socket.gaierror, requests.exceptions.RequestException):
+        # If either check fails, the site is likely not live
+        return False
+    return False
+</code></pre>
+        <p>Only domains that failed <em>both</em> of these checks were considered truly available. This thorough process, largely automated by the Gemini CLI, helped me get a reliable list of genuinely expired domains.</p>
+
+        <h2>The Result: A List of Expired Directory Domains</h2>
+        <p>After all those checks, what I ended up with, thanks to the Gemini CLI's efficient work, was a list of promising <strong>expired <em>directory</em> domains</strong>. These aren't just random names; they're domains that have some history. I can now use them to:</p>
+        <ul>
+            <li><strong>Start new directories</strong> with a bit of a head start in terms of SEO.</li>
+            <li>Build niche directories that might already have some authority in a specific area.</li>
+            <li>Potentially get some backlinks without having to build them from scratch, especially from sites that linked to the old directory.</li>
+        </ul>
+        <p>It's a pretty systematic way to find these, and honestly, having the Gemini CLI handle the heavy lifting made it a lot easier to get this list for my next directory project.</p>
+    </div>
+</body>
+</html>

@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap');
 
 :root {
-    --font-family: 'Inter', sans-serif;
-    --white: #ffffff;
-    --black: #1a1a1a;
-    --gray-dark: #666;
-    --accent-color: #007bff; /* Default accent color (blue) */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
+    --color-primary: #4A235A; /* Deep Purple */
+    --color-secondary: #E74C3C; /* Vibrant Red */
+    --color-accent: #F39C12; /* Golden Orange */
+    --color-text: #34495E; /* Dark Slate Gray */
+    --color-background-light: #FDF5E6; /* Creamy White */
+    --color-background-dark: #D6DBDF; /* Light Gray Blue */
 }
 
 * {
@@ -15,192 +18,222 @@
 }
 
 body {
-    font-family: var(--font-family);
-    background-color: var(--white);
-    color: var(--black);
-    line-height: 1.6;
+    font-family: var(--font-body);
+    background-color: var(--color-background-light);
+    color: var(--color-text);
+    line-height: 1.7; /* Slightly increased line height for readability */
     -webkit-font-smoothing: antialiased;
     padding: 40px 0;
+    /* Non-minimalist: Subtle background texture */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"><path fill="%23f0e6d2" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path></svg>');
+    background-repeat: repeat;
 }
 
 .container {
-    max-width: 800px; /* Increased max-width for landing page */
+    max-width: 850px; /* Slightly wider container */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 30px 30px; /* More padding */
+    background-color: var(--color-background-light);
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid var(--color-background-dark); /* Light border */
 }
 
 h1 {
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    letter-spacing: -0.03em;
+    font-family: var(--font-heading);
+    font-size: 56px; /* Larger heading */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -0.04em;
+    color: var(--color-primary); /* Primary heading color */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
 }
 
 .profile-pic {
-    width: 60px;
-    height: 60px;
+    width: 100px; /* Larger profile picture */
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 40px;
     display: block;
+    border: 5px solid var(--color-accent); /* Accent border */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* More prominent shadow */
 }
 
 h2 {
-    font-size: 36px; /* Increased size for section titles */
+    font-family: var(--font-heading);
+    font-size: 42px; /* Larger section titles */
     font-weight: 700;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
+    margin-top: 70px;
+    margin-bottom: 25px;
+    letter-spacing: -0.03em;
+    color: var(--color-secondary); /* Secondary heading color */
+    border-bottom: 2px solid var(--color-accent); /* Decorative border */
+    padding-bottom: 10px;
 }
 
 h3 {
-    font-size: 20px;
+    font-family: var(--font-heading);
+    font-size: 24px; /* Larger subheadings */
     font-weight: 700;
-    margin-top: 40px;
-    margin-bottom: 10px;
+    margin-top: 45px;
+    margin-bottom: 12px;
     letter-spacing: -0.02em;
+    color: var(--color-primary);
 }
 
 p {
-    font-size: 18px;
+    font-size: 19px; /* Slightly larger body text */
     line-height: 1.8;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 ul {
     list-style: none;
     margin-left: 0;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 li {
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.8;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    padding-left: 25px; /* Indent list items */
+    position: relative;
+}
+
+li::before {
+    content: '•'; /* Custom bullet point */
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1;
 }
 
 a {
-    color: var(--accent-color);
+    color: var(--color-secondary); /* Link color */
     text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.3s ease;
+    font-weight: 700; /* Bolder links */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
-    opacity: 0.7;
+    color: var(--color-accent); /* Accent on hover */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
-.contact-email {
-    font-size: 18px;
-    font-weight: 500;
+.contact-email, .social-link {
+    font-size: 19px;
+    font-weight: 700;
     margin-top: 60px;
-    margin-bottom: 20px;
-}
-
-.social-link {
-    font-size: 16px;
     margin-bottom: 20px;
 }
 
 .copyright {
-    font-size: 14px;
-    color: var(--gray-dark);
+    font-size: 15px;
+    color: var(--color-text);
     margin-top: 60px;
     text-align: center;
 }
 
-/* --- New Styles for SaaS Landing Page --- */
+/* --- New Styles for SaaS Landing Page (keeping for now, but might be removed if not used) --- */
 
 /* Button Styles */
 .button {
     display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--white);
-    padding: 15px 30px;
-    font-size: 18px;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    padding: 18px 35px; /* Larger buttons */
+    font-size: 20px;
     font-weight: 700;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded */
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     border: none;
     cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Button shadow */
 }
 
 .button:hover {
-    background-color: #0056b3; /* A slightly darker blue */
-    opacity: 1;
+    background-color: var(--color-secondary); /* Change on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    opacity: 1; /* Ensure opacity is 1 */
 }
 
 /* Pricing Table */
 .pricing-table {
     display: grid;
-    grid-template-columns: 1fr; /* Default to 1 column for mobile */
-    gap: 30px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 45px;
+    margin-bottom: 45px;
 }
 
-/* On larger screens, use 3 columns */
 @media (min-width: 768px) {
     .pricing-table {
         grid-template-columns: repeat(3, 1fr);
     }
     .button {
-        width: auto; /* Auto width for buttons on larger screens */
+        width: auto;
     }
 }
 
 .pricing-card {
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 30px;
+    border: 2px solid var(--color-background-dark); /* More prominent border */
+    border-radius: 12px;
+    padding: 35px;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: var(--color-background-light);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .pricing-card h3 {
-    font-size: 24px;
+    font-size: 28px;
     margin-top: 0;
+    color: var(--color-primary);
 }
 
 .pricing-card .price {
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 800;
-    margin: 20px 0;
+    margin: 25px 0;
+    color: var(--color-secondary);
 }
 
 .pricing-card .price-term {
-    font-size: 16px;
-    color: var(--gray-dark);
+    font-size: 18px;
+    color: var(--color-text);
 }
 
 .pricing-card ul {
     text-align: left;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
 .pricing-card li {
-    margin-bottom: 15px;
-    padding-left: 25px;
+    margin-bottom: 18px;
+    padding-left: 30px;
     position: relative;
 }
 
 .pricing-card li::before {
     content: '✓';
-    color: #28a745; /* Green checkmark */
+    color: #28a745;
     position: absolute;
     left: 0;
+    font-size: 1.3em;
 }
 
 /* How it Works Section */
 .how-it-works {
     display: grid;
-    grid-template-columns: 1fr; /* Default to 1 column for mobile */
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 45px;
 }
 
 @media (min-width: 768px) {
@@ -214,50 +247,55 @@ a:hover {
 }
 
 .step h3 {
-    margin-top: 10px;
+    margin-top: 15px;
+    color: var(--color-primary);
 }
 
 .step-number {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
+    color: var(--color-secondary);
+    border: 3px solid var(--color-secondary);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    line-height: 36px;
+    width: 50px;
+    height: 50px;
+    line-height: 44px;
     margin: 0 auto;
+    background-color: var(--color-background-light);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
 
 /* FAQ Section */
 .faq {
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .faq-item {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-background-dark);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .faq-item h3 {
     margin-top: 0;
+    color: var(--color-primary);
 }
 
 /* --- Grid for benefits section --- */
 .benefits-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1 column on mobile */
-    gap: 40px;
-    margin-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin-top: 45px;
 }
 
 @media (min-width: 768px) {
     .benefits-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on larger screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 .benefit-item h3 {
     margin-top: 0;
+    color: var(--color-primary);
 }
