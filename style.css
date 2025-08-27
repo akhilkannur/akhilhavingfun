@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #e0f2f7;
+    background-color: #FFFFFF;
     color: #333;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -28,7 +28,6 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: #666;
-    margin: 0;
     letter-spacing: 0.5px;
 }
 
@@ -261,7 +260,6 @@ body {
     .profile-section {
         flex-direction: column;
         gap: 24px;
-
     }
     
     .profile-image {
@@ -326,4 +324,8 @@ body {
 
 .blog-post li {
     margin-bottom: 0.5em;
+}
+
+.accent-red {
+    color: #E74C3C;
 }
