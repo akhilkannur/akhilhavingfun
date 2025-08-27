@@ -58,7 +58,7 @@ body {
 }
 
 .greeting {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 700;
     color: #333;
     margin: 0 0 24px 0;
@@ -93,7 +93,7 @@ body {
 }
 
 .section-title {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 700;
     color: #333;
     margin: 0 0 32px 0;
@@ -124,7 +124,7 @@ body {
 }
 
 .project-title {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     color: #333;
     margin: 0 0 12px 0;
@@ -220,6 +220,10 @@ body {
     color: #333;
     text-decoration: underline;
     font-weight: 500;
+}
+
+.contact-link:hover {
+    color: #FF3366;
 }
 
 .location {
@@ -344,4 +348,17 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+.hero-illustration {
+    position: absolute; /* Position relative to .hero */
+    top: 50px; /* Adjust position as needed */
+    left: 50px; /* Adjust position as needed */
+    width: 150px;
+    height: 150px;
+    background-color: #FF3366; /* Secondary Accent color */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Blob shape */
+    opacity: 0.6;
+    filter: blur(10px); /* Soften the edges */
+    z-index: -1; /* Send it behind content */
 }
