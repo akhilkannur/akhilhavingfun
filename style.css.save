@@ -1,0 +1,67 @@
+    .greeting {
+        font-size: 38px;
+    }
+    
+    .description, .project-highlights li, .project-highlights {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .projects {
+        margin-bottom: 60px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-card {
+        padding: 25px;
+    }
+
+    .project-title {
+        font-size: 20px;
+    }
+
+    .project-description {
+        font-size: 15px;
+    }
+
+    .thoughts {
+        margin-bottom: 60px;
+    }
+
+    .thoughts-list {
+        gap: 10px;
+    }
+
+    .thought-link {
+        font-size: 16px;
+    }
+
+    .contact {
+        margin-bottom: 60px;
+    }
+
+    .contact-description {
+        font-size: 16px;
+    }
+
+    .contact-link {
+        font-size: 20px;
+    }
+
+    .location {
+        font-size: 15px;
+    }
+
+    .social-link svg {
+        width: 24px;
+        height: 24px;
+    }
+}
