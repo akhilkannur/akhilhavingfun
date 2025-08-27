@@ -351,14 +351,53 @@ footer a:hover {
 }
 
 .hero-illustration {
-    position: absolute; /* Position relative to .hero */
-    top: 50px; /* Adjust position as needed */
-    left: 50px; /* Adjust position as needed */
+    position: absolute;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(15px);
+}
+
+#illustration-1 {
+    top: 50px;
+    left: 50px;
     width: 150px;
     height: 150px;
-    background-color: #FF3366; /* Secondary Accent color */
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Blob shape */
-    opacity: 0.6;
-    filter: blur(10px); /* Soften the edges */
-    z-index: -1; /* Send it behind content */
+    background-color: #FF3366; /* Vivid Pink-Red */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: float1 10s ease-in-out infinite alternate;
+}
+
+#illustration-2 {
+    top: 200px;
+    right: 80px; /* Position from right */
+    width: 180px;
+    height: 180px;
+    background-color: #0066FF; /* Electric Blue */
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    animation: float2 12s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(20px, 30px) rotate(5deg); }
+}
+
+@keyframes float2 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-25px, -15px) rotate(-8deg); }
+}
+
+@keyframes float3 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(15px, -20px) rotate(10deg); }
+}
+
+#illustration-3 {
+    bottom: 100px; /* Position from bottom */
+    left: 150px;
+    width: 120px;
+    height: 120px;
+    background-color: #00BFA6; /* Teal */
+    border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%; /* More circular blob */
+    animation: float3 14s ease-in-out infinite alternate;
 }

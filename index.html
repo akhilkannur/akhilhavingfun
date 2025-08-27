@@ -12,12 +12,14 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1 class="name">akhil mk</h1>
+            <div id="countdown-timer" class="countdown-style"></div>
         </header>
 
         <main>
             <section class="hero">
-                <div class="hero-illustration"></div>
+                <div class="hero-illustration" id="illustration-1"></div>
+                <div class="hero-illustration" id="illustration-2"></div>
+                <div class="hero-illustration" id="illustration-3"></div>
                 <div class="profile-section">
                     <div class="profile-image-container">
                         <img src="DP.jpg" alt="Akhil MK" class="profile-image">
@@ -141,4 +143,31 @@
         </footer>
     </div>
 </body>
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const endOfYear = new Date(2025, 11, 31, 23, 59, 59); // December 31, 2025, 23:59:59
+
+            // Calculate total milliseconds in 2025
+            const startOfYear = new Date(2025, 0, 1, 0, 0, 0); // January 1, 2025, 00:00:00
+            const totalMillisecondsInYear = endOfYear.getTime() - startOfYear.getTime();
+
+            // Calculate milliseconds remaining
+            const millisecondsRemaining = endOfYear.getTime() - now.getTime();
+
+            if (millisecondsRemaining <= 0) {
+                document.getElementById('countdown-timer').innerText = "0% left of 2025";
+                return;
+            }
+
+            const percentageLeft = (millisecondsRemaining / totalMillisecondsInYear) * 100;
+            document.getElementById('countdown-timer').innerText = `${percentageLeft.toFixed(2)}% left of 2025`;
+        }
+
+        // Initial call
+        updateCountdown();
+
+        // Update every second
+        setInterval(updateCountdown, 1000);
+    </script>
 </html>
