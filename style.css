@@ -243,3 +243,21 @@ a:hover {
 .faq-item h3 {
     margin-top: 0;
 }
+
+/* --- Grid for benefits section --- */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 40px;
+    margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on larger screens */
+    }
+}
+
+.benefit-item h3 {
+    margin-top: 0;
+}
