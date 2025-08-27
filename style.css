@@ -3,12 +3,12 @@
 :root {
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lora', serif;
-    --color-primary: #4A235A; /* Deep Purple */
-    --color-secondary: #E74C3C; /* Vibrant Red */
-    --color-accent: #F39C12; /* Golden Orange */
-    --color-text: #34495E; /* Dark Slate Gray */
-    --color-background-light: #FDF5E6; /* Creamy White */
-    --color-background-dark: #D6DBDF; /* Light Gray Blue */
+    --color-primary: #1A535C; /* Deep Teal */
+    --color-secondary: #FF6B6B; /* Vibrant Coral */
+    --color-accent: #FFE66D; /* Cheerful Yellow */
+    --color-text: #1A535C; /* Using primary for main text */
+    --color-background-light: #F7F7F7; /* Very light, warm Gray */
+    --color-background-dark: #C8D8E4; /* Soft, muted Blue-Gray */
 }
 
 * {
@@ -25,7 +25,7 @@ body {
     -webkit-font-smoothing: antialiased;
     padding: 40px 0;
     /* Non-minimalist: Subtle background texture */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"><path fill="%23f0e6d2" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"><path fill="%23e0e0e0" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path></svg>'); /* Adjusted fill color for new background */
     background-repeat: repeat;
 }
 
