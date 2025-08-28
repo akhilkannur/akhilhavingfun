@@ -3,12 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            const isExternal = link.href.startsWith('http') && new URL(link.href).hostname !== window.location.hostname;
             const opensInNewTab = link.target === '_blank';
             const isMailto = link.href.startsWith('mailto:');
 
 
-            if (isExternal || opensInNewTab || isMailto) {
+            if (opensInNewTab || isMailto) {
                 return;
             }
 
