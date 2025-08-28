@@ -400,24 +400,30 @@ footer a:hover {
     pointer-events: none; /* Don't interfere with clicks */
 }
 
-.sticky-note {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 200px;
-    height: 150px;
-    background-color: #A3FF12; /* Lime Green from neon palette */
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    transform: rotate(3deg); /* Slight rotation */
-    font-family: 'Inter', sans-serif; /* Consistent font */
-    font-size: 0.9em;
-    color: #1A1A1A; /* Primary text color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.fact-flicker-style {
     text-align: center;
-    z-index: 1000; /* Ensure it's above most content */
-    transition: opacity 0.5s ease-in-out, background-color 0.5s ease, bottom 0.5s ease, right 0.5s ease, transform 0.5s ease;
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    height: 20px; /* To prevent layout shift */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.upcoming-card {
+    background-color: #f0f8ff; /* A light blue to distinguish it */
+    border-left: 5px solid #4a90e2; /* A blue accent border */
+}
+
+.upcoming-projects-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.upcoming-projects-list li {
+    margin-bottom: 10px;
+}
+
+.tag.future {
+    background-color: #4a90e2;
+    color: white;
 }

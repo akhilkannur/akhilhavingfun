@@ -14,6 +14,7 @@
     <div class="container">
         <header class="header">
             <div id="countdown-timer" class="countdown-style"></div>
+            <div id="fact-flicker" class="fact-flicker-style"></div>
         </header>
 
         <main>
@@ -114,6 +115,23 @@
                 </div>
             </section>
 
+            <section class="projects">
+                <h2 class="section-title">Soon to be Launched</h2>
+                <div class="projects-grid">
+                    <div class="project-card upcoming-card">
+                        <h3 class="project-title">Future Ventures</h3>
+                        <ul class="upcoming-projects-list">
+                            <li>A platform that covers founders behind the latest new sales tools.</li>
+                            <li>A platform that shares insights on funded startups for sales prospecting for marketing agencies.</li>
+                            <li>A platform that shares real AI examples for non-technical people.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag future">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="thoughts">
                 <h2 class="section-title">Thoughts</h2>
                 <div class="thoughts-list">
@@ -173,61 +191,46 @@
         // Update every second
         setInterval(updateCountdown, 1000);
 
-        // Sticky Note Logic
+        // Fact Flicker Logic
         document.addEventListener('DOMContentLoaded', function() {
-            // ... countdown logic ...
+            const factFlicker = document.getElementById('fact-flicker');
+            if (factFlicker) {
+                const facts = [
+                    "Did you know? 'First Principles Thinking' means breaking down problems to their fundamental truths, then building up from there.",
+                    "Did you know? 'Inversion' is solving a problem by considering the opposite: what would guarantee failure, then avoiding it.",
+                    "Did you know? 'Occam's Razor' suggests the simplest explanation is usually the best one.",
+                    "Did you know? 'The Map Is Not The Territory' reminds us that our models of reality are not reality itself.",
+                    "Did you know? 'Compounding' isn't just for money; small, consistent efforts yield massive results over time.",
+                    "Did you know? 'Circle of Competence' means knowing what you know, and more importantly, what you don't know.",
+                    "Did you know? 'Margin of Safety' is building in a buffer to protect against unforeseen events or errors.",
+                    "Did you know? 'Hanlon's Razor' suggests never attributing to malice that which is adequately explained by stupidity.",
+                    "Did you know? 'The Law of Unintended Consequences' states that actions often have effects not foreseen or intended.",
+                    "Did you know? 'Feedback Loops' are processes where outputs are routed back as inputs, influencing future outputs.",
+                    "Did you know? 'Survivorship Bias' is focusing only on things that survived, overlooking those that failed.",
+                    "Did you know? 'Opportunity Cost' is the value of the next best alternative that was not taken.",
+                    "Did you know? 'The Pareto Principle' (80/20 rule) states that roughly 80% of effects come from 20% of causes."
+                ];
+                let currentFactIndex = 0;
 
-            const stickyNote = document.getElementById('sticky-note');
-            const facts = [
-                "Did you know? 'First Principles Thinking' means breaking down problems to their fundamental truths, then building up from there.",
-                "Did you know? 'Inversion' is solving a problem by considering the opposite: what would guarantee failure, then avoiding it.",
-                "Did you know? 'Occam's Razor' suggests the simplest explanation is usually the best one.",
-                "Did you know? 'The Map Is Not The Territory' reminds us that our models of reality are not reality itself.",
-                "Did you know? 'Compounding' isn't just for money; small, consistent efforts yield massive results over time.",
-                "Did you know? 'Circle of Competence' means knowing what you know, and more importantly, what you don't know.",
-                "Did you know? 'Margin of Safety' is building in a buffer to protect against unforeseen events or errors.",
-                "Did you know? 'Hanlon's Razor' suggests never attributing to malice that which is adequately explained by stupidity.",
-                "Did you know? 'The Law of Unintended Consequences' states that actions often have effects not foreseen or intended.",
-                "Did you know? 'Feedback Loops' are processes where outputs are routed back as inputs, influencing future outputs.",
-                "Did you know? 'Survivorship Bias' is focusing only on things that survived, overlooking those that failed.",
-                "Did you know? 'Opportunity Cost' is the value of the next best alternative that was not taken.",
-                "Did you know? 'The Pareto Principle' (80/20 rule) states that roughly 80% of effects come from 20% of causes."
-            ];
-            let currentFactIndex = 0;
-            const colors = ['#A3FF12', '#FF4ECD', '#7C4DFF', '#FF7F11', '#29ABE2', '#00BFA6'];
+                function updateFactFlicker() {
+                    // Fade out
+                    factFlicker.style.opacity = 0;
+                    setTimeout(() => {
+                        factFlicker.innerText = facts[currentFactIndex];
+                        currentFactIndex = (currentFactIndex + 1) % facts.length;
+                        // Fade in
+                        factFlicker.style.opacity = 1;
+                    }, 500); // Half of transition duration
+                }
 
-            // Initial random position and rotation on page load
-            function setInitialStickyNotePosition() {
-                const randomBottom = Math.random() * 50 + 20; // 20px to 70px from bottom
-                const randomRight = Math.random() * 50 + 20;  // 20px to 70px from right
-                const randomRotate = Math.random() * 10 - 5; // -5deg to 5deg rotation
+                // Initial setup
+                updateFactFlicker(); // Initial fact display
 
-                stickyNote.style.bottom = `${randomBottom}px`;
-                stickyNote.style.right = `${randomRight}px`;
-                stickyNote.style.transform = `rotate(${randomRotate}deg)`;
+                // Update every 8 seconds
+                setInterval(updateFactFlicker, 8000);
             }
-
-            function updateStickyNote() {
-                // Fade out
-                stickyNote.style.opacity = 0;
-                setTimeout(() => {
-                    stickyNote.innerText = facts[currentFactIndex];
-                    stickyNote.style.backgroundColor = colors[currentFactIndex % colors.length];
-                    currentFactIndex = (currentFactIndex + 1) % facts.length;
-                    // Fade in
-                    stickyNote.style.opacity = 1;
-                }, 500); // Half of transition duration
-            }
-
-            // Initial setup
-            setInitialStickyNotePosition();
-            updateStickyNote(); // Initial fact display
-
-            // Update every 8 seconds
-            setInterval(updateStickyNote, 8000);
         });
     </script>
     <script src="confetti.js"></script>
-    <div id="sticky-note" class="sticky-note"></div>
 </body>
 </html>

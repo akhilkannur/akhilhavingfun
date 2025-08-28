@@ -1,52 +1,61 @@
-document.addEventListener('click', function(event) {
-    console.log('Click event detected.'); // Debug log
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a');
 
-    let targetElement = event.target;
-    while (targetElement && targetElement.tagName !== 'A') {
-        targetElement = targetElement.parentNode;
-    }
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const isExternal = link.href.startsWith('http') && new URL(link.href).hostname !== window.location.hostname;
+            const opensInNewTab = link.target === '_blank';
+            const isMailto = link.href.startsWith('mailto:');
 
-    if (targetElement && targetElement.tagName === 'A') {
-        console.log('Anchor tag clicked:', targetElement.href); // Debug log
-        event.preventDefault();
 
-        const confettiCount = 100;
-        const colors = ['#00BFA6', '#A3FF12', '#FF4ECD', '#7C4DFF', '#FF7F11', '#29ABE2'];
+            if (isExternal || opensInNewTab || isMailto) {
+                return;
+            }
 
-        const clickX = event.clientX;
-        const clickY = event.clientY;
+            e.preventDefault();
 
-        for (let i = 0; i < confettiCount; i++) {
-            const confetti = document.createElement('div');
-            confetti.classList.add('confetti');
-            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.left = `${clickX + (Math.random() - 0.5) * 200}px`;
-            confetti.style.top = `${clickY + (Math.random() - 0.5) * 200}px`;
-            document.body.appendChild(confetti);
+            for (let i = 0; i < 50; i++) {
+                createConfetti(e.clientX, e.clientY);
+            }
 
-            // Make confetti very large and fully opaque for debugging
-            confetti.style.width = '50px';
-            confetti.style.height = '50px';
-            confetti.style.opacity = '1';
+            setTimeout(() => {
+                window.location = link.href;
+            }, 500);
+        });
+    });
 
-            const animationDuration = Math.random() * 1 + 5; // Even longer duration
-            const translateX = (Math.random() - 0.5) * 500;
-            const translateY = (Math.random() - 0.5) * 500 + 200;
-            const rotate = Math.random() * 720;
+    function createConfetti(x, y) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        document.body.appendChild(confetti);
 
-            confetti.animate([
-                { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
-                { transform: `translate(${translateX}px, ${translateY}px) rotate(${rotate}deg)`, opacity: 0 }
-            ], {
-                duration: animationDuration * 1000,
-                easing: 'ease-out',
-                fill: 'forwards'
-            }).onfinish = () => {
+        const colors = ['#A3FF12', '#FF4ECD', '#7C4DFF', '#FF7F11', '#29ABE2', '#00BFA6'];
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+        confetti.style.left = x + 'px';
+        confetti.style.top = y + 'px';
+
+        const angle = Math.random() * 2 * Math.PI;
+        const velocity = Math.random() * 3 + 2;
+        const gravity = 0.1;
+
+        let vx = Math.cos(angle) * velocity;
+        let vy = Math.sin(angle) * velocity;
+
+        function animate() {
+            vx *= 0.99;
+            vy += gravity;
+
+            confetti.style.left = (parseFloat(confetti.style.left) + vx) + 'px';
+            confetti.style.top = (parseFloat(confetti.style.top) + vy) + 'px';
+
+            if (parseFloat(confetti.style.top) > window.innerHeight) {
                 confetti.remove();
-            };
+            } else {
+                requestAnimationFrame(animate);
+            }
         }
 
-        setTimeout(() => {
-            window.location.href = targetElement.href;
-        }, 500); // Longer delay for debugging
+        requestAnimationFrame(animate);
     }
+});
