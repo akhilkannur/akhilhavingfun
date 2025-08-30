@@ -273,6 +273,11 @@ body {
     .profile-section {
         flex-direction: column;
         gap: 24px;
+        align-items: center;
+    }
+
+    .fact-flicker-style {
+        margin-bottom: 20px;
     }
     
     .profile-image {
@@ -294,6 +299,10 @@ body {
     
     .header {
         padding: 40px 0 20px 0;
+    }
+
+    .header-info {
+        padding: 0 20px;
     }
 }
 
