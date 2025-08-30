@@ -119,6 +119,17 @@ body {
     gap: 24px;
 }
 
+.major-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
 .project-card {
     background: #fff;
     padding: 24px;
@@ -172,19 +183,19 @@ body {
     text-transform: lowercase;
 }
 
-.tag.service { color: #00BFA6; }
-.tag.b2b { color: #A3FF12; }
-.tag.automation { color: #FF4ECD; }
-.tag.sales { color: #7C4DFF; }
-.tag.strategy { color: #FF7F11; }
-.tag.consulting { color: #29ABE2; }
-.tag.free { color: #00BFA6; }
-.tag.database { color: #A3FF12; }
-.tag.tool { color: #FF4ECD; }
-.tag.linkedin { color: #7C4DFF; }
-.tag.agency { color: #FF7F11; }
-.tag.video { color: #29ABE2; }
-.tag.airtable { color: #00BFA6; }
+.tag.service { color: #007bff; }
+.tag.b2b { color: #007bff; }
+.tag.automation { color: #007bff; }
+.tag.sales { color: #007bff; }
+.tag.strategy { color: #007bff; }
+.tag.consulting { color: #007bff; }
+.tag.free { color: #007bff; }
+.tag.database { color: #007bff; }
+.tag.tool { color: #007bff; }
+.tag.linkedin { color: #007bff; }
+.tag.agency { color: #007bff; }
+.tag.video { color: #007bff; }
+.tag.airtable { color: #007bff; }
 
 .thoughts {
     margin-bottom: 80px;
@@ -460,8 +471,8 @@ footer a:hover {
 }
 
 .upcoming-card {
-    background-color: #f0f8ff; /* A light blue to distinguish it */
-    border-left: 5px solid #4a90e2; /* A blue accent border */
+    background-color: #f7f7f7;
+    border-left: 5px solid #ccc;
 }
 
 .upcoming-projects-list {
