@@ -33,14 +33,13 @@ sed -e "s|<!-- BLOG_TITLE_HERE -->|$ESCAPED_BLOG_TITLE|g" \
 
 # Add link to index.html
 # First, create the new link HTML
-# Escape special characters in BLOG_TITLE for awk
-ESCAPED_BLOG_TITLE_AWK=$(echo "$BLOG_TITLE" | sed -e 's/[\/&]/\\&/g' -e 's/\[/\\[/g' -e 's/\]/\\]/g')
-NEW_LINK_HTML="                    <a href=\"$SLUG.html\" class=\"thought-link\">$ESCAPED_BLOG_TITLE_AWK</a>"
+NEW_LINK_HTML="                    <a href=\"/\" class=\"thought-link\">$BLOG_TITLE</a>"
 
 # Check if the new link already exists to prevent duplicates
 if ! grep -q "$SLUG.html" "$INDEX_FILE"; then
     # Insert the new link after the <h2>Thoughts</h2> line
-    awk -v new_link="$NEW_LINK_HTML" '/<h2 class="section-title">Thoughts<\/h2>/ { print; print new_link; next } { print }' "$INDEX_FILE" > "${INDEX_FILE}.tmp" && mv "${INDEX_FILE}.tmp" "$INDEX_FILE"
+    # Use printf %q to properly quote the new_link for awk
+    printf '%s\n' "$NEW_LINK_HTML" | awk -v new_link="$NEW_LINK_HTML" '/<h2 class="section-title">Thoughts<\/h2>/ { print; print new_link; next } { print }' "$INDEX_FILE" > "${INDEX_FILE}.tmp" && mv "${INDEX_FILE}.tmp" "$INDEX_FILE"
     echo "Added link to $BLOG_TITLE in $INDEX_FILE"
 else
     echo "Link for $BLOG_TITLE already exists in $INDEX_FILE. Skipping update."

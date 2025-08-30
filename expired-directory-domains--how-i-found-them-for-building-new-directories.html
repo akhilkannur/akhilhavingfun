@@ -14,7 +14,7 @@
     <div class="container">
         <header class="header">
             <div class="header-info">
-                <a href="index.html">
+                <a href="/">
                     <img src="DP.jpg" alt="Akhil MK" class="profile-image-small">
                 </a>
             </div>
@@ -27,6 +27,7 @@
             </section>
 
             <section class="projects">
+                <div class="blog-content">
         <p>Finding a good domain name can be a real headache. I'm not a professional coder – more of a "vibe coder" who knows enough to get by and definitely knows when to call in a real developer for anything production-ready. But I've been looking into something interesting: using <strong>expired <em>directory</em> domains</strong>. These are domains that used to host actual directories or resource lists, and they often come with some existing history and backlinks. I figured they'd be a solid starting point for building new directory sites. Here's how I went about finding them, with a lot of help from the Gemini CLI.</p>
 
         <h2>Step 1: Finding the Right Data to Start With</h2>
@@ -57,6 +58,7 @@ def get_clean_domain(url_string):
         <h2>Step 3: Checking WHOIS for Expiration</h2>
         <p>My first check for whether a domain was expired involved looking at its WHOIS record. The Gemini CLI handled running these lookups for me.</p>
         <p>If a domain's WHOIS record didn't show an expiration date, or if the lookup failed completely, I considered it potentially available. This was a good first sign that the domain might be expired or never fully registered.</p>
+
         <p>However, I learned that a missing WHOIS record isn't always the full story. Sometimes, active websites use privacy services that hide their WHOIS data, or the WHOIS server might just be having issues. So, I knew I needed another step to be sure.</p>
 
         <h2>Step 4: Making Sure the Site Isn't Actually Live</h2>
@@ -96,7 +98,8 @@ def is_website_live(domain):
             <li>Build niche directories that might already have some authority in a specific area.</li>
             <li>Potentially get some backlinks without having to build them from scratch, especially from sites that linked to the old directory.</li>
         </ul>
-        <p>It's a pretty systematic way to find these, and honestly, having the Gemini CLI handle the heavy lifting made it a lot easier to get this list for my next directory project.</p>            </section>
+        <p>It's a pretty systematic way to find these, and honestly, having the Gemini CLI handle the heavy lifting made it a lot easier to get this list for my next directory project.</p>                </div>
+            </section>
         </main>
 
         <footer>
