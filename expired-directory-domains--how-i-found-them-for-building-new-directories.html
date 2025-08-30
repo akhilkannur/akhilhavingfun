@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expired Directory Domains: How I Found Them for Building New Directories</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="blog-post">
+<body>
+    <div class="animated-background"></div>
     <div class="container">
-        <h1>Expired Directory Domains: How I Found Them for Building New Directories</h1>
-        <p class="date">August 2025</p>
+        <header class="header">
+            <div class="header-info">
+                <div id="countdown-timer" class="countdown-style"></div>
+                <div id="fact-flicker" class="fact-flicker-style"></div>
+            </div>
+        </header>
 
+        <main>
+            <section class="hero">
+                <div class="profile-section">
+                    <div class="profile-content">
+                        <h1 class="greeting">Expired Directory Domains: How I Found Them for Building New Directories</h1>
+                        <p class="description"><em>August 2025</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects">
         <p>Finding a good domain name can be a real headache. I'm not a professional coder – more of a "vibe coder" who knows enough to get by and definitely knows when to call in a real developer for anything production-ready. But I've been looking into something interesting: using <strong>expired <em>directory</em> domains</strong>. These are domains that used to host actual directories or resource lists, and they often come with some existing history and backlinks. I figured they'd be a solid starting point for building new directory sites. Here's how I went about finding them, with a lot of help from the Gemini CLI.</p>
 
         <h2>Step 1: Finding the Right Data to Start With</h2>
@@ -80,8 +99,80 @@ def is_website_live(domain):
             <li>Build niche directories that might already have some authority in a specific area.</li>
             <li>Potentially get some backlinks without having to build them from scratch, especially from sites that linked to the old directory.</li>
         </ul>
-        <p>It's a pretty systematic way to find these, and honestly, having the Gemini CLI handle the heavy lifting made it a lot easier to get this list for my next directory project.</p>
+        <p>It's a pretty systematic way to find these, and honestly, having the Gemini CLI handle the heavy lifting made it a lot easier to get this list for my next directory project.</p>            </section>
+        </main>
+
+        <footer>
+            <p class="copyright">&copy; 2025 Akhil MK. Inspired by <a href="https://mhouge.dk/" target="_blank">mhouge.dk</a>. Wanna get in touch? Email me at <a href="mailto:akhil@akhilhaving.fun">akhil@akhilhaving.fun</a></p>
+        </footer>
     </div>
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const endOfYear = new Date(2025, 11, 31, 23, 59, 59); // December 31, 2025, 00:00:00
+
+            // Calculate total milliseconds in 2025
+            const startOfYear = new Date(2025, 0, 1, 0, 0, 0); // January 1, 2025, 00:00:00
+            const totalMillisecondsInYear = endOfYear.getTime() - startOfYear.getTime();
+
+            // Calculate milliseconds remaining
+            const millisecondsRemaining = endOfYear.getTime() - now.getTime();
+
+            if (millisecondsRemaining <= 0) {
+                document.getElementById('countdown-timer').innerText = "0% left of 2025";
+                return;
+            }
+
+            const percentageLeft = (millisecondsRemaining / totalMillisecondsInYear) * 100;
+            document.getElementById('countdown-timer').innerText = `${percentageLeft.toFixed(2)}% left of 2025`;
+        }
+
+        // Initial call
+        updateCountdown();
+
+        // Update every second
+        setInterval(updateCountdown, 1000);
+
+        // Fact Flicker Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const factFlicker = document.getElementById('fact-flicker');
+            if (factFlicker) {
+                const facts = [
+                    "Did you know? 'First Principles Thinking' means breaking down problems to their fundamental truths, then building up from there.",
+                    "Did you know? 'Inversion' is solving a problem by considering the opposite: what would guarantee failure, then avoiding it.",
+                    "Did you know? 'Occam's Razor' suggests the simplest explanation is usually the best one.",
+                    "Did you know? 'The Map Is Not The Territory' reminds us that our models of reality are not reality itself.",
+                    "Did you know? 'Compounding' isn't just for money; small, consistent efforts yield massive results over time.",
+                    "Did you know? 'Circle of Competence' means knowing what you know, and more importantly, what you don't know.",
+                    "Did you know? 'Margin of Safety' is building in a buffer to protect against unforeseen events or errors.",
+                    "Did you know? 'Hanlon's Razor' suggests never attributing to malice that which is adequately explained by stupidity.",
+                    "Did you know? 'The Law of Unintended Consequences' states that actions often have effects not foreseen or intended.",
+                    "Did you know? 'Feedback Loops' are processes where outputs are routed back as inputs, influencing future outputs.",
+                    "Did you know? 'Survivorship Bias' is focusing only on things that survived, overlooking those that failed.",
+                    "Did you know? 'Opportunity Cost' is the value of the next best alternative that was not taken.",
+                    "Did you know? 'The Pareto Principle' (80/20 rule) states that roughly 80% of effects come from 20% of causes."
+                ];
+                let currentFactIndex = 0;
+
+                function updateFactFlicker() {
+                    // Fade out
+                    factFlicker.style.opacity = 0;
+                    setTimeout(() => {
+                        factFlicker.innerText = facts[currentFactIndex];
+                        currentFactIndex = (currentFactIndex + 1) % facts.length;
+                        // Fade in
+                        factFlicker.style.opacity = 1;
+                    }, 500); // Half of transition duration
+                }
+
+                // Initial setup
+                updateFactFlicker(); // Initial fact display
+
+                // Update every 8 seconds
+                setInterval(updateFactFlicker, 10000);
+            }
+        });
+    </script>
     <script src="confetti.js"></script>
 </body>
 </html>

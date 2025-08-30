@@ -9,14 +9,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="blog-post">
-
+<body>
+    <div class="animated-background"></div>
     <div class="container">
-        <h1><a href="index.html">Akhil MK</a></h1>
+        <header class="header">
+            <div class="header-info">
+                <div id="countdown-timer" class="countdown-style"></div>
+                <div id="fact-flicker" class="fact-flicker-style"></div>
+            </div>
+        </header>
 
-        <h1>Beyond Templates: Finding Pain-Qualified Segments for AI Automation Success</h1>
-        <p class="post-meta">August 24, 2025</p>
+        <main>
+            <section class="hero">
+                <div class="profile-section">
+                    <div class="profile-content">
+                        <h1 class="greeting">Beyond Templates: Finding Pain-Qualified Segments for AI Automation Success</h1>
+                        <p class="description"><em>August 2025</em></p>
+                    </div>
+                </div>
+            </section>
 
+            <section class="projects">
         <p><strong>⚠️ Warning: Long ass post!</strong></p>
 
         <p>I've been seeing a lot of posts here lately about the struggle with cold outreach, especially in the context of AI automation solutions. It seems like many of us are sending out tons of emails and getting nothing back. I've also noticed people sharing templates from so-called "gurus" that are all about spamming as many people as possible.</p>
@@ -68,7 +81,7 @@
         <p>Once you have your PQS, the outreach becomes much easier and more effective, especially when positioning your AI automation services.</p>
         <ul>
             <li><strong>Data-Driven Narrative:</strong> "I saw on BuiltWith that you're using both HubSpot and Salesforce. I've worked with several B2B companies with this exact stack, and a common challenge is keeping the data between the two systems in sync. This often leads to leads not being routed correctly and sales reps working with outdated information – a problem AI automation can solve."</li>
-            <li><strong>Permissionless Value Prop (PVP):</strong> "I noticed you're hiring a 'Salesforce Administrator' and the job description mentions 'data cleansing' and 'managing integration errors'. This is a common issue with the HubSpot/Salesforce integration. I recorded a short Loom video outlining a custom workflow using n8n that can automate the data syncing process and eliminate 90% of these errors, leveraging AI for intelligent data handling. Hope it's helpful."</li>
+            <li><strong>Permissionless Value Prop (PVP):</strong> "I noticed you're hiring a 'Salesforce Administrator' and the job description mentions 'data cleansing' and 'managing integration errors'. I recorded a short Loom video outlining a custom workflow using n8n that can automate the data syncing process and eliminate 90% of these errors, leveraging AI for intelligent data handling. Hope it's helpful."</li>
         </ul>
 
         <h2>🖊️ The Takeaway</h2>
@@ -76,11 +89,80 @@
 
         <p>Frameworks force you to understand your customer, their pains, and how your AI automation can genuinely help them. It's more work, but it's the kind of work that leads to real results and truly impactful AI implementations.</p>
 
-        <p>So, go out there, find some frameworks you like, test them, and make them your own :)</p>
+        <p>So, go out there, find some frameworks you like, test them, and make them your own :)</p>            </section>
+        </main>
 
-        <p class="copyright">&copy; 2025 Akhil MK. All rights reserved.</p>
+        <footer>
+            <p class="copyright">&copy; 2025 Akhil MK. Inspired by <a href="https://mhouge.dk/" target="_blank">mhouge.dk</a>. Wanna get in touch? Email me at <a href="mailto:akhil@akhilhaving.fun">akhil@akhilhaving.fun</a></p>
+        </footer>
     </div>
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const endOfYear = new Date(2025, 11, 31, 23, 59, 59); // December 31, 2025, 00:00:00
 
+            // Calculate total milliseconds in 2025
+            const startOfYear = new Date(2025, 0, 1, 0, 0, 0); // January 1, 2025, 00:00:00
+            const totalMillisecondsInYear = endOfYear.getTime() - startOfYear.getTime();
+
+            // Calculate milliseconds remaining
+            const millisecondsRemaining = endOfYear.getTime() - now.getTime();
+
+            if (millisecondsRemaining <= 0) {
+                document.getElementById('countdown-timer').innerText = "0% left of 2025";
+                return;
+            }
+
+            const percentageLeft = (millisecondsRemaining / totalMillisecondsInYear) * 100;
+            document.getElementById('countdown-timer').innerText = `${percentageLeft.toFixed(2)}% left of 2025`;
+        }
+
+        // Initial call
+        updateCountdown();
+
+        // Update every second
+        setInterval(updateCountdown, 1000);
+
+        // Fact Flicker Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const factFlicker = document.getElementById('fact-flicker');
+            if (factFlicker) {
+                const facts = [
+                    "Did you know? 'First Principles Thinking' means breaking down problems to their fundamental truths, then building up from there.",
+                    "Did you know? 'Inversion' is solving a problem by considering the opposite: what would guarantee failure, then avoiding it.",
+                    "Did you know? 'Occam's Razor' suggests the simplest explanation is usually the best one.",
+                    "Did you know? 'The Map Is Not The Territory' reminds us that our models of reality are not reality itself.",
+                    "Did you know? 'Compounding' isn't just for money; small, consistent efforts yield massive results over time.",
+                    "Did you know? 'Circle of Competence' means knowing what you know, and more importantly, what you don't know.",
+                    "Did you know? 'Margin of Safety' is building in a buffer to protect against unforeseen events or errors.",
+                    "Did you know? 'Hanlon's Razor' suggests never attributing to malice that which is adequately explained by stupidity.",
+                    "Did you know? 'The Law of Unintended Consequences' states that actions often have effects not foreseen or intended.",
+                    "Did you know? 'Feedback Loops' are processes where outputs are routed back as inputs, influencing future outputs.",
+                    "Did you know? 'Survivorship Bias' is focusing only on things that survived, overlooking those that failed.",
+                    "Did you know? 'Opportunity Cost' is the value of the next best alternative that was not taken.",
+                    "Did you know? 'The Pareto Principle' (80/20 rule) states that roughly 80% of effects come from 20% of causes."
+                ];
+                let currentFactIndex = 0;
+
+                function updateFactFlicker() {
+                    // Fade out
+                    factFlicker.style.opacity = 0;
+                    setTimeout(() => {
+                        factFlicker.innerText = facts[currentFactIndex];
+                        currentFactIndex = (currentFactIndex + 1) % facts.length;
+                        // Fade in
+                        factFlicker.style.opacity = 1;
+                    }, 500); // Half of transition duration
+                }
+
+                // Initial setup
+                updateFactFlicker(); // Initial fact display
+
+                // Update every 8 seconds
+                setInterval(updateFactFlicker, 10000);
+            }
+        });
+    </script>
     <script src="confetti.js"></script>
 </body>
 </html>
