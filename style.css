@@ -434,3 +434,14 @@ footer a:hover {
     background-color: #4a90e2;
     color: white;
 }
+
+.highlight-box {
+    background-color: #f0f8ff;
+    border-left: 5px solid #4a90e2;
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.highlight-box h3 {
+    margin-top: 0;
+}
