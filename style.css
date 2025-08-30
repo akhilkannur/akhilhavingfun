@@ -44,6 +44,15 @@ body {
     flex-shrink: 0;
 }
 
+.profile-image-small {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
 .profile-image {
     width: 160px;
     height: 160px;
