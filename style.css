@@ -9,8 +9,9 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #1A1A1A;
-    line-height: 1.6;
+    line-height: 1.7; /* Increased for readability */
     -webkit-font-smoothing: antialiased;
+    font-size: 18px; /* Base font size */
 }
 
 .container {
@@ -74,10 +75,10 @@ body {
 }
 
 .description {
-    font-size: 16px;
+    font-size: 18px; /* Adjusted for consistency */
     color: #4B4B4B;
     margin-bottom: 20px;
-    line-height: 1.6;
+    line-height: 1.7; /* Adjusted for consistency */
 }
 
 .project-highlights {
@@ -86,7 +87,7 @@ body {
 }
 
 .project-highlights li {
-    font-size: 16px;
+    font-size: 18px; /* Adjusted for consistency */
     color: #666;
     margin-bottom: 8px;
     padding-left: 16px;
@@ -151,10 +152,10 @@ body {
 }
 
 .project-description {
-    font-size: 14px;
+    font-size: 16px; /* Adjusted for consistency */
     color: #666;
     margin-bottom: 16px;
-    line-height: 1.5;
+    line-height: 1.6; /* Adjusted for consistency */
 }
 
 .project-tags {
@@ -198,7 +199,7 @@ body {
 .thought-link {
     color: #333;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px; /* Adjusted for consistency */
     font-weight: 500;
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
@@ -214,7 +215,7 @@ body {
 }
 
 .contact-description {
-    font-size: 16px;
+    font-size: 18px; /* Adjusted for consistency */
     color: #666;
     margin-bottom: 24px;
 }
@@ -224,7 +225,7 @@ body {
 }
 
 .contact-link {
-    font-size: 16px;
+    font-size: 18px; /* Adjusted for consistency */
     color: #333;
     text-decoration: underline;
     font-weight: 500;
@@ -235,7 +236,7 @@ body {
 }
 
 .location {
-    font-size: 14px;
+    font-size: 16px; /* Adjusted for consistency */
     color: #999;
     margin: 8px 0 0 0;
     display: flex;
@@ -245,7 +246,7 @@ body {
 
 .location::before {
     content: '📍';
-    font-size: 12px;
+    font-size: 14px; /* Adjusted for consistency */
 }
 
 .social-links {
@@ -313,29 +314,53 @@ body {
     background-color: #FF3366; /* Secondary Accent */
 }
 
-.blog-post p {
+/* Blog Content Specific Styling */
+.blog-content p {
     margin-bottom: 1.5em; /* Spacing between paragraphs */
     line-height: 1.8; /* Increased line height for readability */
+    font-size: 18px; /* Consistent with body */
 }
 
-.blog-post h1,
-.blog-post h2,
-.blog-post h3,
-.blog-post h4,
-.blog-post h5,
-.blog-post h6 {
-    margin-top: 1.5em; /* Spacing above headings */
-    margin-bottom: 1em; /* Spacing below headings */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+    margin-top: 1.8em; /* Spacing above headings */
+    margin-bottom: 0.8em; /* Spacing below headings */
+    line-height: 1.3; /* Adjusted for readability */
 }
 
-.blog-post ul,
-.blog-post ol {
+.blog-content h1 { font-size: 36px; }
+.blog-content h2 { font-size: 30px; }
+.blog-content h3 { font-size: 24px; }
+.blog-content h4 { font-size: 20px; }
+.blog-content h5 { font-size: 18px; }
+.blog-content h6 { font-size: 16px; }
+
+.blog-content ul,
+.blog-content ol {
     margin-bottom: 1.5em;
-    margin-left: 20px; /* Indent lists */
+    margin-left: 1.5em; /* Indent lists */
 }
 
-.blog-post li {
+.blog-content li {
     margin-bottom: 0.5em;
+    line-height: 1.7; /* Consistent with body */
+}
+
+.blog-content pre {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 1.5em;
+}
+
+.blog-content code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9em;
 }
 
 .hero-accent {
@@ -378,7 +403,7 @@ footer a:hover {
 }
 
 @keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; } 
     100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
 }
 
