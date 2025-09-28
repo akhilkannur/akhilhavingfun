@@ -2,24 +2,32 @@
   "rewrites": [
     {
       "source": "/email-checker/(.*)",
-      "destination": "/email-deliverability-checker/app.py"
+      "destination": "/api/email-deliverability-checker"
     }
   ],
   "builds": [
     {
       "src": "email-deliverability-checker/app.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "." }
     }
   ],
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "s-maxage=1, stale-while-revalidate"
-        }
-      ]
+      "src": "/api/email-deliverability-checker",
+      "dest": "email-deliverability-checker/app.py"
+    },
+    {
+      "src": "/email-checker/(.*)",
+      "dest": "/api/email-deliverability-checker"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
