@@ -1,10 +1,4 @@
 {
-  "rewrites": [
-    {
-      "source": "/email-checker/(.*)",
-      "destination": "/email-deliverability-checker/app.py"
-    }
-  ],
   "builds": [
     {
       "src": "email-deliverability-checker/app.py",
