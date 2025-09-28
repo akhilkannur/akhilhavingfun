@@ -2,28 +2,19 @@
   "rewrites": [
     {
       "source": "/email-checker/(.*)",
-      "destination": "/api/email-deliverability-checker"
+      "destination": "/email-deliverability-checker/app.py"
     }
   ],
   "builds": [
     {
       "src": "email-deliverability-checker/app.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "index.html",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "." }
     }
   ],
   "routes": [
     {
-      "src": "/api/email-deliverability-checker",
-      "dest": "email-deliverability-checker/app.py"
-    },
-    {
       "src": "/email-checker/(.*)",
-      "dest": "/api/email-deliverability-checker"
+      "dest": "/email-deliverability-checker/app.py"
     },
     {
       "src": "/(.*)",
