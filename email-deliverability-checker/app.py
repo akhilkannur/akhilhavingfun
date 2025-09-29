@@ -105,11 +105,11 @@ def check_blacklists(domain):
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
-@app.route('/')
+@app.route('/email-deliverability-checker/')
 def index():
     return render_template('index.html')
 
-@app.route('/check_deliverability', methods=['POST'])
+@app.route('/email-deliverability-checker/check_deliverability', methods=['POST'])
 def check_deliverability():
     data = request.get_json()
     domain = data.get('domain')

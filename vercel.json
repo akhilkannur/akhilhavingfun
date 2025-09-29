@@ -1,5 +1,27 @@
 {
+  "builds": [
+    {
+      "src": "email-deliverability-checker/app.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
+    {
+      "src": "/email-deliverability-checker/(.*)",
+      "dest": "/email-deliverability-checker/app.py"
+    },
+    {
+      "src": "/email-deliverability-checker/static/(.*)",
+      "dest": "/email-deliverability-checker/static/$1"
+    },
+    {
+      "src": "/email-deliverability-checker",
+      "dest": "/email-deliverability-checker/app.py"
+    },
+    {
+      "src": "/email-deliverability-checker/",
+      "dest": "/email-deliverability-checker/app.py"
+    },
     {
       "src": "/",
       "dest": "/public/index.html"

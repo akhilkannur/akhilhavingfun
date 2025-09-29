@@ -3,7 +3,7 @@ document.getElementById('checkButton').addEventListener('click', function() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = 'Loading...';
 
-    fetch('/check_deliverability', {
+    fetch('/email-deliverability-checker/check_deliverability', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
