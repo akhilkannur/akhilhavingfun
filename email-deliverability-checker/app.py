@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import dns.resolver
 import re
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # List of common DNSBLs to check against
 DNSBLS = [
@@ -105,11 +105,11 @@ def check_blacklists(domain):
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
-@app.route('/')
+@app.route('/email-checker/')
 def index():
     return render_template('index.html')
 
-@app.route('/check_deliverability', methods=['POST'])
+@app.route('/email-checker/check_deliverability', methods=['POST'])
 def check_deliverability():
     data = request.get_json()
     domain = data.get('domain')
