@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import dns.resolver
 import re
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # List of common DNSBLs to check against
 DNSBLS = [
