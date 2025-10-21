@@ -1,0 +1,73 @@
+<!-- for testing personalize the landing page content based on UTM source -->
+<!-- HOW TO DEMO THIS FEATURE:
+This demo showcases how a CRM product landing page can be personalized based on the traffic source (e.g., where the user clicked from).
+
+1. Open this page in your browser.
+2. To see personalization for Google Ads traffic (focus on sales/ROI), append "?utm_source=google" to the URL.
+   Example: /public/personalized_landing_page.html?utm_source=google
+3. For Facebook Ads traffic (focus on ease of use/management), use "?utm_source=facebook".
+   Example: /public/personalized_landing_page.html?utm_source=facebook
+4. For LinkedIn Ads traffic (focus on professional connections/client relations), use "?utm_source=linkedin".
+   Example: /public/personalized_landing_page.html?utm_source=linkedin
+5. Any other utm_source or no utm_source will show the default content, emphasizing general CRM benefits.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CRM for Small Business - Personalized Landing Page</title>
+</head>
+<body>
+  <header>
+    <h1 id="personalized-headline">Boost Your Small Business with Our CRM!</h1>
+    <p>Streamline your customer relationships, manage leads, and grow your business efficiently.</p>
+  </header>
+
+  <section>
+    <p>Our intuitive CRM helps businesses like yours simplify operations and achieve remarkable growth.</p>
+    <button id="personalized-cta">Start Your Free Trial</button>
+  </section>
+
+  <footer>
+    <small>© 2025 YourCompany. All rights reserved.</small>
+  </footer>
+
+  <script>
+    (function() {
+      function getUrlParam(param) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(param);
+      }
+
+      const variants = {
+        google: {
+          headline: "Google Ads Special: Drive More Sales with Our CRM!",
+          cta: "Get Started & Boost Your ROI"
+        },
+        facebook: {
+          headline: "Facebook Exclusive: Simplify Your Customer Management!",
+          cta: "Try Our Easy-to-Use CRM"
+        },
+        linkedin: {
+          headline: "LinkedIn Pro: Elevate Your Client Relationships!",
+          cta: "Connect Better with Our CRM"
+        },
+        default: {
+          headline: "Boost Your Small Business with Our CRM!",
+          cta: "Start Your Free Trial"
+        }
+      };
+
+      const source = (getUrlParam("utm_source") || "").toLowerCase();
+      const variant = variants[source] || variants.default;
+
+      const headlineEl = document.getElementById("personalized-headline");
+      const ctaEl = document.getElementById("personalized-cta");
+
+      if (headlineEl) headlineEl.textContent = variant.headline;
+      if (ctaEl) ctaEl.textContent = variant.cta;
+    })();
+  </script>
+</body>
+</html>
