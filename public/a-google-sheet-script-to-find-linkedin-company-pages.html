@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Google Sheet Script to Find LinkedIn Company Pages">
+    <title>A Google Sheet Script to Find LinkedIn Company Pages</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JY27M7VW7W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JY27M7VW7W');
+</script>
+    <link rel="icon" href="DP.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="animated-background"></div>
+    <div class="container">
+        <header class="header">
+            <div class="header-info">
+                <a href="/">
+                    <img src="DP.jpg" alt="Akhil MK" class="profile-image-small">
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1 class="greeting">A Google Sheet Script to Find LinkedIn Company Pages</h1>
+                <p class="description"><em>October 23, 2025</em></p>
+            </section>
+
+            <section class="projects">
+                <div class="blog-content">
+                    <p>If you're working with a list of company websites in a Google Sheet and need to find their official LinkedIn pages, this script can save you a lot of manual work. I've been using it myself to track down LinkedIn company posts, and it's quite handy.</p>
+                    <h2>What the Script Does</h2>
+                    <p>This script goes through your list of company websites. For each one, it fetches the website's HTML and looks for a LinkedIn company page URL (like linkedin.com/company/company-name). If it finds one, it puts that LinkedIn URL into another column in your sheet. If not, it just marks it "Not found."</p>
+                    <h2>How to Set Up Your Sheet</h2>
+                    <p>For the script to work correctly, here's how your sheet should be organized:</p>
+                    <ul>
+                        <li>Column A: This is where your company website URLs go (e.g., example.com).</li>
+                        <li>Column D: This is where the script will write the LinkedIn URLs it finds. Make sure this column is empty for the rows you want to process. The script is designed to skip any row that already has a value here, so you can run it multiple times without re-processing old data.</li>
+                    </ul>
+                    <h2>The Script</h2>
+                    <p>You can add this code to your Google Sheet by going to Extensions > Apps Script.</p>
+<pre><code>function findLinkedInURLs() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const startRow = 2; // IMPORTANT: Update this to the actual row where your data starts
+  const numRows = 1000; // How many rows you want to process in one go
+  const range = sheet.getRange(startRow, 1, numRows, 1); // Reads from Column A
+  const urls = range.getValues();
+
+  urls.forEach((row, index) => {
+    const website = row[0];
+    const currentRow = startRow + index;
+
+    // Skip if Column D already has a value or if the website cell is empty
+    const existingValue = sheet.getRange(currentRow, 4).getValue();
+    if (existingValue || !website) return;
+
+    try {
+      // Fetch the website's HTML
+      const html = UrlFetchApp.fetch(website, {
+        muteHttpExceptions: true,
+        followRedirects: true
+      }).getContentText();
+
+      // Look for the LinkedIn company URL using a regular expression
+      const linkedInMatch = html.match(/https?:\/\/(www.)?linkedin.com\/company\/[a-zA-Z0-9-]+/i);
+
+      if (linkedInMatch) {
+        sheet.getRange(currentRow, 4).setValue(linkedInMatch[0]); // Writes to Column D
+      } else {
+        sheet.getRange(currentRow, 4).setValue("Not found");
+      }
+    } catch (e) {
+      sheet.getRange(currentRow, 4).setValue("Error");
+    }
+
+    // Pause for 2 seconds to avoid overwhelming servers
+    Utilities.sleep(2000);
+
+    // Log progress in the Apps Script console every 50 rows
+    if ((index + 1) % 50 === 0) {
+      Logger.log(`Processed ${index + 1} rows`);
+    }
+  });
+
+  Logger.log("Processing complete.");
+}</code></pre>
+                    <h2>Important Notes Before Running</h2>
+                    <ul>
+                        <li>`startRow`: You'll need to update the const startRow = 2; line to match the row where your data actually begins in the sheet.</li>
+                        <li>Execution Limits: Google Apps Scripts have a time limit (usually 6 minutes per run). Because this script pauses for 2 seconds between requests, it can process about 180 rows in one go. If you have a longer list, just run the script again; it's designed to pick up where it left off.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="copyright">&copy; 2025 Akhil MK. Homepage Inspired by <a href="https://mhouge.dk/" target="_blank">mhouge.dk</a></p>
+        </footer>
+    </div>
+    <script src="confetti.js"></script>
+<script src="https://heyo.so/embed/script?projectId=68b66e4679c04bc3521fbc5b"></script>
+</body>
+</html>
