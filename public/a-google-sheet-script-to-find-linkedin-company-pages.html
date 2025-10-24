@@ -41,16 +41,18 @@
                 <div class="blog-content">
                     <p>If you're working with a list of company websites in a Google Sheet and need to find their official LinkedIn pages, this script can save you a lot of manual work. I've been using it myself to track down LinkedIn company posts, and it's quite handy.</p>
                     <h2>What the Script Does</h2>
-                    <p>This script goes through your list of company websites. For each one, it fetches the website's HTML and looks for a LinkedIn company page URL (like linkedin.com/company/company-name). If it finds one, it puts that LinkedIn URL into another column in your sheet. If not, it just marks it "Not found."</p>
+                    <p>This script goes through your list of company websites. For each one, it fetches the website's HTML and looks for a LinkedIn company page URL (like linkedin.com/company/company-name). If it finds one, it puts that LinkedIn URL into another column in your sheet. If not, it just marks it "Not found." This works most of the time because around 90% of B2B companies link to their LinkedIn page from their homepage.</p>
                     <h2>How to Set Up Your Sheet</h2>
                     <p>For the script to work correctly, here's how your sheet should be organized:</p>
                     <ul>
                         <li>Column A: This is where your company website URLs go (e.g., example.com).</li>
-                        <li>Column D: This is where the script will write the LinkedIn URLs it finds. Make sure this column is empty for the rows you want to process. The script is designed to skip any row that already has a value here, so you can run it multiple times without re-processing old data.</li>
+                        <li>Column B: This is where the script will write the LinkedIn URLs it finds. Make sure this column is empty for the rows you want to process. The script is designed to skip any row that already has a value here, so you can run it multiple times without re-processing old data.</li>
                     </ul>
                     <h2>The Script</h2>
                     <p>You can add this code to your Google Sheet by going to Extensions > Apps Script.</p>
-<pre><code>function findLinkedInURLs() {
+                    <div style="position: relative;">
+                        <button onclick="copyToClipboard()" style="position: absolute; top: 10px; right: 10px; background: #eee; border: 1px solid #ccc; padding: 5px 10px; cursor: pointer;">Copy</button>
+<pre id="script-text"><code>function findLinkedInURLs() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const startRow = 2; // IMPORTANT: Update this to the actual row where your data starts
   const numRows = 1000; // How many rows you want to process in one go
@@ -61,8 +63,8 @@
     const website = row[0];
     const currentRow = startRow + index;
 
-    // Skip if Column D already has a value or if the website cell is empty
-    const existingValue = sheet.getRange(currentRow, 4).getValue();
+    // Skip if Column B already has a value or if the website cell is empty
+    const existingValue = sheet.getRange(currentRow, 2).getValue();
     if (existingValue || !website) return;
 
     try {
@@ -76,12 +78,12 @@
       const linkedInMatch = html.match(/https?:\/\/(www.)?linkedin.com\/company\/[a-zA-Z0-9-]+/i);
 
       if (linkedInMatch) {
-        sheet.getRange(currentRow, 4).setValue(linkedInMatch[0]); // Writes to Column D
+        sheet.getRange(currentRow, 2).setValue(linkedInMatch[0]); // Writes to Column B
       } else {
-        sheet.getRange(currentRow, 4).setValue("Not found");
+        sheet.getRange(currentRow, 2).setValue("Not found");
       }
     } catch (e) {
-      sheet.getRange(currentRow, 4).setValue("Error");
+      sheet.getRange(currentRow, 2).setValue("Error");
     }
 
     // Pause for 2 seconds to avoid overwhelming servers
@@ -95,6 +97,15 @@
 
   Logger.log("Processing complete.");
 }</code></pre>
+                    </div>
+                    <script>
+                        function copyToClipboard() {
+                            const scriptText = document.getElementById('script-text').innerText;
+                            navigator.clipboard.writeText(scriptText).then(() => {
+                                alert('Script copied to clipboard!');
+                            });
+                        }
+                    </script>
                     <h2>Important Notes Before Running</h2>
                     <ul>
                         <li>`startRow`: You'll need to update the const startRow = 2; line to match the row where your data actually begins in the sheet.</li>
