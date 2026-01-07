@@ -7,7 +7,7 @@ fi
 
 BLOG_TITLE="$1"
 CONTENT_FILE="$2"
-OUTPUT_DIR="/home/akhilnairmk/akhilhavingfun"
+OUTPUT_DIR="/home/akhilnairmk/akhilhavingfun/public"
 TEMPLATE_FILE="$OUTPUT_DIR/blog-template.html"
 INDEX_FILE="$OUTPUT_DIR/index.html"
 
@@ -33,7 +33,7 @@ sed -e "s|<!-- BLOG_TITLE_HERE -->|$ESCAPED_BLOG_TITLE|g" \
 
 # Add link to index.html
 # First, create the new link HTML
-NEW_LINK_HTML="                    <a href=\"/\" class=\"thought-link\">$BLOG_TITLE</a>"
+NEW_LINK_HTML="                    <a href=\"$SLUG.html\" class=\"thought-link\">$BLOG_TITLE</a>"
 
 # Check if the new link already exists to prevent duplicates
 if ! grep -q "$SLUG.html" "$INDEX_FILE"; then
