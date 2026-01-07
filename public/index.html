@@ -175,22 +175,22 @@
     <script>
         function updateCountdown() {
             const now = new Date();
-            const endOfYear = new Date(2025, 11, 31, 23, 59, 59); // December 31, 2025, 00:00:00
+            const endOfYear = new Date(2026, 11, 31, 23, 59, 59); // December 31, 2026, 00:00:00
 
-            // Calculate total milliseconds in 2025
-            const startOfYear = new Date(2025, 0, 1, 0, 0, 0); // January 1, 2025, 00:00:00
+            // Calculate total milliseconds in 2026
+            const startOfYear = new Date(2026, 0, 1, 0, 0, 0); // January 1, 2026, 00:00:00
             const totalMillisecondsInYear = endOfYear.getTime() - startOfYear.getTime();
 
             // Calculate milliseconds remaining
             const millisecondsRemaining = endOfYear.getTime() - now.getTime();
 
             if (millisecondsRemaining <= 0) {
-                document.getElementById('countdown-timer').innerText = "0% left of 2025";
+                document.getElementById('countdown-timer').innerText = "0% left of 2026";
                 return;
             }
 
             const percentageLeft = (millisecondsRemaining / totalMillisecondsInYear) * 100;
-            document.getElementById('countdown-timer').innerText = `${percentageLeft.toFixed(2)}% left of 2025`;
+            document.getElementById('countdown-timer').innerText = `${percentageLeft.toFixed(2)}% left of 2026`;
         }
 
         // Initial call
