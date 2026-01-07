@@ -26,6 +26,8 @@ ESCAPED_BLOG_TITLE=$(echo "$BLOG_TITLE" | sed -e 's/[\/&]/\\&/g')
 
 # Populate the template
 sed -e "s|<!-- BLOG_TITLE_HERE -->|$ESCAPED_BLOG_TITLE|g" \
+    -e "s|<!-- BLOG_SLUG_HERE -->|$SLUG.html|g" \
+    -e "s|<!-- BLOG_DESCRIPTION_HERE -->|$ESCAPED_BLOG_TITLE|g" \
     -e "s|<!-- BLOG_DATE_HERE -->|$BLOG_DATE|g" \
     -e "/<!-- BLOG_CONTENT_HERE -->/r $CONTENT_FILE" \
     -e "/<!-- BLOG_CONTENT_HERE -->/d" \
