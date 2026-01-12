@@ -96,11 +96,18 @@
         .pill-accent { background: #FFF1F2; color: #BE123C; border-color: #FECDD3; }
 
         /* BUTTONS */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            padding: 18px 40px;
+            padding: 16px 32px;
             border-radius: 8px;
             font-weight: 600;
             font-size: 1.1rem;
@@ -116,6 +123,16 @@
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #E5E7EB;
+        }
+        .btn-secondary:hover {
+            border-color: #000;
+            background-color: #fff;
         }
 
         .btn-white {
@@ -244,6 +261,8 @@
             .pricing-section { padding: 40px 20px; }
             .preview-container { overflow-x: scroll; }
             .data-table { min-width: 600px; }
+            .btn-group { flex-direction: column; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
@@ -259,16 +278,20 @@
     <!-- HERO SECTION -->
     <section class="hero text-center">
         <div class="container">
-            <div class="pill pill-accent">Updated: February 12, 2026</div>
+            <div class="pill pill-accent">Limited Drop: February 2026 Edition</div>
             <h1>Stop Pitching<br>Broke Companies.</h1>
             <p class="subhead">
                 Every month, we curate <strong>1,000 B2B companies</strong> that have verified purchasing power.
                 500 just raised capital. 500 are aggressively scaling ads.
             </p>
-            <div>
+            <div class="btn-group">
                 <a href="#pricing" class="btn btn-primary">Get This Month's List — $49</a>
-                <p style="margin-top: 12px; font-size: 0.85rem; color: #9CA3AF;">Instant CSV Download • Cancel Anytime</p>
+                <a href="sample_data.csv" download class="btn btn-secondary">↓ Download Sample (10 Rows)</a>
             </div>
+            <p style="margin-top: 16px; font-size: 0.85rem; color: #9CA3AF;">
+                <span style="display: inline-block; width: 8px; height: 8px; background: #10B981; border-radius: 50%; margin-right: 6px;"></span>
+                Enrichment-Ready for Apollo, Clay, & Smartlead.
+            </p>
 
             <!-- PRODUCT MOCKUP -->
             <div class="preview-container">
@@ -282,7 +305,7 @@
                         <tr>
                             <th>Company</th>
                             <th>Signal Type</th>
-                            <th>Details</th>
+                            <th>Context</th>
                             <th>Decision Maker</th>
                             <th>Action</th>
                         </tr>
@@ -343,7 +366,7 @@
                 <div class="step-card">
                     <div class="step-num">01</div>
                     <h3>We Track The Money</h3>
-                    <p>Our systems monitor thousands of sources for confirmed funding announcements (SEC filings, press) and LinkedIn's Ad Library API for new campaign launches.</p>
+                    <p>Our systems monitor thousands of sources for confirmed funding announcements and the LinkedIn Ad Library for new campaign launches.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-num">02</div>
@@ -352,8 +375,8 @@
                 </div>
                 <div class="step-card">
                     <div class="step-num">03</div>
-                    <h3>You Get The Cream</h3>
-                    <p>We compile the top 1,000 verified opportunities into a clean CSV and drop it in your inbox on the 1st of every month.</p>
+                    <h3>You Enrich & Convert</h3>
+                    <p>We deliver the raw signal: The Company & The Decision Maker Title. You upload it to your favorite enrichment tool (Clay/Apollo) to get the verified email, then hit send.</p>
                 </div>
             </div>
         </div>
@@ -413,9 +436,9 @@
                         <td><span class="check">Direct Links to Ads</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Focus</strong></td>
-                        <td>Volume (Quantity)</td>
-                        <td><span class="check">Intent (Quality)</span></td>
+                        <td><strong>Workflow</strong></td>
+                        <td>Spam Ready (Low Quality)</td>
+                        <td><span class="check">Enrichment Ready (High Quality)</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -449,32 +472,24 @@
             <h2 class="text-center" style="margin-bottom: 40px;">Frequently Asked Questions</h2>
             
             <div class="faq-item">
-                <div class="faq-q">What exactly do I get?</div>
-                <p>You get a CSV file containing 1,000 rows. Columns include Company Name, Website, LinkedIn URL, Location, Funding Date/Amount (for funded segment), and Ad Library Links/Count (for ad segment).</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Can I cancel easily?</div>
-                <p>Yes. There is a self-serve portal link in every email. You can cancel with one click. No questions asked.</p>
+                <div class="faq-q">Can I see the data before I buy?</div>
+                <p>Yes. You can <a href="sample_data.csv" download style="text-decoration: underline; color: #000;">download a sample CSV</a> to check the quality and compatibility with your workflow.</p>
             </div>
 
             <div class="faq-item">
                 <div class="faq-q">Do you provide email addresses?</div>
-                <p>We provide the <strong>Company</strong> and <strong>Decision Maker Titles</strong>. We focus on identifying the <em>opportunity</em>. You can easily plug this list into Apollo, Clay, or any enrichment tool to get the specific contact email you need (Sales, Marketing, Founder, etc.).</p>
+                <p>We provide the <strong>Company</strong> and <strong>Decision Maker Titles</strong>. We focus on the "Hard Part" (identifying the 1% of buyers). You can easily upload this CSV to Apollo, Clay, or Smartlead to get the verified emails. This ensures you always have the freshest contact data.</p>
             </div>
             
             <div class="faq-item">
-                <div class="faq-q">How is the "Ad Spender" segment defined?</div>
-                <p>We look for companies running <em>active</em> ads on LinkedIn at the time of the scan. We prioritize companies running video ads or having a high volume of creatives, as this signals a sophisticated marketing operation.</p>
+                <div class="faq-q">Does the data repeat?</div>
+                <p>We aim for net-new opportunities every month. If a company raises a new round (e.g. Series B after Series A), they might appear again, but the goal is to keep your pipeline fed with fresh leads.</p>
             </div>
-        </div>
-    </section>
 
-    <section class="section bg-gray">
-        <div class="container text-center">
-            <h3>Ready to fill your pipeline?</h3>
-            <p style="max-width: 500px; margin: 20px auto;">Stop wasting time on research. Let us deliver the top 1% of opportunities to your inbox.</p>
-            <a href="#pricing" class="btn btn-primary">Get the List</a>
+             <div class="faq-item">
+                <div class="faq-q">Can I cancel easily?</div>
+                <p>Yes. There is a self-serve portal link in every email. You can cancel with one click. No questions asked.</p>
+            </div>
         </div>
     </section>
 
