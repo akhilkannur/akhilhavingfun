@@ -3,504 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Growth & Intent 1K | High-Signal B2B Leads</title>
-    <meta name="description" content="A monthly curated list of 1,000 B2B companies with verified budgets. Stop pitching broke companies.">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="The Growth & Intent 1K">
-    <meta property="og:description" content="Get 1,000 verified leads with budget every month. 500 Funded + 500 Active Ad Spenders.">
+    <title>The Growth & Intent 1K | Exclusive B2B Leads</title>
+    <meta name="description" content="Get 1,000 verified B2B leads with proven budget every month. The only list that filters for Liquidity and Ad Spend.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* RESET & BASE */
+        /* 
+           REPLICATING BOOKTHEMOVE.COM STYLE 
+           - Font: Plus Jakarta Sans (Clean, Geometric)
+           - Colors: Dark Navy/Black background for contrast sections, Vibrant Blue Accents
+           - Layout: Center aligned, Card-based features, Clean Typography
+        */
+
+        :root {
+            --primary: #0066FF; /* Vibrant Blue */
+            --dark: #0A0F1C;    /* Deep Navy/Black */
+            --gray: #64748B;    /* Slate Gray */
+            --light: #F8FAFC;   /* Very Light Gray/Blue */
+            --white: #FFFFFF;
+            --border: #E2E8F0;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        
+
         body {
-            font-family: 'Inter', sans-serif;
-            color: #111;
-            background-color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
             line-height: 1.6;
         }
 
-        a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
-        a:hover { opacity: 0.8; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s; }
 
-        /* LAYOUT UTILS */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section { padding: 100px 0; }
-        .section-sm { padding: 60px 0; }
-        .bg-gray { background-color: #F9FAFB; }
-        .bg-black { background-color: #050505; color: #fff; }
-        
+        /* UTILITIES */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .text-center { text-align: center; }
-        .flex-center { display: flex; justify-content: center; align-items: center; }
+        .section { padding: 100px 0; }
+        .bg-light { background-color: var(--light); }
+        .bg-dark { background-color: var(--dark); color: var(--white); }
         
         /* TYPOGRAPHY */
-        h1, h2, h3, h4 { letter-spacing: -0.03em; font-weight: 800; color: #000; }
-        .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4 { color: #fff; }
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
         
-        h1 {
-            font-size: 4rem;
-            line-height: 1.05;
-            margin-bottom: 24px;
-        }
-
-        h2 { font-size: 2.8rem; margin-bottom: 24px; line-height: 1.1; }
-        h3 { font-size: 1.5rem; margin-bottom: 12px; }
-        h4 { font-size: 1.1rem; margin-bottom: 8px; }
+        h1 { font-size: 3.5rem; margin-bottom: 24px; color: var(--dark); }
+        h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        h3 { font-size: 1.25rem; margin-bottom: 12px; }
         
-        p {
-            color: #555;
-            font-size: 1.125rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        .bg-black p { color: #aaa; }
+        p { color: var(--gray); font-size: 1.125rem; margin-bottom: 24px; }
+        .bg-dark p { color: #94A3B8; }
 
-        .subhead {
-            font-size: 1.35rem;
-            color: #666;
-            max-width: 640px;
-            margin: 0 auto 40px auto;
-            font-weight: 400;
-        }
-
-        .lead-text {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: #333;
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-        }
-
-        /* BADGES */
-        .pill {
-            display: inline-block;
-            background: #F3F4F6;
-            color: #374151;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            border: 1px solid #E5E7EB;
-        }
-        .pill-accent { background: #FFF1F2; color: #BE123C; border-color: #FECDD3; }
+        .subhead { max-width: 600px; margin: 0 auto 40px auto; font-size: 1.25rem; }
 
         /* BUTTONS */
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         .btn {
             display: inline-flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             padding: 16px 32px;
-            border-radius: 8px;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.2s ease;
+            border-radius: 8px;
+            font-size: 1rem;
             cursor: pointer;
+            transition: transform 0.2s;
         }
-
+        
         .btn-primary {
-            background-color: #000;
-            color: #fff;
-            border: 1px solid #000;
+            background-color: var(--primary);
+            color: var(--white);
+            border: 1px solid var(--primary);
         }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,102,255,0.2); }
 
-        .btn-secondary {
+        .btn-outline {
             background-color: transparent;
-            color: #000;
-            border: 1px solid #E5E7EB;
+            color: var(--dark);
+            border: 1px solid var(--border);
         }
-        .btn-secondary:hover {
-            border-color: #000;
-            background-color: #fff;
-        }
+        .btn-outline:hover { border-color: var(--dark); }
 
-        .btn-white {
-            background-color: #fff;
-            color: #000;
-        }
-        .btn-white:hover {
-            background-color: #f0f0f0;
-        }
+        /* NAV */
+        nav { padding: 24px 0; border-bottom: 1px solid var(--light); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
 
         /* HERO */
-        .hero { padding-top: 120px; padding-bottom: 80px; }
-
-        /* MOCKUP */
-        .preview-container {
-            margin-top: 60px;
-            background: #fff;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-        }
-        .preview-header {
-            background: #F9FAFB;
-            padding: 12px 20px;
-            border-bottom: 1px solid #E5E7EB;
-            display: flex;
-            gap: 8px;
-        }
-        .dot { width: 10px; height: 10px; border-radius: 50%; background: #D1D5DB; }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-        }
-        .data-table th {
-            text-align: left;
-            padding: 12px 20px;
-            background: #fff;
-            color: #6B7280;
-            font-weight: 600;
-            border-bottom: 1px solid #E5E7EB;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-        .data-table td { padding: 16px 20px; border-bottom: 1px solid #F3F4F6; color: #111; }
-        .tag { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
-        .tag-fund { background: #DCFCE7; color: #166534; }
-        .tag-ad { background: #DBEAFE; color: #1E40AF; }
-        .blur-row td { color: transparent; text-shadow: 0 0 8px rgba(0,0,0,0.3); user-select: none; }
-
-        /* PROCESS STEPS */
-        .step-grid {
+        .hero { padding: 120px 0 80px 0; }
+        
+        /* FEATURE GRID */
+        .feature-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
             margin-top: 60px;
         }
-        .step-card {
-            background: #fff;
+        
+        .feature-card {
             padding: 32px;
-            border-radius: 12px;
-            border: 1px solid #eee;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            background: #EFF6FF;
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+
+        /* HOW IT WORKS (Timeline) */
+        .process-steps {
+            max-width: 800px;
+            margin: 60px auto 0 auto;
+        }
+        .step {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+            text-align: left;
         }
         .step-num {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #eee;
-            line-height: 1;
-            margin-bottom: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
-        /* COMPARISON TABLE */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 40px;
-        }
-        .comparison-table th, .comparison-table td {
-            padding: 24px;
-            border-bottom: 1px solid #eee;
-            font-size: 1.1rem;
-        }
-        .comparison-table th { text-align: left; }
-        .check { color: #10B981; font-weight: bold; }
-        .cross { color: #EF4444; }
-
-        /* USE CASES */
-        .use-case-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 60px;
-        }
-        .use-case-card {
-            background: #F9FAFB;
-            padding: 40px;
-            border-radius: 12px;
-        }
-
-        /* PRICING */
-        .pricing-section {
-            background: #111;
-            color: #fff;
+        /* PRICING CARD */
+        .pricing-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--dark);
+            color: white;
             border-radius: 24px;
-            padding: 80px 40px;
-            margin-top: 60px;
-            text-align: center;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
         }
-        .price-tag { font-size: 5rem; font-weight: 800; line-height: 1; margin: 30px 0; color: #fff; }
-        .checklist { display: inline-block; text-align: left; margin-bottom: 40px; }
-        .checklist li { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; color: #E5E7EB; font-size: 1.1rem; }
-        .checklist svg { width: 20px; height: 20px; color: #10B981; }
-
+        .pricing-container h2 { color: white; }
+        .pricing-container p { color: #94A3B8; }
+        .price-large { font-size: 4rem; font-weight: 700; line-height: 1; margin: 30px 0; }
+        
+        .check-list { list-style: none; margin: 32px 0; text-align: left; }
+        .check-list li { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; color: #E2E8F0; }
+        
         /* FAQ */
-        .faq-item { border-bottom: 1px solid #eee; padding: 24px 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-q { font-weight: 700; font-size: 1.2rem; margin-bottom: 8px; cursor: pointer; }
+        .faq-grid { max-width: 800px; margin: 60px auto 0 auto; display: grid; gap: 16px; }
+        .faq-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: left; }
+        .faq-q { font-weight: 600; margin-bottom: 8px; color: var(--dark); }
+        .faq-a { font-size: 0.95rem; color: var(--gray); margin-bottom: 0; }
 
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            h1 { font-size: 2.8rem; }
-            h2 { font-size: 2rem; }
-            .step-grid, .use-case-grid { grid-template-columns: 1fr; }
-            .pricing-section { padding: 40px 20px; }
-            .preview-container { overflow-x: scroll; }
-            .data-table { min-width: 600px; }
-            .btn-group { flex-direction: column; }
-            .btn { width: 100%; }
+            h1 { font-size: 2.5rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .pricing-container { padding: 32px; }
         }
     </style>
 </head>
 <body>
 
-    <nav style="position: absolute; width: 100%; padding: 24px 0; top: 0;">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="font-weight: 700; font-size: 1.1rem;">Akhil MK</a>
-            <a href="mailto:akhil@lisnagency.online" style="color: #666; font-size: 0.9rem;">Contact Support</a>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <span style="width: 24px; height: 24px; background: var(--primary); border-radius: 4px;"></span>
+                Growth & Intent 1K
+            </a>
+            <a href="#pricing" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Get the List</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero text-center">
         <div class="container">
-            <div class="pill pill-accent">Limited Drop: February 2026 Edition</div>
-            <h1>Stop Pitching<br>Broke Companies.</h1>
-            <p class="subhead">
-                Every month, we curate <strong>1,000 B2B companies</strong> that have verified purchasing power.
-                500 just raised capital. 500 are aggressively scaling ads.
-            </p>
-            <div class="btn-group">
-                <a href="#pricing" class="btn btn-primary">Get This Month's List — $49</a>
-                <a href="sample_data.csv" download class="btn btn-secondary">↓ Download Sample (10 Rows)</a>
+            <div style="display: inline-block; background: #EFF6FF; color: var(--primary); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; margin-bottom: 24px;">
+                🚀 February 2026 Drop is Live
             </div>
-            <p style="margin-top: 16px; font-size: 0.85rem; color: #9CA3AF;">
-                <span style="display: inline-block; width: 8px; height: 8px; background: #10B981; border-radius: 50%; margin-right: 6px;"></span>
-                Enrichment-Ready for Apollo, Clay, & Smartlead.
+            <h1>The "Cheat Code" for<br>B2B Agencies.</h1>
+            <p class="subhead">
+                Get 1,000 verified companies every month that just raised capital or started running ads. 
+                Stop pitching broke leads.
             </p>
-
-            <!-- PRODUCT MOCKUP -->
-            <div class="preview-container">
-                <div class="preview-header">
-                    <div class="dot" style="background: #EF4444;"></div>
-                    <div class="dot" style="background: #F59E0B;"></div>
-                    <div class="dot" style="background: #10B981;"></div>
-                </div>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Company</th>
-                            <th>Signal Type</th>
-                            <th>Context</th>
-                            <th>Decision Maker</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>FinTech ScaleUp Inc.</strong><br><span style="color:#666; font-size:0.8em;">San Francisco, CA</span></td>
-                            <td><span class="tag tag-fund">💰 Series B: $15M</span></td>
-                            <td>Verified 3 days ago</td>
-                            <td>VP of Growth</td>
-                            <td><a href="#" style="color:#2563EB;">LinkedIn ↗</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>AI Marketing Tool</strong><br><span style="color:#666; font-size:0.8em;">Austin, TX</span></td>
-                            <td><span class="tag tag-ad">📢 24 Active Ads</span></td>
-                            <td>Video Ads (High Budget)</td>
-                            <td>Founder</td>
-                            <td><a href="#" style="color:#2563EB;">Ad Library ↗</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Cloud Infra Corp</strong><br><span style="color:#666; font-size:0.8em;">New York, NY</span></td>
-                            <td><span class="tag tag-fund">💰 Series A: $6M</span></td>
-                            <td>Verified 1 week ago</td>
-                            <td>CTO</td>
-                            <td><a href="#" style="color:#2563EB;">LinkedIn ↗</a></td>
-                        </tr>
-                        <tr class="blur-row"><td>Hidden</td><td>Hidden</td><td>Hidden</td><td>Hidden</td><td>Hidden</td></tr>
-                        <tr class="blur-row"><td>Hidden</td><td>Hidden</td><td>Hidden</td><td>Hidden</td><td>Hidden</td></tr>
-                    </tbody>
-                </table>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="#pricing" class="btn btn-primary">Get 1,000 Leads - $49</a>
+                <a href="sample_data.csv" download class="btn btn-outline">↓ Download Sample</a>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 16px; color: var(--gray);">Trusted by 150+ Agency Owners & Sales Teams</p>
+            
+            <!-- MOCKUP / SOCIAL PROOF VISUAL -->
+            <div style="margin-top: 60px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                <img src="https://placehold.co/1200x600/f8fafc/e2e8f0?text=Data+Dashboard+Preview:+Company+|+Funding+|+Ad+Link" alt="Dashboard Preview" style="width: 100%; display: block;">
             </div>
         </div>
     </section>
 
-    <!-- THE PROBLEM -->
-    <section class="section bg-gray">
+    <!-- FEATURES -->
+    <section class="section bg-light">
         <div class="container text-center">
-            <h2 style="max-width: 800px; margin: 0 auto;">Most lead lists are graveyards.</h2>
-            <p class="lead-text">
-                You buy a database. You enrich it. You craft the perfect email.<br>
-                And then... nothing.
-            </p>
-            <div style="max-width: 700px; margin: 0 auto; text-align: left;">
-                <p><strong>The problem isn't your offer. It's your timing.</strong></p>
-                <p>Standard databases (Apollo, ZoomInfo) tell you who a company <em>is</em>. They don't tell you if they can <em>buy</em>. You end up pitching companies that are freezing budgets, cutting staff, or simply coasting.</p>
-                <p>To win in 2026, you need to filter for <strong>Liquidity</strong> (Cash on Hand) and <strong>Intent</strong> (Active Spending).</p>
+            <h2>Why "Standard" Lists Fail</h2>
+            <p class="subhead">You don't need more data. You need <em>better</em> signals.</p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon-box">📉</div>
+                    <h3>The "Stale Data" Trap</h3>
+                    <p style="font-size: 0.95rem;">Most databases are 6 months old. You pitch companies that are firing, not hiring. We track fresh money movement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">💰</div>
+                    <h3>Liquidity Filter</h3>
+                    <p style="font-size: 0.95rem;">We only list companies that verified a funding round in the last 30 days. They have cash and a mandate to spend.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">🎯</div>
+                    <h3>Ad Intent Signal</h3>
+                    <p style="font-size: 0.95rem;">We verify active ad campaigns. If they are spending $10k on ads, they can afford your $3k retainer.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- HOW IT WORKS -->
     <section class="section">
-        <div class="container">
-            <h2 class="text-center">How We Build The List</h2>
-            <p class="text-center subhead">We don't scrape phone books. We track money movement.</p>
-            
-            <div class="step-grid">
-                <div class="step-card">
-                    <div class="step-num">01</div>
-                    <h3>We Track The Money</h3>
-                    <p>Our systems monitor thousands of sources for confirmed funding announcements and the LinkedIn Ad Library for new campaign launches.</p>
+        <div class="container text-center">
+            <h2>How It Works</h2>
+            <p class="subhead">We do the 40+ hours of research so you don't have to.</p>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h3>We Scan The Market</h3>
+                        <p>Our systems monitor SEC filings, press releases, and the LinkedIn Ad Library API 24/7 to catch new money events.</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-num">02</div>
-                    <h3>We Filter The Noise</h3>
-                    <p>We exclude universities, non-profits, and solo consultants. We only want scalable B2B companies that have the infrastructure to hire agencies and buy software.</p>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h3>We Curate The Top 1%</h3>
+                        <p>We filter out noise (universities, non-profits). We identify the 1,000 highest-potential B2B companies for agencies.</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-num">03</div>
-                    <h3>You Enrich & Convert</h3>
-                    <p>We deliver the raw signal: The Company & The Decision Maker Title. You upload it to your favorite enrichment tool (Clay/Apollo) to get the verified email, then hit send.</p>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h3>You Get The Drop</h3>
+                        <p>On the 1st of every month, you get a clean CSV with Company, Decision Maker Title, Funding Amount, and Ad Library Links.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- USE CASES -->
-    <section class="section bg-black">
-        <div class="container">
-            <h2 class="text-center">Who Is This For?</h2>
-            <div class="use-case-grid">
-                <div class="use-case-card" style="background: #1a1a1a; border: 1px solid #333;">
-                    <h3>⚡ For Agency Owners</h3>
-                    <p>Your retainer is $3k+. You can't afford to waste time on "mom and pop" shops. You need clients who understand that growth costs money.</p>
-                    <ul style="color: #aaa; list-style: disc; padding-left: 20px;">
-                        <li>Pitch Funded Startups: "Congrats on the Series A..."</li>
-                        <li>Pitch Ad Runners: "I saw your ads, here's how to improve them..."</li>
-                    </ul>
-                </div>
-                <div class="use-case-card" style="background: #1a1a1a; border: 1px solid #333;">
-                    <h3>🎯 For B2B Sales Teams</h3>
-                    <p>You have a quota to hit. Cold calling stagnant companies is soul-crushing. You need a list of prospects that are already in "buying mode."</p>
-                    <ul style="color: #aaa; list-style: disc; padding-left: 20px;">
-                        <li>Skip the "education" phase.</li>
-                        <li>Talk to prospects who have a mandate to spend.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARISON -->
-    <section class="section">
-        <div class="container" style="max-width: 800px;">
-            <h2 class="text-center">Why Growth & Intent 1K?</h2>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Standard Databases</th>
-                        <th>Growth & Intent 1K</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Data Freshness</strong></td>
-                        <td>Often 6-12 months old</td>
-                        <td><span class="check">Verified This Month</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Budget Signal</strong></td>
-                        <td>Unknown / Revenue Estimates</td>
-                        <td><span class="check">Real Funding & Ad Spend</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ad Creative Visibility</strong></td>
-                        <td><span class="cross">No</span></td>
-                        <td><span class="check">Direct Links to Ads</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Workflow</strong></td>
-                        <td>Spam Ready (Low Quality)</td>
-                        <td><span class="check">Enrichment Ready (High Quality)</span></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </section>
 
     <!-- PRICING -->
-    <section class="container" id="pricing">
-        <div class="pricing-section">
-            <h2>The No-Brainer Offer</h2>
-            <p>One client pays for 10 years of this subscription.</p>
-            
-            <div class="price-tag">$49<span>/month</span></div>
+    <section class="section bg-light" id="pricing">
+        <div class="container text-center">
+            <div class="pricing-container">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #0066FF, #00CCFF);"></div>
+                <h2>Simple Pricing</h2>
+                <p>One active client pays for 10 years of this list.</p>
+                
+                <div class="price-large">$49<span style="font-size: 1.5rem; font-weight: 400; color: #64748B;">/mo</span></div>
+                
+                <ul class="check-list">
+                    <li>✓ 1,000 Verified High-Intent Leads</li>
+                    <li>✓ 500 Funded + 500 Ad Spenders</li>
+                    <li>✓ Direct Links to Ad Creative</li>
+                    <li>✓ Enrichment-Ready Format</li>
+                    <li>✓ Cancel Anytime</li>
+                </ul>
 
-            <ul class="checklist">
-                <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> 1,000 Verified High-Intent Leads</li>
-                <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> 500 Freshly Funded Companies</li>
-                <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> 500 Active Ad Spenders</li>
-                <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg> Cancel Anytime (One Click)</li>
-            </ul>
-
-            <br>
-            <a href="https://buy.stripe.com/PLACEHOLDER_LINK" class="btn btn-white" style="padding: 20px 60px;">Subscribe Now</a>
-            <p style="font-size: 0.8rem; margin-top: 24px; opacity: 0.6;">First drop arrives immediately.</p>
+                <a href="https://buy.stripe.com/PLACEHOLDER_LINK" class="btn btn-primary" style="width: 100%; padding: 20px;">Subscribe Now</a>
+                <p style="font-size: 0.85rem; margin-top: 16px; opacity: 0.6;">Secure payment via Stripe</p>
+            </div>
         </div>
     </section>
 
     <!-- FAQ -->
     <section class="section">
-        <div class="container" style="max-width: 800px;">
-            <h2 class="text-center" style="margin-bottom: 40px;">Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-q">Can I see the data before I buy?</div>
-                <p>Yes. You can <a href="sample_data.csv" download style="text-decoration: underline; color: #000;">download a sample CSV</a> to check the quality and compatibility with your workflow.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Do you provide email addresses?</div>
-                <p>We provide the <strong>Company</strong> and <strong>Decision Maker Titles</strong>. We focus on the "Hard Part" (identifying the 1% of buyers). You can easily upload this CSV to Apollo, Clay, or Smartlead to get the verified emails. This ensures you always have the freshest contact data.</p>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-q">Does the data repeat?</div>
-                <p>We aim for net-new opportunities every month. If a company raises a new round (e.g. Series B after Series A), they might appear again, but the goal is to keep your pipeline fed with fresh leads.</p>
-            </div>
-
-             <div class="faq-item">
-                <div class="faq-q">Can I cancel easily?</div>
-                <p>Yes. There is a self-serve portal link in every email. You can cancel with one click. No questions asked.</p>
+        <div class="container text-center">
+            <h2>Common Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q">Do you provide email addresses?</div>
+                    <p class="faq-a">We provide the Decision Maker *Title* and Company. You use Apollo/Clay to get the verified email. This ensures 100% deliverability.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Is there a contract?</div>
+                    <p class="faq-a">No. It's a monthly subscription. You can cancel instantly with one click from your receipt.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">What industries are included?</div>
+                    <p class="faq-a">Primarily B2B SaaS, FinTech, HealthTech, and Professional Services. Companies that hire agencies.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center section-sm" style="border-top: 1px solid #E5E7EB; color: #9CA3AF;">
-        <div class="container">
-            <p>&copy; 2026 Akhil MK. All rights reserved.</p>
-            <div style="margin-top: 20px;">
-                <a href="index.html" style="margin: 0 10px;">Home</a>
-                <a href="#" style="margin: 0 10px;">Terms</a>
-                <a href="#" style="margin: 0 10px;">Privacy</a>
+    <footer class="bg-dark" style="padding: 60px 0;">
+        <div class="container text-center">
+            <h3 style="color: white; margin-bottom: 24px;">Growth & Intent 1K</h3>
+            <p style="margin-bottom: 40px;">Data-driven leads for modern sales teams.</p>
+            <div style="display: flex; justify-content: center; gap: 24px; opacity: 0.6; font-size: 0.9rem;">
+                <a href="index.html">Back to Portfolio</a>
+                <a href="mailto:akhil@lisnagency.online">Contact</a>
+                <a href="#">Privacy Policy</a>
             </div>
+            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 Akhil MK.</p>
         </div>
     </footer>
 
