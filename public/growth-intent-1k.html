@@ -3,330 +3,537 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Growth & Intent 1K | Exclusive B2B Leads</title>
+    <title>Growth & Intent 1K | Reach Funded B2B Leads</title>
     <meta name="description" content="Get 1,000 verified B2B leads with proven budget every month. The only list that filters for Liquidity and Ad Spend.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* 
-           REPLICATING BOOKTHEMOVE.COM STYLE 
-           - Font: Plus Jakarta Sans (Clean, Geometric)
-           - Colors: Dark Navy/Black background for contrast sections, Vibrant Blue Accents
-           - Layout: Center aligned, Card-based features, Clean Typography
-        */
-
+        /* RESET & BASE */
         :root {
-            --primary: #0066FF; /* Vibrant Blue */
-            --dark: #0A0F1C;    /* Deep Navy/Black */
-            --gray: #64748B;    /* Slate Gray */
-            --light: #F8FAFC;   /* Very Light Gray/Blue */
+            --bg-body: #F9FAFB;
+            --text-main: #111827;
+            --text-muted: #6B7280;
+            --accent: #000000;
             --white: #FFFFFF;
-            --border: #E2E8F0;
+            --border: #E5E7EB;
+            --radius-lg: 24px;
+            --radius-md: 12px;
+            --radius-full: 9999px;
+            --shadow-soft: 0 20px 40px -12px rgba(0, 0, 0, 0.05);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--dark);
-            background-color: var(--white);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
         }
 
-        a { text-decoration: none; color: inherit; transition: all 0.2s; }
-
-        /* UTILITIES */
+        a { text-decoration: none; color: inherit; }
+        
+        /* UTILS */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .flex-col { flex-direction: column; }
+        .grid { display: grid; }
+        .grid-cols-2 { grid-template-columns: 1fr 1fr; }
+        .grid-cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .gap-12 { gap: 48px; }
+        .gap-6 { gap: 24px; }
         .text-center { text-align: center; }
-        .section { padding: 100px 0; }
-        .bg-light { background-color: var(--light); }
-        .bg-dark { background-color: var(--dark); color: var(--white); }
+        .font-bold { font-weight: 700; }
+        .text-sm { font-size: 0.875rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-muted { color: var(--text-muted); }
+        .section-py { padding: 100px 0; }
         
-        /* TYPOGRAPHY */
-        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+        /* HEADER */
+        header { padding: 24px 0; position: absolute; width: 100%; top: 0; z-index: 10; }
+        .nav-logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
         
-        h1 { font-size: 3.5rem; margin-bottom: 24px; color: var(--dark); }
-        h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        h3 { font-size: 1.25rem; margin-bottom: 12px; }
-        
-        p { color: var(--gray); font-size: 1.125rem; margin-bottom: 24px; }
-        .bg-dark p { color: #94A3B8; }
-
-        .subhead { max-width: 600px; margin: 0 auto 40px auto; font-size: 1.25rem; }
-
         /* BUTTONS */
         .btn {
             display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
             font-weight: 600;
-            border-radius: 8px;
-            font-size: 1rem;
+            transition: all 0.2s;
             cursor: pointer;
-            transition: transform 0.2s;
+            font-size: 0.95rem;
         }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-            border: 1px solid var(--primary);
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,102,255,0.2); }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--dark);
-            border: 1px solid var(--border);
-        }
-        .btn-outline:hover { border-color: var(--dark); }
-
-        /* NAV */
-        nav { padding: 24px 0; border-bottom: 1px solid var(--light); }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+        .btn-black { background: var(--accent); color: var(--white); border: 1px solid var(--accent); }
+        .btn-black:hover { transform: translateY(-2px); opacity: 0.9; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
+        .btn-outline:hover { border-color: var(--text-main); }
 
         /* HERO */
-        .hero { padding: 120px 0 80px 0; }
-        
-        /* FEATURE GRID */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            margin-top: 60px;
-        }
-        
-        .feature-card {
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            background: var(--white);
-            transition: transform 0.2s;
-        }
-        .feature-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        
-        .icon-box {
-            width: 48px;
-            height: 48px;
-            background: #EFF6FF;
-            color: var(--primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            font-size: 24px;
-        }
-
-        /* HOW IT WORKS (Timeline) */
-        .process-steps {
-            max-width: 800px;
-            margin: 60px auto 0 auto;
-        }
-        .step {
-            display: flex;
-            gap: 24px;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-        .step-num {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        /* PRICING CARD */
-        .pricing-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: var(--dark);
-            color: white;
-            border-radius: 24px;
-            padding: 48px;
+        .hero {
+            background: linear-gradient(180deg, #E0F2FE 0%, #FFF7ED 100%);
+            padding-top: 160px;
+            padding-bottom: 80px;
             position: relative;
             overflow: hidden;
         }
-        .pricing-container h2 { color: white; }
-        .pricing-container p { color: #94A3B8; }
-        .price-large { font-size: 4rem; font-weight: 700; line-height: 1; margin: 30px 0; }
+        /* Cloud decorations */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: 0;
+        }
+        .cloud-1 { width: 300px; height: 300px; top: -50px; left: -50px; }
+        .cloud-2 { width: 400px; height: 400px; bottom: 0; right: -100px; background: rgba(255, 237, 213, 0.5); }
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+            color: var(--text-main);
+        }
+        .hero-sub {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dashboard-preview {
+            margin-top: 60px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 40px 80px -20px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.8);
+            overflow: hidden;
+            position: relative;
+        }
+        .dashboard-header {
+            height: 40px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            gap: 8px;
+        }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot-r { background: #FECACA; } .dot-y { background: #FDE68A; } .dot-g { background: #A7F3D0; }
+
+        /* SOCIAL PROOF */
+        .logos-bar {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            opacity: 0.5;
+            filter: grayscale(100%);
+        }
+        .logo-item { font-weight: 700; font-size: 1.2rem; color: #9CA3AF; }
+
+        /* FEATURES */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .feature-visual {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+        .feature-text h2 { font-size: 2.5rem; letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.2; }
+        .feature-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px; }
         
-        .check-list { list-style: none; margin: 32px 0; text-align: left; }
-        .check-list li { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; color: #E2E8F0; }
+        /* Object Detection UI Mockup */
+        .detection-card {
+            background: #F3F4F6;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .bounding-box {
+            border: 2px solid #3B82F6;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #1D4ED8;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* PRICING */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .card-active {
+            background: var(--white);
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border);
+        }
+        .card-ghost {
+            padding: 40px;
+            opacity: 0.6;
+            border: 1px dashed var(--border);
+            border-radius: var(--radius-lg);
+        }
+        .price-tag { font-size: 3rem; font-weight: 800; margin: 20px 0; }
+        .check-list li { margin-bottom: 12px; display: flex; gap: 10px; color: var(--text-muted); }
+        .check-list li::before { content: "✓"; color: var(--text-main); font-weight: bold; }
+
+        /* RESOURCES */
+        .resource-card-main {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+        .resource-content { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .resource-img { background: #E5E7EB; min-height: 300px; }
         
-        /* FAQ */
-        .faq-grid { max-width: 800px; margin: 60px auto 0 auto; display: grid; gap: 16px; }
-        .faq-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: left; }
-        .faq-q { font-weight: 600; margin-bottom: 8px; color: var(--dark); }
-        .faq-a { font-size: 0.95rem; color: var(--gray); margin-bottom: 0; }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.2s;
+        }
+        .blog-card:hover { transform: translateY(-4px); }
+        .blog-body { padding: 20px; }
+        .blog-date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; display: block; }
+        .blog-title { font-weight: 600; font-size: 1.1rem; line-height: 1.4; }
+
+        /* FOOTER */
+        footer { background: var(--white); padding: 80px 0 40px 0; border-top: 1px solid var(--border); }
+        .footer-cta { text-align: center; margin-bottom: 80px; }
+        .footer-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+        .footer-col h4 { font-weight: 600; margin-bottom: 20px; }
+        .footer-col a { display: block; color: var(--text-muted); margin-bottom: 12px; font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--text-main); }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            .feature-grid { grid-template-columns: 1fr; }
-            .pricing-container { padding: 32px; }
+            .grid-cols-2, .grid-cols-3, .pricing-cards, .resource-card-main, .footer-links, .feature-grid { grid-template-columns: 1fr; }
+            .hero { padding-top: 120px; }
+            .gap-12 { gap: 40px; }
+            .card-active { padding: 32px; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="container nav-content">
-            <a href="index.html" class="logo">
-                <span style="width: 24px; height: 24px; background: var(--primary); border-radius: 4px;"></span>
-                Growth & Intent 1K
-            </a>
-            <a href="#pricing" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Get the List</a>
+    <header>
+        <div class="container flex justify-between items-center">
+            <div class="nav-logo">Growth & Intent 1K</div>
+            <a href="#pricing" class="btn btn-black" style="padding: 10px 20px; font-size: 0.9rem;">Get Started</a>
         </div>
-    </nav>
+    </header>
 
     <!-- HERO -->
     <section class="hero text-center">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        
         <div class="container">
-            <div style="display: inline-block; background: #EFF6FF; color: var(--primary); padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; margin-bottom: 24px;">
-                🚀 February 2026 Drop is Live
+            <div class="hero-content">
+                <h1>Reach Funded B2B Companies <br>Before They Hire.</h1>
+                <p class="hero-sub">
+                    Get 1,000 verified companies every month that just raised capital or started running ads. 
+                    Stop pitching broke leads.
+                </p>
+                <a href="#pricing" class="btn btn-black" style="padding: 16px 32px; font-size: 1rem;">Get the List</a>
             </div>
-            <h1>The "Cheat Code" for<br>B2B Agencies.</h1>
-            <p class="subhead">
-                Get 1,000 verified companies every month that just raised capital or started running ads. 
-                Stop pitching broke leads.
-            </p>
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="#pricing" class="btn btn-primary">Get 1,000 Leads - $49</a>
-                <a href="sample_data.csv" download class="btn btn-outline">↓ Download Sample</a>
-            </div>
-            <p style="font-size: 0.85rem; margin-top: 16px; color: var(--gray);">Trusted by 150+ Agency Owners & Sales Teams</p>
-            
-            <!-- MOCKUP / SOCIAL PROOF VISUAL -->
-            <div style="margin-top: 60px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
-                <img src="https://placehold.co/1200x600/f8fafc/e2e8f0?text=Data+Dashboard+Preview:+Company+|+Funding+|+Ad+Link" alt="Dashboard Preview" style="width: 100%; display: block;">
+
+            <div class="dashboard-preview">
+                <div class="dashboard-header">
+                    <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+                </div>
+                <div style="padding: 24px; overflow-x: auto;">
+                    <!-- Simple Table Simulation -->
+                    <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 600px;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid #E5E7EB; color: #6B7280; font-size: 0.85rem;">
+                                <th style="padding: 12px;">Company</th>
+                                <th style="padding: 12px;">Funding Status</th>
+                                <th style="padding: 12px;">Ad Spend</th>
+                                <th style="padding: 12px;">Decision Maker</th>
+                                <th style="padding: 12px;">Last Verified</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 0.95rem;">
+                            <tr>
+                                <td style="padding: 16px; font-weight: 600;">TechFlow AI</td>
+                                <td style="padding: 16px;"><span style="background: #DCFCE7; color: #166534; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">Seed: $4M</span></td>
+                                <td style="padding: 16px;">$15k/mo</td>
+                                <td style="padding: 16px;">Head of Growth</td>
+                                <td style="padding: 16px;">2 hrs ago</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 16px; font-weight: 600;">DataSphere</td>
+                                <td style="padding: 16px;"><span style="background: #DCFCE7; color: #166534; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">Series A: $12M</span></td>
+                                <td style="padding: 16px;">$45k/mo</td>
+                                <td style="padding: 16px;">VP Marketing</td>
+                                <td style="padding: 16px;">5 hrs ago</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 16px; font-weight: 600;">Nexus Health</td>
+                                <td style="padding: 16px;"><span style="background: #DBEAFE; color: #1E40AF; padding: 4px 8px; border-radius: 12px; font-size: 0.8rem;">Grant: $500k</span></td>
+                                <td style="padding: 16px;">$5k/mo</td>
+                                <td style="padding: 16px;">Founder</td>
+                                <td style="padding: 16px;">1 day ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="section bg-light">
-        <div class="container text-center">
-            <h2>Why "Standard" Lists Fail</h2>
-            <p class="subhead">You don't need more data. You need <em>better</em> signals.</p>
+    <!-- SOCIAL PROOF -->
+    <div class="container">
+        <div class="logos-bar">
+            <div class="logo-item">AGENCY SCALE</div>
+            <div class="logo-item">GROWTH LABS</div>
+            <div class="logo-item">PIPELINE PRO</div>
+            <div class="logo-item">COLD MAIL AI</div>
+            <div class="logo-item">LEAD FLOW</div>
+        </div>
+    </div>
 
+    <!-- FEATURE 1: AI VISION / INTENT -->
+    <section class="section-py">
+        <div class="container">
             <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="icon-box">📉</div>
-                    <h3>The "Stale Data" Trap</h3>
-                    <p style="font-size: 0.95rem;">Most databases are 6 months old. You pitch companies that are firing, not hiring. We track fresh money movement.</p>
+                <div class="feature-visual">
+                    <!-- Object Detection Style Card -->
+                    <div style="position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px; background: #F9FAFB; border-radius: 12px; border: 1px dashed #D1D5DB; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        
+                        <div class="detection-card" style="width: 80%; background: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                            <div class="bounding-box">Detected: Funding Event</div>
+                            <h4 style="font-weight: 700;">Raised $5,000,000</h4>
+                            <p style="font-size: 0.9rem; color: #6B7280; margin-top: 4px;">Source: SEC Filing • Date: Yesterday</p>
+                        </div>
+
+                        <div class="detection-card" style="width: 80%; background: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                            <div class="bounding-box" style="border-color: #10B981; background: rgba(16, 185, 129, 0.1); color: #047857;">Detected: Ad Launch</div>
+                            <h4 style="font-weight: 700;">Active Campaign: 12 Ads</h4>
+                            <p style="font-size: 0.9rem; color: #6B7280; margin-top: 4px;">Platform: LinkedIn • Spend Est: High</p>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-box">💰</div>
-                    <h3>Liquidity Filter</h3>
-                    <p style="font-size: 0.95rem;">We only list companies that verified a funding round in the last 30 days. They have cash and a mandate to spend.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon-box">🎯</div>
-                    <h3>Ad Intent Signal</h3>
-                    <p style="font-size: 0.95rem;">We verify active ad campaigns. If they are spending $10k on ads, they can afford your $3k retainer.</p>
+                <div class="feature-text">
+                    <h2>See who's spending <br>before they start hiring.</h2>
+                    <p>
+                        Most databases are 6 months old. You pitch companies that are firing, not hiring. 
+                        We track fresh money movement. If they just raised a verified round or launched ads, 
+                        they have the budget and the mandate to spend.
+                    </p>
+                    <ul class="check-list">
+                        <li>Real-time SEC Filing monitoring</li>
+                        <li>Ad Library active campaign verification</li>
+                        <li>Liquidity-first filtering</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section">
-        <div class="container text-center">
-            <h2>How It Works</h2>
-            <p class="subhead">We do the 40+ hours of research so you don't have to.</p>
-
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <div>
-                        <h3>We Scan The Market</h3>
-                        <p>Our systems monitor SEC filings, press releases, and the LinkedIn Ad Library API 24/7 to catch new money events.</p>
+    <!-- FEATURE 2: AUTOMATION -->
+    <section class="section-py" style="padding-top: 0;">
+        <div class="container">
+            <div class="feature-grid" style="direction: rtl;"> <!-- Reverse layout -->
+                <div class="feature-visual" style="direction: ltr;">
+                    <!-- Email/CRM Mockup -->
+                    <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; padding: 20px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #F3F4F6; padding-bottom: 10px;">
+                            <span style="font-weight: 600; font-size: 0.9rem;">Lead Export_Feb_2026.csv</span>
+                            <span style="color: #10B981; font-size: 0.8rem; background: #ECFDF5; padding: 2px 8px; border-radius: 12px;">Ready to Send</span>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                            <div style="width: 40px; height: 40px; background: #F3F4F6; border-radius: 50%;"></div>
+                            <div style="flex: 1;">
+                                <div style="height: 10px; width: 60%; background: #F3F4F6; border-radius: 4px; margin-bottom: 6px;"></div>
+                                <div style="height: 8px; width: 40%; background: #F3F4F6; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px; opacity: 0.5;">
+                            <div style="width: 40px; height: 40px; background: #F3F4F6; border-radius: 50%;"></div>
+                            <div style="flex: 1;">
+                                <div style="height: 10px; width: 50%; background: #F3F4F6; border-radius: 4px; margin-bottom: 6px;"></div>
+                                <div style="height: 8px; width: 30%; background: #F3F4F6; border-radius: 4px;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <div>
-                        <h3>We Curate The Top 1%</h3>
-                        <p>We filter out noise (universities, non-profits). We identify the 1,000 highest-potential B2B companies for agencies.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <div>
-                        <h3>You Get The Drop</h3>
-                        <p>On the 1st of every month, you get a clean CSV with Company, Decision Maker Title, Funding Amount, and Ad Library Links.</p>
-                    </div>
+                <div class="feature-text" style="direction: ltr;">
+                    <h2>We verify the intent. <br>You close the deals.</h2>
+                    <p>
+                        We do the 40+ hours of research so you don't have to. 
+                        Our team manually verifies every signal to ensure "Title" matches "First Last" and the company isn't a university or non-profit.
+                        You get a clean CSV ready for Apollo or Clay.
+                    </p>
+                    <a href="sample_data.csv" class="btn btn-outline" style="border-radius: var(--radius-full);">Download Sample Data</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRICING -->
-    <section class="section bg-light" id="pricing">
+    <section class="section-py" id="pricing">
         <div class="container text-center">
-            <div class="pricing-container">
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #0066FF, #00CCFF);"></div>
-                <h2>Simple Pricing</h2>
-                <p>One active client pays for 10 years of this list.</p>
-                
-                <div class="price-large">$49<span style="font-size: 1.5rem; font-weight: 400; color: #64748B;">/mo</span></div>
-                
-                <ul class="check-list">
-                    <li>✓ 1,000 Verified High-Intent Leads</li>
-                    <li>✓ 500 Funded + 500 Ad Spenders</li>
-                    <li>✓ Direct Links to Ad Creative</li>
-                    <li>✓ Enrichment-Ready Format</li>
-                    <li>✓ Cancel Anytime</li>
-                </ul>
+            <h2 style="font-size: 2.5rem; margin-bottom: 60px;">Pricing Options</h2>
+            
+            <div class="pricing-cards">
+                <!-- Active Card -->
+                <div class="card-active text-center" style="text-align: left;">
+                    <span style="background: #E0F2FE; color: #0284C7; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">MOST POPULAR</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 16px; font-weight: 700;">Standard Access</h3>
+                    <div class="price-tag">$49<span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+                    <p style="color: var(--text-muted); margin-bottom: 32px;">Perfect for agencies and sales teams starting to scale.</p>
+                    
+                    <ul class="check-list" style="margin-bottom: 32px;">
+                        <li>1,000 Verified High-Intent Leads</li>
+                        <li>500 Funded + 500 Ad Spenders</li>
+                        <li>Direct Links to Ad Creative</li>
+                        <li>Enrichment-Ready Format</li>
+                    </ul>
 
-                <a href="https://buy.stripe.com/PLACEHOLDER_LINK" class="btn btn-primary" style="width: 100%; padding: 20px;">Subscribe Now</a>
-                <p style="font-size: 0.85rem; margin-top: 16px; opacity: 0.6;">Secure payment via Stripe</p>
-            </div>
-        </div>
-    </section>
+                    <a href="https://buy.stripe.com/PLACEHOLDER_LINK" class="btn btn-black" style="width: 100%; justify-content: center; padding: 16px;">Get Started</a>
+                </div>
 
-    <!-- FAQ -->
-    <section class="section">
-        <div class="container text-center">
-            <h2>Common Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-q">Do you provide email addresses?</div>
-                    <p class="faq-a">We provide the Decision Maker *Title* and Company. You use Apollo/Clay to get the verified email. This ensures 100% deliverability.</p>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q">Is there a contract?</div>
-                    <p class="faq-a">No. It's a monthly subscription. You can cancel instantly with one click from your receipt.</p>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q">What industries are included?</div>
-                    <p class="faq-a">Primarily B2B SaaS, FinTech, HealthTech, and Professional Services. Companies that hire agencies.</p>
+                <!-- Ghost Card -->
+                <div class="card-ghost" style="text-align: left;">
+                    <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--text-muted);">Enterprise</h3>
+                    <div class="price-tag" style="color: var(--text-muted);">Custom</div>
+                    <p style="color: var(--text-muted); margin-bottom: 32px;">For teams needing API access or >10k leads/mo.</p>
+                    <ul class="check-list" style="opacity: 0.6;">
+                        <li>API Access</li>
+                        <li>Custom Geography</li>
+                        <li>CRM Integration</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center; opacity: 0.5; pointer-events: none;">Contact Sales</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark" style="padding: 60px 0;">
-        <div class="container text-center">
-            <h3 style="color: white; margin-bottom: 24px;">Growth & Intent 1K</h3>
-            <p style="margin-bottom: 40px;">Data-driven leads for modern sales teams.</p>
-            <div style="display: flex; justify-content: center; gap: 24px; opacity: 0.6; font-size: 0.9rem;">
-                <a href="index.html">Back to Portfolio</a>
-                <a href="mailto:akhil@lisnagency.online">Contact</a>
-                <a href="#">Privacy Policy</a>
+    <!-- RESOURCES -->
+    <section class="section-py" style="background: #F3F4F6;">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 40px;">Ideas to grow your business</h2>
+            
+            <!-- Main Resource Card -->
+            <div class="resource-card-main">
+                <div class="resource-content">
+                    <span style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">FEATURED GUIDE</span>
+                    <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2;">The AI Sniper Workflow</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">How to combine intent signals with AI personalization to get 15%+ reply rates.</p>
+                    <a href="the-ai-sniper-workflow.html" style="font-weight: 600; text-decoration: underline;">Read Article →</a>
+                </div>
+                <div class="resource-img" style="background: linear-gradient(135deg, #000000 0%, #333333 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 2rem; opacity: 0.9;">
+                    AI SNIPER
+                </div>
             </div>
-            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.4;">&copy; 2026 Akhil MK.</p>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div style="height: 160px; background: #E5E7EB;"></div>
+                    <div class="blog-body">
+                        <span class="blog-date">GUIDE</span>
+                        <a href="a-two-minute-guide-to-setting-up-cold-email.html" class="blog-title">A Two-Minute Guide to Setting Up Cold Email</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div style="height: 160px; background: #E5E7EB;"></div>
+                    <div class="blog-body">
+                        <span class="blog-date">STRATEGY</span>
+                        <a href="beyond-templates--finding-pain-qualified-segments-for-ai-automation-success.html" class="blog-title">Finding Pain-Qualified Segments</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div style="height: 160px; background: #E5E7EB;"></div>
+                    <div class="blog-body">
+                        <span class="blog-date">TACTIC</span>
+                        <a href="what-i-learned-from-finally-using-meeting-transcripts.html" class="blog-title">Using Meeting Transcripts for Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-cta">
+                <h2 style="font-size: 2rem; margin-bottom: 24px;">Ready to get started?</h2>
+                <a href="#pricing" class="btn btn-black" style="padding: 16px 40px; font-size: 1.1rem;">Get the List</a>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#pricing">Pricing</a>
+                    <a href="sample_data.csv">Sample Data</a>
+                    <a href="#">Changelog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="mailto:akhil@lisnagency.online">Contact</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="index.html">Blog</a>
+                    <a href="#">Community</a>
+                    <a href="#">Help Center</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 0.85rem;">
+                &copy; 2026 Growth & Intent 1K. All rights reserved.
+            </div>
         </div>
     </footer>
 
