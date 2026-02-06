@@ -35,10 +35,10 @@ sed -e "s|<!-- BLOG_TITLE_HERE -->|$ESCAPED_BLOG_TITLE|g" \
 
 # Add link to index.html
 # First, create the new link HTML
-NEW_LINK_HTML="                    <a href=\"$SLUG.html\" class=\"thought-link\">$BLOG_TITLE</a>"
+NEW_LINK_HTML="                    <a href=\"$SLUG\" class=\"thought-link\">$BLOG_TITLE</a>"
 
 # Check if the new link already exists to prevent duplicates
-if ! grep -q "$SLUG.html" "$INDEX_FILE"; then
+if ! grep -q "$SLUG\"" "$INDEX_FILE"; then
     # Insert the new link at the beginning of the thoughts-list div
     # Use sed to insert after the opening <div class="thoughts-list"> tag
     sed -i "/<div class=\"thoughts-list\">/a \    $NEW_LINK_HTML" "$INDEX_FILE"

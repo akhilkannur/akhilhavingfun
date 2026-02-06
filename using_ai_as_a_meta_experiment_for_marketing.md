@@ -56,6 +56,6 @@ The setup is pretty straightforward:
 ### 9. Programmatic Social Posting
 - **Why:** Posting updates manually doesn't scale.
 - **What:** Automated posting of new recipes and tools.
-- **How:** Scripts that pull entries from a local database and post them to X.
+- **How:** Hooked up Instagram and Pinterest APIs to the codebase to generate static images and motion videos. Will report back on how it goes.
 
 In parallel, I've also been using the terminal for sending cold emails for hyper targeted campaigns with limited number of leads, scraping LinkedIn ad libraries to find high value advertisers and enrich the data using Exa AI etc.
