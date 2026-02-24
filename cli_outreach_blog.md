@@ -6,7 +6,7 @@ I've been using a CLI-based AI agent to handle my outreach. It’s not a "bot" t
 
 ## The Workflow: Research, "Jam," and Send
 
-Here is how this interactive workflow looks, using a B2B SaaS company—let’s say a PropTech CRM called "EstateFlow"—as an example.
+Here is how this interactive workflow looks, using a B2B SaaS company as an example. Let's say a PropTech CRM called "EstateFlow".
 
 ### 1. Real-Time Verification
 Instead of relying on a static CSV, I have the CLI verify the target live. 

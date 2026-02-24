@@ -7,7 +7,7 @@ Each month, curate 500 hand-picked companies running LinkedIn ads. Deliver on th
 
 ## Step 1: Scrape LinkedIn Ad Library
 
-Start with the Ad Library — this is the source of truth.
+Start with the Ad Library. This is the source of truth.
 
 ### Keywords to scrape (rotate/expand monthly)
 ```
@@ -118,7 +118,7 @@ Don't scrape all verticals every month. Rotate to keep lists fresh.
 - **February**: Fintech, LegalTech, PropTech, Supply Chain, Sales Tech, EdTech, CleanTech, RevOps
 - **March**: Mix based on subscriber feedback + new trending verticals
 
-Always include **Fintech** and **MarTech** — highest demand.
+Always include **Fintech** and **MarTech** since they have the highest demand.
 
 ---
 
