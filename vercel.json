@@ -7,11 +7,11 @@
     { "source": "/using-ai-as-a-meta-experiment-for-marketing--last-30-days", "destination": "/blog/using-ai-as-meta-experiment" },
     { "source": "/i-built-a-chrome-extension-for-voice-typing", "destination": "/blog/voice-typing-chrome-extension" },
     { "source": "/fixing-the-google-search-console-sitemap-bug", "destination": "/blog/fixing-google-search-console-sitemap-bug" },
-    { "source": "/5-ai-prompts-for-deeper-thinking---better-output", "destination": "/" },
-    { "source": "/a-google-sheet-script-to-find-linkedin-company-pages", "destination": "/" },
-    { "source": "/a-two-minute-guide-to-setting-up-cold-email", "destination": "/" },
-    { "source": "/beyond-templates--finding-pain-qualified-segments-for-ai-automation-success", "destination": "/" },
-    { "source": "/expired-directory-domains--how-i-found-them-for-building-new-directories", "destination": "/" },
-    { "source": "/what-i-learned-from-finally-using-meeting-transcripts", "destination": "/" }
+    { "source": "/5-ai-prompts-for-deeper-thinking---better-output", "destination": "/blog/5-ai-prompts-for-deeper-thinking" },
+    { "source": "/a-google-sheet-script-to-find-linkedin-company-pages", "destination": "/blog/a-google-sheet-script-to-find-linkedin-company-pages" },
+    { "source": "/a-two-minute-guide-to-setting-up-cold-email", "destination": "/blog/a-two-minute-guide-to-setting-up-cold-email" },
+    { "source": "/beyond-templates--finding-pain-qualified-segments-for-ai-automation-success", "destination": "/blog/beyond-templates--finding-pain-qualified-segments-for-ai-automation-success" },
+    { "source": "/expired-directory-domains--how-i-found-them-for-building-new-directories", "destination": "/blog/expired-directory-domains--how-i-found-them-for-building-new-directories" },
+    { "source": "/what-i-learned-from-finally-using-meeting-transcripts", "destination": "/blog/what-i-learned-from-finally-using-meeting-transcripts" }
   ]
 }
