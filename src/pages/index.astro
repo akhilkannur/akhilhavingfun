@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+// Sort by published time (newest first)
+blogPosts.sort((a, b) => {
+  const aDate = new Date(a.data.publishedTime || 0);
+  const bDate = new Date(b.data.publishedTime || 0);
+  return bDate.getTime() - aDate.getTime();
+});
+---
+
+<BaseLayout
+  title="Akhil MK"
+  description="Akhil MK runs a marketing agency for DTC brands with over 10 years of experience building sales campaigns, e-commerce stores, and AI-powered tools."
+>
+    <section class="hero">
+        <div class="profile-section">
+            <div class="profile-image-container">
+                <img src="/DP.jpg" alt="Akhil MK" class="profile-image">
+            </div>
+            <div class="profile-content">
+                <h1 class="greeting">
+                    <span class="hero-accent" style="position: relative; display: inline-block;">
+                        HI
+                        <div class="hero-illustration"></div>
+                    </span>, i'm Akhil
+                </h1>
+                <p class="description">I run a marketing agency for DTC brands while dabbling with AI in my free time to create tools that solve real sales & marketing problems. Over 10 years of experience in building everything from sales campaigns to e-commerce stores to AI-powered tools that transform messy data into clean, actionable insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="major-projects">
+            <div class="project-card">
+                <h3 class="project-title"><a href="http://lisnagency.online/">LISN Agency</a></h3>
+                <p class="project-description">We capture real people and real moments through event videos and street interview ad creatives for UGC brands.</p>
+                <div class="project-tags">
+                    <span class="tag agency">Agency</span>
+                    <span class="tag video">Video</span>
+                    <span class="tag events">Events</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3 class="project-title"><a href="/no-agenda-call">No Agenda Call</a></h3>
+                <p class="project-description">Book a no-strings-attached, no-pitch call to discuss your internet project ideas or challenges.</p>
+                <div class="project-tags">
+                    <span class="tag consulting">Consulting</span>
+                    <span class="tag free">Free</span>
+                </div>
+            </div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://realaiexamples.com/">Real AI Examples</a></h3>
+                <p class="project-description">A platform that shares real AI examples for non-technical people, showing practical use cases of AI in the real world.</p>
+                <div class="project-tags">
+                    <span class="tag tool">Platform</span>
+                    <span class="tag tool">AI</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://salestoolsclub.com/">SalesTools Club</a></h3>
+                <p class="project-description">A directory of Sales Automation APIs and MCPs.</p>
+                <div class="project-tags">
+                    <span class="tag tool">Directory</span>
+                    <span class="tag sales">Sales</span>
+                    <span class="tag automation">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://adlibrary.store/">adlibrary.store</a></h3>
+                <p class="project-description">Curated lists of mid-market B2B companies actively running LinkedIn ads, with decision-maker contacts for outbound sales teams, agencies, and consultants.</p>
+                <div class="project-tags">
+                    <span class="tag tool">Tool</span>
+                    <span class="tag b2b">B2B</span>
+                    <span class="tag linkedin">LinkedIn</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://salesprospecting.akhilhaving.fun/">Sales Prospecting Examples</a></h3>
+                <p class="project-description">A no-longer maintained project with examples of sales prospecting techniques.</p>
+                <div class="project-tags">
+                    <span class="tag database">Database</span>
+                    <span class="tag sales">Sales</span>
+                    <span class="tag deprecated">Deprecated</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2 class="section-title">Products & Tools</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://1000what.gumroad.com/l/triggered?layout=profile">Lead Gen Tactics Database</a></h3>
+                <p class="project-description">A database of lead generation tactics for B2B salespeople (manually curated, pre-chatgpt).</p>
+                <div class="project-tags">
+                    <span class="tag database">Database</span>
+                    <span class="tag b2b">B2B</span>
+                    <span class="tag free">Free</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://1000what.gumroad.com/l/rypkw">LinkedIn CEO Profile Finder</a></h3>
+                <p class="project-description">A tool to find LinkedIn CEO profiles and integrate with Google Sheets.</p>
+                <div class="project-tags">
+                    <span class="tag tool">Tool</span>
+                    <span class="tag linkedin">LinkedIn</span>
+                    <span class="tag automation">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="project-title"><a href="https://1000what.gumroad.com/l/IntelligenceDatabase">Sales & Marketing Intelligence Database</a></h3>
+                <p class="project-description">I built a sales and marketing intelligence database because I was tired of how much time prospecting and research took. It's an Airtable-based toolbox to help you find prospects, analyze competitors, and speed up your sales prep.</p>
+                <div class="project-tags">
+                    <span class="tag database">Database</span>
+                    <span class="tag sales">Sales</span>
+                    <span class="tag airtable">Airtable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="thoughts">
+        <h2 class="section-title">Thoughts</h2>
+        <div class="thoughts-list">
+            {blogPosts.map((post) => (
+                <a href={`/blog/${post.slug}`} class="thought-link">{post.data.title}</a>
+            ))}
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2 class="section-title">Wanna get in touch?</h2>
+        <p class="contact-description">I am always available for exciting discussions</p>
+        <div class="contact-info">
+            <a href="mailto:akhil@lisnagency.online" class="contact-link">akhil@lisnagency.online</a>
+            <p class="location">Kerala, India</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/akhilmk/" target="_blank" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            <a href="https://x.com/akhilpedia" target="_blank" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const endOfYear = new Date(2026, 11, 31, 23, 59, 59);
+
+            const startOfYear = new Date(2026, 0, 1, 0, 0, 0);
+            const totalMillisecondsInYear = endOfYear.getTime() - startOfYear.getTime();
+            const millisecondsRemaining = endOfYear.getTime() - now.getTime();
+
+            if (millisecondsRemaining <= 0) {
+                document.getElementById('countdown-timer').innerText = "0% left of 2026";
+                return;
+            }
+
+            const percentageLeft = (millisecondsRemaining / totalMillisecondsInYear) * 100;
+            document.getElementById('countdown-timer').innerText = `${percentageLeft.toFixed(2)}% left of 2026`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const factFlicker = document.getElementById('fact-flicker');
+            if (factFlicker) {
+                const facts = [
+                    "Did you know? 'First Principles Thinking' means breaking down problems to their fundamental truths, then building up from there.",
+                    "Did you know? 'Inversion' is solving a problem by considering the opposite: what would guarantee failure, then avoiding it.",
+                    "Did you know? 'Occam's Razor' suggests the simplest explanation is usually the best one.",
+                    "Did you know? 'The Map Is Not The Territory' reminds us that our models of reality are not reality itself.",
+                    "Did you know? 'Compounding' isn't just for money; small, consistent efforts yield massive results over time.",
+                    "Did you know? 'Circle of Competence' means knowing what you know, and more importantly, what you don't know.",
+                    "Did you know? 'Margin of Safety' is building in a buffer to protect against unforeseen events or errors.",
+                    "Did you know? 'Hanlon's Razor' suggests never attributing to malice that which is adequately explained by stupidity.",
+                    "Did you know? 'The Law of Unintended Consequences' states that actions often have effects not foreseen or intended.",
+                    "Did you know? 'Feedback Loops' are processes where outputs are routed back as inputs, influencing future outputs.",
+                    "Did you know? 'Survivorship Bias' is focusing only on things that survived, overlooking those that failed.",
+                    "Did you know? 'Opportunity Cost' is the value of the next best alternative that was not taken.",
+                    "Did you know? 'The Pareto Principle' (80/20 rule) states that roughly 80% of effects come from 20% of causes."
+                ];
+                let currentFactIndex = 0;
+
+                function updateFactFlicker() {
+                    factFlicker.style.opacity = 0;
+                    setTimeout(() => {
+                        factFlicker.innerText = facts[currentFactIndex];
+                        currentFactIndex = (currentFactIndex + 1) % facts.length;
+                        factFlicker.style.opacity = 1;
+                    }, 500);
+                }
+
+                updateFactFlicker();
+                setInterval(updateFactFlicker, 10000);
+            }
+        });
+    </script>
+</BaseLayout>

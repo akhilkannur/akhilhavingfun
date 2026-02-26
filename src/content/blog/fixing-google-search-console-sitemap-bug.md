@@ -1,4 +1,8 @@
-# Fixing the Google Search Console "Couldn't Fetch" Sitemap Bug
+---
+title: 'Fixing the Google Search Console "Couldn\'t Fetch" Sitemap Bug'
+description: 'How I finally fixed the Google Search Console "Couldn\'t Fetch" sitemap error after a week of debugging.'
+publishedTime: '2026-02-26'
+---
 
 I've been stuck for a week trying to get Google Search Console to read my sitemap. It kept throwing a "Couldn't fetch" error, even though every validator and even Bing Webmaster Tools said the XML was perfect.
 

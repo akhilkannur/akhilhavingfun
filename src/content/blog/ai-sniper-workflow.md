@@ -1,15 +1,19 @@
-# The "AI Sniper" Workflow: High-Touch Outreach via the Terminal
+---
+title: 'The "AI Sniper" Workflow: High-Touch Outreach via the Terminal'
+description: 'A CLI-based AI agent for high-touch B2B outreach that verifies, drafts, and sends emails one-by-one from your own inbox.'
+publishedTime: '2025-02-24'
+---
 
 Most B2B outreach today is a volume game: buy a massive list, plug it into an automated sequencer, and hope for a 1% reply rate. While this works for scale, it often fails for high-value deals where context and accuracy matter more than numbers.
 
-I've been using a CLI-based AI agent to handle my outreach. It’s not a "bot" that blasts emails; it’s a research partner that helps me verify, draft, and send emails one-by-one from my own inbox.
+I've been using a CLI-based AI agent to handle my outreach. It's not a "bot" that blasts emails; it's a research partner that helps me verify, draft, and send emails one-by-one from my own inbox.
 
 ## The Workflow: Research, "Jam," and Send
 
 Here is how this interactive workflow looks, using a B2B SaaS company as an example. Let's say a PropTech CRM called "EstateFlow".
 
 ### 1. Real-Time Verification
-Instead of relying on a static CSV, I have the CLI verify the target live. 
+Instead of relying on a static CSV, I have the CLI verify the target live.
 *   **The Prompt:** *"Read row 10 (EstateFlow). Find their Head of Sales. Check LinkedIn to see if they recently mentioned expanding their regional teams."*
 *   **The Result:** The CLI finds that **Sarah K.** is the Head of Sales and she recently spoke at a conference about "The Future of Digital Real Estate in India." I now have a specific, relevant hook.
 

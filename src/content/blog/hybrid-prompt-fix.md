@@ -1,6 +1,8 @@
-# The "Hybrid" prompt: A simple fix for agents that get stuck or lose context
-
-## Tips and Tricks
+---
+title: 'The "Hybrid" Prompt: A Simple Fix for Agents That Get Stuck or Lose Context'
+description: 'A simple fix for AI agents that get stuck or lose context during long automation tasks.'
+publishedTime: '2025-02-20'
+---
 
 I've been testing a lot of automations lately with tools like Gemini CLI. I have a huge list of about 500 prompts that worked fine when I was chatting with them, but they all fell apart once I tried to let them run on their own in the background. So I thought about sharing a few observations I noticed about agents and the fix I came up with. This could be a "too long, didn't read" one, but I'll give it a go!
 

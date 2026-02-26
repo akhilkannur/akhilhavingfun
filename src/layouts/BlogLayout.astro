@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishedTime?: string;
+}
+
+const { title, description, publishedTime } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+  publishedTime={publishedTime}
+>
+    <section class="hero">
+        <h1 class="greeting">{title}</h1>
+        {publishedTime && <p class="description"><em>{publishedTime}</em></p>}
+    </section>
+
+    <section class="projects">
+        <div class="blog-content">
+            <slot />
+        </div>
+    </section>
+</BaseLayout>
