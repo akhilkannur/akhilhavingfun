@@ -1,9 +1,6 @@
 {
   "cleanUrls": true,
   "outputDirectory": "dist",
-  "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" }
-  ],
   "redirects": [
     { "source": "/the-ai-sniper-workflow", "destination": "/blog/ai-sniper-workflow" },
     { "source": "/the--hybrid--prompt--a-simple-fix-for-agents-that-get-stuck-or-lose-context", "destination": "/blog/hybrid-prompt-fix" },
