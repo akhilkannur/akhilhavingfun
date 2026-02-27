@@ -4,3 +4,4 @@ Allow: /
 Sitemap: https://akhilhaving.fun/sitemap.xml
 Sitemap: https://akhilhaving.fun/sitemap-index.xml
 Sitemap: https://akhilhaving.fun/sitemap_index.xml
+Sitemap: https://akhilhaving.fun/sitemap-main.xml
