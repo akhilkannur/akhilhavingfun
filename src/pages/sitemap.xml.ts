@@ -3,35 +3,45 @@ import { getCollection } from 'astro:content';
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://akhilhaving.fun';
+  const today = new Date().toISOString();
 
   const staticPages = [
-    '/',
-    '/about',
-    '/no-agenda-call',
-    '/cold-email-setup-service',
-    '/directory-listing-service',
-    '/growth-intent-1k',
-    '/personalized_landing_page',
-    '/spendsignal',
-    '/two-minute-guide-to-cold-email',
+    { url: '/', priority: '1.0' },
+    { url: '/about', priority: '0.8' },
+    { url: '/no-agenda-call', priority: '0.8' },
+    { url: '/cold-email-setup-service', priority: '0.8' },
+    { url: '/directory-listing-service', priority: '0.8' },
+    { url: '/growth-intent-1k', priority: '0.8' },
+    { url: '/personalized_landing_page', priority: '0.8' },
+    { url: '/spendsignal', priority: '0.8' },
+    { url: '/two-minute-guide-to-cold-email', priority: '0.8' },
   ];
 
   const blogEntries = await getCollection('blog');
-  const blogPosts = blogEntries.map(entry => entry.slug);
+  
+  const urlElements = [
+    ...staticPages.map(page => `
+  <url>
+    <loc>${page.url === '/' ? baseUrl : `${baseUrl}${page.url}`}</loc>
+    <lastmod>${today}</lastmod>
+    <priority>${page.priority}</priority>
+  </url>`),
+    ...blogEntries.map(entry => `
+  <url>
+    <loc>${baseUrl}/blog/${entry.slug}</loc>
+    <lastmod>${entry.data.publishedTime ? new Date(entry.data.publishedTime).toISOString() : today}</lastmod>
+    <priority>0.6</priority>
+  </url>`)
+  ].join('');
 
-  const allUrls = new Set([
-    ...staticPages.map(page => page === '/' ? `${baseUrl}/` : `${baseUrl}${page}`),
-    ...blogPosts.map(slug => `${baseUrl}/blog/${slug}`)
-  ]);
-
-  const urlElements = Array.from(allUrls).map(url => `<url><loc>${url}</loc></url>`).join('');
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urlElements}</urlset>`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlElements}
+</urlset>`.trim();
 
   return new Response(xml, {
     headers: {
-      'Content-Type': 'application/xml',
-      'X-Content-Type-Options': 'nosniff'
+      'Content-Type': 'application/xml; charset=utf-8',
     },
   });
 };
