@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://akhilhaving.fun/sitemap.xml
+Sitemap: https://akhilhaving.fun/sitemap-main.xml
