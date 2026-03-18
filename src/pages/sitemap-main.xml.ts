@@ -21,29 +21,28 @@ export const GET: APIRoute = async () => {
 
   const blogEntries = await getCollection('blog');
   
-  const urlElements = [
-    ...staticPages.map(page => `
-  <url>
-    <loc>${page.url === '/' ? `${baseUrl}/` : `${baseUrl}${page.url}`}</loc>
-    <lastmod>${today}</lastmod>
-    <priority>${page.priority}</priority>
-  </url>`),
-    ...blogEntries.map(entry => `
-  <url>
-    <loc>${baseUrl}/blog/${entry.slug}</loc>
-    <lastmod>${entry.data.publishedTime ? entry.data.publishedTime : today}</lastmod>
-    <priority>0.6</priority>
-  </url>`)
-  ].join('');
+  const urls = new Set<string>();
+  
+  const addUrl = (loc: string, lastmod: string, priority: string) => {
+    urls.add(`<url><loc>${loc}</loc><lastmod>${lastmod}</lastmod><priority>${priority}</priority></url>`);
+  };
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urlElements}
-</urlset>`;
+  staticPages.forEach(page => {
+    const loc = page.url === '/' ? `${baseUrl}/` : `${baseUrl}${page.url}`;
+    addUrl(loc, today, page.priority);
+  });
+
+  blogEntries.forEach(entry => {
+    const loc = `${baseUrl}/blog/${entry.slug}`;
+    const lastmod = entry.data.publishedTime || today;
+    addUrl(loc, lastmod, '0.6');
+  });
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${Array.from(urls).join('')}</urlset>`;
 
   return new Response(xml, {
     headers: {
-      'Content-Type': 'application/xml; charset=utf-8',
+      'Content-Type': 'application/xml',
     },
   });
 };
