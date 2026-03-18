@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
+export const prerender = true;
+
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://akhilhaving.fun';
   const today = new Date().toISOString().split('T')[0];
@@ -34,13 +36,14 @@ export const GET: APIRoute = async () => {
   </url>`)
   ].join('');
 
-  const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urlElements}</urlset>`;
-  const bytes = new TextEncoder().encode(xml);
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlElements}
+</urlset>`;
 
-  return new Response(bytes, {
+  return new Response(xml, {
     headers: {
-      'Content-Type': 'application/xml',
-      'Content-Length': bytes.length.toString(),
+      'Content-Type': 'application/xml; charset=utf-8',
     },
   });
 };
