@@ -1,12 +1,12 @@
 ---
 title: "I Put an AI Agent on a Server. Here's When It's Worth It (And When It's Not)"
-description: "After running Hermes on AWS for my newsletter automation, I learned that most tasks don't need a full AI agent — a simple script with one API call works better."
+description: "After running Hermes on AWS for my newsletter automation, I learned that most tasks don't need a full AI agent. A simple script with one API call works better."
 publishedTime: "2026-05-13"
 ---
 
-I've been tinkering with [Hermes](https://github.com/Hermes-AI/hermes-agent) — an open-source AI agent you can run in your terminal. Think of it as having a developer on call who can write code, run commands, browse the web, and remember what you told it last week.
+I've been tinkering with [Hermes](https://github.com/Hermes-AI/hermes-agent), an open-source AI agent you can run in your terminal. Think of it as having a developer on call who can write code, run commands, browse the web, and remember what you told it last week.
 
-The cool part? You can install Hermes on a cloud server and let it run tasks on autopilot — like a personal assistant that never sleeps. But after a few weeks of doing this, I realized something: **most of the time, I didn't need the full agent. A much simpler setup worked better.**
+The cool part? You can install Hermes on a cloud server and let it run tasks on autopilot, like a personal assistant that never sleeps. But after a few weeks of doing this, I realized something: **most of the time, I didn't need the full agent. A much simpler setup worked better.**
 
 Let me explain.
 
@@ -30,27 +30,27 @@ A simple Python script that:
 
 No agent. No reasoning. No conversation memory. Just a loop with one AI call where I need it.
 
-**The cost difference?** About $0.002 per edit with the simple script. Hermes doing the same thing would cost 10-50x more, because an agent "thinks" through every step — even when the steps are always the same.
+**The cost difference?** About $0.002 per edit with the simple script. Hermes doing the same thing would cost 10-50x more, because an agent "thinks" through every step, even when the steps are always the same.
 
 ## So When Is Hermes Actually Worth It?
 
-Here's what I learned. An AI agent like Hermes is basically **a cron job that can think.** A cron job is just a scheduled task — "do this every Monday at 9am." It runs the same steps every time. If something breaks, it just fails and waits for you to fix it.
+Here's what I learned. An AI agent like Hermes is basically **a cron job that can think.** A cron job is just a scheduled task, like "do this every Monday at 9am." It runs the same steps every time. If something breaks, it just fails and waits for you to fix it.
 
 Hermes can **figure out what went wrong and try a different approach.** That's its superpower. But it's also expensive and occasionally unpredictable.
 
 ### Use Hermes when:
 
-- **Things break unpredictably** — You have a scraper that stops working every few weeks because websites change their layout. Hermes can detect the breakage and adapt, instead of just crashing.
-- **The task changes every time** — "Research this company, find their latest funding round, check if they're hiring marketers, and write me a brief." The steps depend on what it finds along the way.
-- **You want a daily briefing that requires judgment** — Not just "send me data," but "tell me what's interesting and why."
-- **You're monitoring something complex** — Like watching 50 companies for signals that they're about to start advertising. Each company needs a different approach.
+- **Things break unpredictably**. You have a scraper that stops working every few weeks because websites change their layout. Hermes can detect the breakage and adapt, instead of just crashing.
+- **The task changes every time**. "Research this company, find their latest funding round, check if they're hiring marketers, and write me a brief." The steps depend on what it finds along the way.
+- **You want a daily briefing that requires judgment**. Not just "send me data," but "tell me what's interesting and why."
+- **You're monitoring something complex**. Like watching 50 companies for signals that they're about to start advertising. Each company needs a different approach.
 
 ### Use a simple script + one AI call when:
 
-- **The steps are always the same** — Scrape → process → send. Every time.
-- **You only need AI for one specific thing** — Writing the copy, applying an edit, scoring relevance.
-- **You need it to be reliable** — Scripts do the same thing every time. Agents can get creative in ways you didn't ask for.
-- **You want to understand what went wrong** — With a script, you read the error log. With an agent, you're asking "why did it decide to do that?"
+- **The steps are always the same**. Scrape → process → send. Every time.
+- **You only need AI for one specific thing**. Writing the copy, applying an edit, scoring relevance.
+- **You need it to be reliable**. Scripts do the same thing every time. Agents can get creative in ways you didn't ask for.
+- **You want to understand what went wrong**. With a script, you read the error log. With an agent, you're asking "why did it decide to do that?"
 
 ## The Simple Test
 
