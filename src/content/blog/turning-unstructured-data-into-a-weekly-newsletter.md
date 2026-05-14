@@ -4,6 +4,8 @@ description: "How I used Claude and Hermes to automate domain dispute scraping, 
 publishedTime: "2026-05-07"
 ---
 
+> **Update (May 14, 2026):** I’ve since moved this entire setup to **AWS**, running on a small EC2 instance via cron jobs. I also realized that using a full AI agent (Hermes) for a recurring task was overkill. I’ve swapped the agent for a modular Python script, which is more reliable and cheaper to run. [Read why I made the switch here](/blog/when-to-use-an-ai-agent-on-a-server).
+
 My favorite use case for LLMs is still turning unstructured data into a structured format.
 
 ![Screenshot of the workflow](/domain-dispute-newsletter-screenshot.jpeg)
