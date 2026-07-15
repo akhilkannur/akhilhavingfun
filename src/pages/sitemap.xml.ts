@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 export const prerender = true;
 
 export const GET: APIRoute = async () => {
-  const baseUrl = 'https://akhilhaving.fun';
+  const baseUrl = 'https://akhilneeds.space';
   const today = new Date().toISOString().split('T')[0];
 
   const staticPages = [

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://akhilhaving.fun/sitemap.xml
+Sitemap: https://akhilneeds.space/sitemap.xml
